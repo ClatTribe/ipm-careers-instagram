@@ -97,3 +97,21 @@ export async function publish(creationId) {
   const { permalink } = await graph(mediaId, { fields: "permalink" }, "GET").catch(() => ({}));
   return permalink ?? `media ${mediaId}`;
 }
+
+/** Keeps a copy of the day's slides online (for the owner's email, to re-upload on YouTube) and returns the links. */
+export async function shareLinks(files, date) {
+  const links = [];
+  for (const f of files) links.push((await hostAsJpeg(f, `ipm-share/${date}`)).url);
+  return links;
+}
+
+/** Deletes shared copies older than `days` days (Cloudinary admin API). */
+export async function cleanupShares(days = 14) {
+  const auth = "Basic " + Buffer.from(`${CLD.key}:${CLD.secret}`).toString("base64");
+  const res = await fetch(`https://api.cloudinary.com/v1_1/${CLD.cloud}/resources/image/upload?prefix=ipm-share/&max_results=500`, { headers: { Authorization: auth } });
+  if (!res.ok) return 0;
+  const { resources = [] } = await res.json();
+  const old = resources.filter((r) => Date.now() - Date.parse(r.created_at) > days * 86400000);
+  for (const r of old) await removeHosted({ publicId: r.public_id });
+  return old.length;
+}

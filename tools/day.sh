@@ -30,6 +30,7 @@ if [ "$MODE" = "post" ]; then
   node tools/render-story.mjs "stories/auto/$DATE-newpost.json"
   [ "$UPLOAD" = "0" ] && { log "rendered only (--no-upload)"; exit 0; }
   node tools/upload-instagram.mjs post "$F" --publish-at "${DATE}T19:30:00+05:30" || exit 1
+  node tools/share-links.mjs "$DATE" | tee "out/$DATE-share.txt" || log "WARN: could not make the download links"
   node tools/upload-instagram.mjs story "stories/auto/$DATE-newpost.json" --publish-at "${DATE}T19:45:00+05:30" || { log "PARTIAL: post live, Story failed"; exit 1; }
   log "DONE"
 elif [ "$MODE" = "story" ]; then
