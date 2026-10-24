@@ -1,0 +1,17 @@
+{
+ "content": {
+  "type": "shortcut",
+  "kicker": "Quant · Percentages",
+  "title": "Two % changes in a row?\n*One line.*",
+  "formulaLabel": "NET CHANGE",
+  "formula": "a + b + ab/100",
+  "legend": "a, b = the two % changes (minus for a fall)",
+  "example": [
+   "Price up 20%, then up 10%",
+   "20 + 10 + (20 × 10)/100 = {green:32%}",
+   "Not 30%!"
+  ]
+ },
+ "caption": "Two percentage changes in a row? Use a + b + ab/100 ✍️\n\nUp 20%, then up 10% = 32%, not 30%.\n\nSave it for the exam 📌\n\n#IPMAT #IPMATQuant #MathsTricks #IPMCareers #JIPMAT",
+ "claims": []
+}

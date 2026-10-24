@@ -1,0 +1,18 @@
+{
+ "date": "2026-11-07",
+ "content": {
+  "type": "shortcut",
+  "kicker": "Quant · Multiplication",
+  "title": "Any 2-digit number × 11,\n*in one line.*",
+  "formulaLabel": "THE TRICK",
+  "formula": "ab × 11 = a | a+b | b",
+  "legend": "put the sum of the digits in the middle (carry if it is 10 or more)",
+  "example": [
+   "72 × 11: 7 | 7+2 | 2 = {green:792}",
+   "87 × 11: 8 | 15 | 7",
+   "carry the 1: {green:957}"
+  ]
+ },
+ "caption": "Any 2-digit number × 11 in one line ✍️\n\n72 × 11 = 792 (7, 7+2, 2)\n87 × 11 = 957 (carry the 1)\n\nYour turn: 68 × 11 = ? Comment below 👇\n\n#IPMAT #IPMATQuant #MathsTricks #IPMCareers #JIPMAT",
+ "claims": []
+}

@@ -1,0 +1,31 @@
+{
+ "date": "2026-11-01",
+ "content": {
+  "type": "parents",
+  "kicker": "For parents",
+  "title": "Your child wants to do *IPM.*\nWhat is it?",
+  "subtitle": "Three common questions, answered simply.",
+  "qa": [
+   {
+    "q": "What is IPM?",
+    "a": "A 5-year integrated management programme at an IIM. Students join right after Class 12 instead of a regular 3-year degree."
+   },
+   {
+    "q": "Which exam does my child need?",
+    "a": "It depends on the IIM. IPMAT Indore covers IIM Indore and several others. JIPMAT covers IIM Jammu and IIM Bodh Gaya. IPMAT Rohtak is for IIM Rohtak."
+   },
+   {
+    "q": "When should preparation start?",
+    "a": "The exams test school-level maths and English, against the clock. Starting in Class 11 gives time to build speed before board exams.",
+    "note": "Always check each IIM's official website for this year's dates and eligibility."
+   }
+  ]
+ },
+ "caption": "Parents, your child mentioned IPM? Here are 3 common questions, answered simply 👇\n\nQuestions? Message us on WhatsApp: wa.me/918299470392\n\n#IPM #IIM #Parents #Class11 #IPMCareers",
+ "claims": [
+  {
+   "text": "IPM exams to IIMs",
+   "source": "IPM Careers context; confirm on AIR 1 before posting"
+  }
+ ]
+}

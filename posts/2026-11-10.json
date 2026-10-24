@@ -1,0 +1,34 @@
+{
+ "date": "2026-11-10",
+ "content": {
+  "type": "solve",
+  "hook": "From *IIM B UGAT 2025.*\nCan you solve it?",
+  "paperHead": "IIM B UGAT 2025 · QA",
+  "stamp": "ASKED IN 2025",
+  "lines": [
+   "The centroid of a triangle with vertices (2a, b), (−b, a) and (b, 3a) is (4, 11). The area of the triangle is ____ square units."
+  ],
+  "options": [
+   "88",
+   "99",
+   "16",
+   "121"
+  ],
+  "working": [
+   "x: (2a − b + b)/3 = 4, so a = 6",
+   "y: (b + a + 3a)/3 = 11, so b = 9",
+   "Points: (12, 9) (−9, 6) (9, 18)",
+   "Area = ½ |12(6 − 18) − 9(18 − 9) + 9(9 − 6)|",
+   "= ½ × 198 = {purple:99}"
+  ],
+  "answer": "99",
+  "takeaway": "The x-coordinates cancel the b's. Find {b:a} first."
+ },
+ "caption": "IIM B UGAT 2025: centroid (4, 11). What is the area of the triangle? ⏱ 60 seconds.\n\nComment your answer, then swipe for the solution.\n\nThe full 2025 paper: study.ipmcareer.com (link in bio)\n\n#IIMBUGAT #IIMBangalore #PYQ #IPMCareers #ExamPrep",
+ "claims": [
+  {
+   "text": "IIM B UGAT 2025 question",
+   "source": "Portal PYQ bank, IIM B UGAT 2025 (verified), answer 99"
+  }
+ ]
+}

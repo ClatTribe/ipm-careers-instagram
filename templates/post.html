@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- One Instagram slide, 1080 x 1350. tools/render.mjs calls renderSlide(post, index). -->
+<style>
+  @font-face { font-family: Fraunces; src: url(../public/fonts/fraunces.woff2); font-weight: 100 900; }
+  @font-face { font-family: Fraunces; src: url(../public/fonts/fraunces-italic.woff2); font-weight: 100 900; font-style: italic; }
+  @font-face { font-family: Inter; src: url(../public/fonts/inter.woff2); font-weight: 100 900; }
+  @font-face { font-family: Hand; src: url(../public/fonts/shantell-sans.woff2); font-weight: 300 800; }
+  :root {
+    --bg: #F8F5EE; --surface: #FFFFFF; --muted: #FBF9F3; --sunken: #F2EEE4;
+    --ink: #1E1A13; --ink2: #57524A; --ink3: #8B857B;
+    --brand: #C48425; --gold: #B8730A; --gold-tint: #F7E8C8; --brand-tint: #F8EFDD;
+    --purple: #893783; --purple-tint: #F3E6F1; --amber: #E9A425;
+    --green: #1A8754; --green-soft: #D6F3E3; --red: #C53030; --red-soft: #FBE3E3; --blue: #2A6FCB;
+    --shadow: 0 4px 16px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    --shadow-lg: 0 16px 48px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.05);
+    --emoji: "Noto Color Emoji";
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; background: var(--bg); overflow: hidden; }
+  body { font-family: Inter, var(--emoji), sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  #slide { position: relative; width: 1080px; height: 1350px; padding: 64px 80px 0; display: flex; flex-direction: column; }
+  .glow { position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(900px 520px at 100% 0%, rgba(233,164,37,0.13), transparent 60%),
+                radial-gradient(800px 500px at 0% 100%, rgba(137,55,131,0.07), transparent 60%); }
+  .top { position: relative; display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .top img { height: 78px; }
+  .pill { font: 700 22px Inter; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple);
+    background: var(--purple-tint); padding: 12px 22px; border-radius: 999px; }
+  .body { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 30px 0 30px; }
+  .foot { position: relative; height: 110px; display: flex; align-items: center; justify-content: space-between;
+    border-top: 2px solid var(--line); font: 500 26px Inter; color: var(--ink3); }
+  .dots { display: flex; gap: 10px; }
+  .dots i { width: 12px; height: 12px; border-radius: 6px; background: var(--dot); }
+  .dots i.on { width: 36px; background: var(--brand); }
+  .swipe { font: 700 26px Inter; color: var(--gold); }
+
+  h1 { font: 600 104px/1.04 Fraunces, var(--emoji), serif; letter-spacing: -0.02em; }
+  h2 { font: 600 72px/1.1 Fraunces, var(--emoji), serif; letter-spacing: -0.015em; }
+  h3 { font: 600 46px/1.15 Fraunces, serif; }
+  em { font-style: italic; color: var(--gold); }
+  .sub { font: 400 40px/1.45 Inter; color: var(--ink2); margin-top: 34px; }
+  .kicker { font: 700 26px Inter; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 26px; }
+  .card { background: var(--surface); border-radius: 28px; box-shadow: var(--shadow-lg); padding: 52px 56px; }
+  .num { width: 104px; height: 104px; border-radius: 52px; background: var(--gold-tint); color: var(--gold);
+    font: 600 56px Fraunces; display: flex; align-items: center; justify-content: center; margin-bottom: 40px; }
+  .detail { font: 400 42px/1.5 Inter; color: var(--ink2); margin-top: 26px; }
+  .tip { margin-top: 40px; background: var(--brand-tint); border-left: 8px solid var(--brand); border-radius: 16px;
+    padding: 28px 34px; font: 500 36px/1.45 Inter; color: var(--ink); }
+  .tip b { color: var(--gold); }
+  .chip { display: inline-block; font: 600 30px Inter; padding: 14px 26px; border-radius: 999px; background: var(--sunken);
+    color: var(--ink2); margin: 0 14px 14px 0; }
+  .btn { display: inline-flex; align-items: center; gap: 16px; background: linear-gradient(97deg, #A56E1E 0%, #C48425 100%);
+    color: var(--btn-ink); font: 700 38px Inter; padding: 30px 48px; border-radius: 999px; box-shadow: var(--shadow); }
+  .tag { display: inline-block; font: 700 22px Inter; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 18px; border-radius: 10px; }
+  /* exam paper card (same look as the PYQ shorts) */
+  .paper { position: relative; background: #FFFDF6; border-radius: 10px; box-shadow: var(--shadow-lg);
+    padding: 36px 48px 44px 92px;
+    background-image: repeating-linear-gradient(#FFFDF6 0 63px, #E7E1D2 63px 65px);
+    background-position: 0 98px; }
+  .paper:before { content: ""; position: absolute; left: 62px; top: 0; bottom: 0; width: 3px; background: #E8A3A3; }
+  .paper .head { font: 700 24px Inter; letter-spacing: 0.08em; color: #C53030; margin-bottom: 26px; }
+  .paper p { font: 400 48px/65px Fraunces, serif; color: var(--ink); }
+  .stamp { position: absolute; right: 16px; top: -34px; transform: rotate(7deg); border: 5px solid #C53030; color: #C53030;
+    font: 800 30px Inter; letter-spacing: 0.06em; padding: 8px 18px; border-radius: 10px; background: rgba(255,255,255,0.85); }
+  .hand { font-family: Hand, var(--emoji), sans-serif; }
+  .hl { background: linear-gradient(transparent 38%, var(--hl) 38%, var(--hl) 88%, transparent 88%); padding: 0 6px; }
+  .shot { border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); border: 2px solid rgba(0,0,0,0.06); background: #fff; }
+  .shot img { display: block; width: 100%; }
+  .sample { position: absolute; right: 18px; bottom: 18px; font: 600 20px Inter; color: #fff; background: rgba(30,26,19,0.65);
+    padding: 6px 14px; border-radius: 8px; }
+
+  /* ---------- THEMES (body class) ---------- */
+  :root { --c-green: var(--green); --c-red: var(--red); --c-purple: #893783; --c-gold: var(--gold); --c-blue: #2A6FCB; --hl: rgba(255,179,71,0.55); --myth-ink: #7A1F1F; --formula-bg: #1E1A13; --formula-ink: #fff; --card-border: none; --line: rgba(0,0,0,0.06); --dot: rgba(0,0,0,0.14); --btn-ink: #fff; }
+  .card { border: var(--card-border); }
+  .paper p { color: #1E1A13; }
+  /* Website theme: ipmcareer.com (near-black, cream Fraunces, amber italic accents, glass cards) */
+  body.t-web {
+    --bg: #0B0B0C; --surface: rgba(255,255,255,0.045); --muted: rgba(255,255,255,0.03); --sunken: rgba(255,255,255,0.08);
+    --ink: #F4F1EA; --ink2: #C9C3B8; --ink3: #9A958C;
+    --brand: #F5A524; --gold: #FDB55B; --gold-tint: rgba(245,165,36,0.14); --brand-tint: rgba(245,165,36,0.10);
+    --purple: #FDB55B; --purple-tint: rgba(255,255,255,0.06);
+    --green: #4CC38A; --green-soft: rgba(76,195,138,0.14); --red: #F07171; --red-soft: rgba(240,113,113,0.12);
+    --shadow: none; --shadow-lg: 0 30px 80px rgba(0,0,0,0.45);
+    --myth-ink: #FFC9C9; --formula-bg: rgba(245,165,36,0.10); --formula-ink: #F4F1EA;
+    --c-green: #4CC38A; --c-red: #F07171; --c-gold: #FDB55B; --c-purple: #FDB55B; --c-blue: #8AB8FF; --hl: rgba(245,165,36,0.30); --card-border: 1.5px solid rgba(255,255,255,0.10); --line: rgba(255,255,255,0.08); --dot: rgba(255,255,255,0.22); --btn-ink: #1A1205;
+  }
+  body.t-web .glow { background:
+      radial-gradient(1000px 640px at 105% -5%, rgba(245,165,36,0.20), transparent 60%),
+      radial-gradient(700px 500px at -10% 105%, rgba(245,165,36,0.08), transparent 60%),
+      radial-gradient(circle at 1px 1px, rgba(253,181,91,0.18) 1.5px, transparent 2px) 0 0/54px 54px; }
+  body.t-web em { background: linear-gradient(92deg, #FFC46B 0%, #F59E0B 100%); -webkit-background-clip: text; color: transparent; padding-right: 6px; }
+  body.t-web .pill { border: 1.5px solid rgba(253,181,91,0.35); }
+  body.t-web .pill:before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 6px; background: #F5A524; margin-right: 12px; vertical-align: 2px; box-shadow: 0 0 12px #F5A524; }
+  body.t-web .btn { background: linear-gradient(97deg, #FFC46B 0%, #F59E0B 100%); }
+  body.t-web .shot { border-color: rgba(255,255,255,0.12); }
+  /* Logo theme: IPM Careers purple + amber */
+  body.t-logo {
+    --bg: #6A2565; --surface: rgba(255,255,255,0.10); --muted: rgba(255,255,255,0.06); --sunken: rgba(255,255,255,0.14);
+    --ink: #FFFFFF; --ink2: #F2DDEF; --ink3: #D7B3D2;
+    --brand: #E9A425; --gold: #FFC24D; --gold-tint: rgba(233,164,37,0.24); --brand-tint: rgba(233,164,37,0.16);
+    --purple: #3E1239; --purple-tint: #E9A425;
+    --green: #7FE3AE; --green-soft: rgba(127,227,174,0.16); --red: #FF9C9C; --red-soft: rgba(255,156,156,0.14);
+    --shadow: none; --shadow-lg: 0 30px 80px rgba(40,6,36,0.40);
+    --myth-ink: #FFD6D6; --formula-bg: #E9A425; --formula-ink: #3E1239;
+    --c-green: #7FE3AE; --c-red: #FF9C9C; --c-gold: #FFC24D; --c-purple: #FFC24D; --c-blue: #A9CCFF; --hl: rgba(233,164,37,0.40); --card-border: 1.5px solid rgba(255,255,255,0.18); --line: rgba(255,255,255,0.16); --dot: rgba(255,255,255,0.30); --btn-ink: #3E1239;
+  }
+  body.t-logo .glow { background:
+      radial-gradient(1100px 700px at 110% -10%, rgba(233,164,37,0.30), transparent 55%),
+      radial-gradient(900px 700px at -10% 110%, rgba(30,4,28,0.55), transparent 60%),
+      linear-gradient(160deg, #893783 0%, #5A1E56 100%); }
+  body.t-logo .btn { background: #E9A425; }
+  body.t-logo .dots i.on { background: #E9A425; }
+
+  /* White theme: EduAbroad-style white grid base, in IPM Careers purple + amber, with the reel's handwriting */
+  body.t-white {
+    --bg: #FFFFFF; --surface: #FFFFFF; --sunken: #F6F1F6;
+    --ink: #1B1420; --ink2: #4E4554; --ink3: #8A8090;
+    --brand: #893783; --gold: #B8730A; --gold-tint: #FDF3E1; --brand-tint: #FEF6E4;
+    --purple: #893783; --purple-tint: #FFFFFF;
+    --c-purple: #893783; --c-gold: #C98A0E;
+    --shadow: 0 10px 30px rgba(137,55,131,0.10); --shadow-lg: 0 24px 60px rgba(137,55,131,0.13);
+    --card-border: 3px solid #EBD6E8; --line: #F0E6EF; --dot: #EBD6E8; --btn-ink: #fff;
+  }
+  body.t-white .glow { background:
+      radial-gradient(ellipse 80% 55% at 50% 45%, rgba(137,55,131,0.06), transparent 70%),
+      linear-gradient(to right, #F4EEF4 2px, transparent 2px) 0 0/120px 120px,
+      linear-gradient(to bottom, #F4EEF4 2px, transparent 2px) 0 0/120px 120px; }
+  body.t-white h1 { font: 900 100px/1.04 Inter, var(--emoji), sans-serif; letter-spacing: -0.035em; }
+  body.t-white h2 { font: 800 68px/1.1 Inter, var(--emoji), sans-serif; letter-spacing: -0.025em; }
+  body.t-white em { font-style: normal; background: linear-gradient(180deg, #B04AA6 0%, #6A2565 100%); -webkit-background-clip: text; color: transparent; }
+  body.t-white .pill { border: 2.5px solid #EBD6E8; font-weight: 800; }
+  body.t-white .kicker { color: #C98A0E; }
+  body.t-white .card { border-radius: 36px; }
+  body.t-white .num { background: linear-gradient(135deg, #A8459F, #6A2565); color: #fff; font: 800 52px Inter; box-shadow: 0 14px 30px rgba(137,55,131,0.30); }
+  body.t-white .btn { background: linear-gradient(90deg, #893783, #6A2565); box-shadow: 0 22px 44px rgba(137,55,131,0.30); }
+  body.t-white .tip { border-left-color: #E9A425; }
+  body.t-white .tip b { color: #B8730A; }
+  body.t-white .dots i.on { background: #893783; }
+  body.t-white .swipe { color: #893783; }
+  body.t-white .hl { --hl: rgba(255,179,71,0.55); }
+
+  body.t-white { --formula-bg: linear-gradient(135deg, #893783 0%, #5A1E56 100%); --formula-ink: #fff; }
+  body.t-panel h1 { font: 900 100px/1.04 Inter, var(--emoji), sans-serif; letter-spacing: -0.035em; }
+  body.t-panel h2 { font: 800 68px/1.1 Inter, var(--emoji), sans-serif; letter-spacing: -0.025em; }
+  body.t-panel em { font-style: normal; color: #FFC24D; }
+  body.t-white .meaning { font: 700 44px/1.35 Inter !important; }
+</style>
+</head>
+<body>
+<div id="slide"></div>
+<script>
+// *word* -> gold italic, {hl:word} -> highlighter, {b:word} -> bold, \n -> line break
+const md = (s = "") => String(s)
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+  .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+  .replace(/\{hl:([^}]*)\}/g, '<span class="hl">$1</span>')
+  .replace(/\{b:([^}]*)\}/g, "<b>$1</b>")
+  .replace(/\{(green|red|purple|gold|blue):([^}]*)\}/g, '<span style="color:var(--c-$1)">$2</span>')
+  .replace(/\n/g, "<br>");
+
+const SERIES = {
+  checklist: "Prep checklist", solve: "Solve in 60 sec", feature: "Inside the portal", myth: "Myth vs fact",
+  word: "Word of the day", shortcut: "Shortcut card", parents: "For parents",
+};
+
+const slideCount = (c) => ({
+  checklist: 2 + c.steps?.length, solve: 2, feature: 3 + (c.steps?.length || 0), myth: 1, word: 1, shortcut: 1, parents: 1 + (c.qa?.length || 0),
+}[c.type]);
+
+function frame(post, i, inner, opts = {}) {
+  const n = slideCount(post.content);
+  const dots = n > 1 ? `<div class="dots">${Array.from({ length: n }, (_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</div>` : "<div></div>";
+  const right = n > 1 && i === 0 ? `<div class="swipe">Swipe →</div>` : `<div>ipmcareer.com</div>`;
+  return `<div class="glow"></div>
+    <div class="top"><img src="../public/brand/${/t-(web|logo)/.test(document.body.className) ? "logo-white.png" : "logo-full.png"}"><div class="pill">${SERIES[post.content.type]}</div></div>
+    <div class="body" style="${opts.bodyStyle || ""}">${inner}</div>
+    <div class="foot">${n > 1 ? dots : `<div>Save it for later 📌</div>`}${right}</div>`;
+}
+
+const R = {
+  checklist(c, i, n) {
+    if (i === 0) return `<div class="kicker">${md(c.kicker)}</div><h1>${md(c.title)}</h1><div class="sub">${md(c.subtitle)}</div>`;
+    if (i === n - 1) return `<div class="card" style="text-align:center">
+        <div style="font-size:110px">📌</div><h2 style="margin-top:20px">${md(c.saveTitle)}</h2>
+        <div class="detail" style="margin-top:28px">${md(c.saveLine)}</div></div>`;
+    const s = c.steps[i - 1];
+    return `<div class="card"><div class="num">${i}</div><h2>${md(s.title)}</h2><div class="detail">${md(s.detail)}</div>
+      ${s.tip ? `<div class="tip"><b>Tip:</b> ${md(s.tip)}</div>` : ""}</div>`;
+  },
+  solve(c, i) {
+    if (i === 0) return `<h2 style="margin-bottom:64px">${md(c.hook)}</h2>
+      <div class="paper"><div class="head">${md(c.paperHead)}</div><p>${md(c.lines.join(" "))}</p>
+      <div class="stamp">${md(c.stamp)}</div></div>
+      ${c.options ? `<div style="margin-top:44px">${c.options.map((o, k) => `<span class="chip">(${"abcd"[k]}) ${md(o)}</span>`).join("")}</div>` : ""}
+      <div class="sub" style="margin-top:48px"><b style="color:var(--ink)">⏱ 60 seconds.</b> Comment your answer, then swipe.</div>`;
+    return `<div class="kicker">Solution</div>
+      <div class="card hand" style="padding:48px 56px">
+        ${c.working.map((w) => `<div style="font-size:46px;line-height:1.55;font-weight:500">${md(w)}</div>`).join("")}
+      </div>
+      <div style="margin-top:48px;display:flex;align-items:center;gap:30px">
+        <h1 class="hand" style="font-family:Hand;font-weight:800">Answer: <span class="hl" style="color:var(--green)">${md(c.answer)}</span></h1></div>
+      <div class="sub" style="margin-top:30px">${md(c.takeaway)}</div>`;
+  },
+  feature(c, i, n) {
+    if (i === 0) return `<div class="kicker">${md(c.feature)}</div><h1>${md(c.promise)}</h1><div class="sub">${md(c.subtitle)}</div>`;
+    if (i === 1) return `<div class="shot" style="position:relative"><img src="../public/${c.screenshot}">
+      ${c.sampleData ? `<div class="sample">sample data</div>` : ""}</div>
+      <div class="sub" style="text-align:center;margin-top:30px">${md(c.screenshotCaption)}</div>`;
+    if (i === n - 1) return `<h2>${md(c.ctaTitle)}</h2><div class="sub">${md(c.ctaLine)}</div>
+      <div style="margin-top:60px"><span class="btn">${md(c.button)} →</span></div>
+      <div class="sub" style="font-size:30px;margin-top:40px;color:var(--ink3)">${md(c.where)}</div>`;
+    const s = c.steps[i - 2];
+    return `<div class="card"><div class="num">${i - 1}</div><h2>${md(s.title)}</h2><div class="detail">${md(s.detail)}</div>
+      ${s.image ? `<div class="shot" style="position:relative;margin-top:40px"><img src="../public/${s.image}">${s.sampleData ? `<div class="sample">sample data</div>` : ""}</div>` : ""}</div>`;
+  },
+  myth(c) {
+    return `<div class="card" style="background:var(--red-soft);box-shadow:none;position:relative;padding-top:70px">
+        <span class="tag" style="background:#C53030;color:#fff;position:absolute;top:-22px;left:56px;font-size:28px">✕ Myth</span>
+        <h2 style="color:var(--myth-ink);font-size:62px">${md(c.myth)}</h2></div>
+      <div class="card" style="margin-top:64px;position:relative;padding-top:64px">
+        <span class="tag" style="background:#1A8754;color:#fff;position:absolute;top:-22px;left:56px;font-size:28px">✓ Fact</span>
+        <h2 style="font-size:62px">${md(c.fact)}</h2><div class="detail" style="font-size:38px">${md(c.detail)}</div></div>`;
+  },
+  word(c) {
+    return `<div class="kicker">${md(c.kicker)}</div>
+      <h1 style="font-size:124px">${md(c.word)}</h1>
+      <div style="font: 500 34px Inter;color:var(--ink3);margin-top:16px">${md(c.pos)}</div>
+      <div class="card" style="margin-top:50px">
+        <div class="meaning" style="font:600 44px/1.35 Fraunces">${md(c.meaning)}</div>
+        <div class="detail" style="font-style:italic">“${md(c.example)}”</div></div>
+      <div style="margin-top:44px"><div style="font:700 24px Inter;letter-spacing:.12em;color:var(--ink3);margin-bottom:16px">SIMILAR</div>
+        ${c.similar.map((w) => `<span class="chip" style="background:var(--green-soft);color:var(--green)">${md(w)}</span>`).join("")}
+        <div style="font:700 24px Inter;letter-spacing:.12em;color:var(--ink3);margin:18px 0 16px">OPPOSITE</div>
+        ${c.opposite.map((w) => `<span class="chip" style="background:var(--red-soft);color:var(--red)">${md(w)}</span>`).join("")}</div>`;
+  },
+  shortcut(c) {
+    return `<div class="kicker">${md(c.kicker)}</div><h2>${md(c.title)}</h2>
+      <div class="card" style="margin-top:46px;text-align:center;background:var(--formula-bg);color:var(--formula-ink)">
+        <div style="font:700 30px Inter;letter-spacing:.1em;opacity:.8">${md(c.formulaLabel)}</div>
+        <div style="font:600 ${c.formula.length > 16 ? 72 : 100}px Fraunces;margin-top:18px;white-space:nowrap">${md(c.formula)}</div>
+        <div style="font:400 30px Inter;opacity:.75;margin-top:14px">${md(c.legend)}</div></div>
+      <div class="card hand" style="margin-top:40px">
+        <div style="font:700 26px Inter;letter-spacing:.12em;color:var(--ink3);margin-bottom:14px">EXAMPLE</div>
+        ${c.example.map((w) => `<div style="font-size:50px;line-height:1.55;font-weight:500">${md(w)}</div>`).join("")}</div>`;
+  },
+  parents(c, i) {
+    if (i === 0) return `<div class="kicker">${md(c.kicker)}</div><h1>${md(c.title)}</h1><div class="sub">${md(c.subtitle)}</div>`;
+    const q = c.qa[i - 1];
+    return `<div class="card"><div style="font:700 26px Inter;letter-spacing:.12em;color:var(--c-purple)">PARENTS ASK</div>
+      <h2 style="margin-top:20px">${md(q.q)}</h2><div class="detail" style="font-size:40px">${md(q.a)}</div>
+      ${q.note ? `<div class="tip">${md(q.note)}</div>` : ""}</div>`;
+  },
+};
+
+window.renderSlide = (post, i, theme) => {
+  const c = post.content;
+  const n = slideCount(c);
+  // white theme: the last slide of a carousel is a purple "panel" slide (like EduAbroad's crimson slides)
+  const panel = theme === "white" && n > 1 && i === n - 1;
+  document.body.className = panel ? "t-logo t-panel" : theme ? "t-" + theme : "";
+  document.getElementById("slide").innerHTML = frame(post, i, R[c.type](c, i, n));
+  return n;
+};
+window.slideCount = (post) => slideCount(post.content);
+</script>
+</body>
+</html>

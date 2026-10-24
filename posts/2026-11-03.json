@@ -1,0 +1,34 @@
+{
+ "date": "2026-11-03",
+ "content": {
+  "type": "solve",
+  "hook": "From *IIM B UGAT 2025.*\nCan you solve it?",
+  "paperHead": "IIM B UGAT 2025 · QA",
+  "stamp": "ASKED IN 2025",
+  "lines": [
+   "Alloys with 40%, 50% and 80% gold are mixed to get 30 kg of a 55% gold alloy. The first alloy is 9 kg. How many kg of the third alloy is used?"
+  ],
+  "options": [
+   "7",
+   "8",
+   "12.5",
+   "9"
+  ],
+  "working": [
+   "Gold needed: 55% of 30 = 16.5 kg",
+   "First alloy: 40% of 9 = 3.6 kg",
+   "Rest: 21 kg must give 12.9 kg gold",
+   "0.5(21 − z) + 0.8z = 12.9",
+   "0.3z = 2.4, so {purple:z = 8}"
+  ],
+  "answer": "8 kg",
+  "takeaway": "Write one equation for the {b:gold}. The total weight gives the second."
+ },
+ "caption": "IIM B UGAT 2025: mixing three gold alloys. How many kg of the third alloy? ⏱ 60 seconds.\n\nComment your answer, then swipe for the solution.\n\nThe full 2025 paper is on the IPM Careers portal: study.ipmcareer.com (link in bio)\n\n#IIMBUGAT #IIMBangalore #PYQ #IPMCareers #ExamPrep",
+ "claims": [
+  {
+   "text": "IIM B UGAT 2025 question",
+   "source": "Portal PYQ bank, IIM B UGAT 2025 (verified), answer 8"
+  }
+ ]
+}

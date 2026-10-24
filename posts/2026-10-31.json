@@ -1,0 +1,18 @@
+{
+ "date": "2026-10-31",
+ "content": {
+  "type": "shortcut",
+  "kicker": "Quant · Squares",
+  "title": "Squares ending in 5,\n*in 3 seconds.*",
+  "formulaLabel": "THE TRICK",
+  "formula": "n5² = n(n+1) | 25",
+  "legend": "multiply the first part by the next number, then write 25",
+  "example": [
+   "65²: 6 × 7 = 42",
+   "then write 25",
+   "65² = {green:4225}"
+  ]
+ },
+ "caption": "Squares ending in 5 in 3 seconds ✍️\n\n65²: 6 × 7 = 42, then write 25. So 65² = 4225.\n\nYour turn: 85² = ? Comment below 👇\n\n#IPMAT #IPMATQuant #MathsTricks #IPMCareers #JIPMAT",
+ "claims": []
+}

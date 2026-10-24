@@ -1,0 +1,36 @@
+{
+ "date": "2026-11-04",
+ "content": {
+  "type": "feature",
+  "feature": "PYQ Papers",
+  "promise": "The real IIM B UGAT 2025 paper,\n*on your phone.*",
+  "subtitle": "All 60 questions, with answers and solutions, in the PYQ section of the IPM Careers study portal.",
+  "screenshot": "screens/pyq-iimb.png",
+  "screenshotCaption": "The IIM Bangalore UG paper, on the IPM Careers study portal",
+  "steps": [
+   {
+    "title": "Attempt it as a full mock",
+    "detail": "One button turns the whole paper into a mock. Sit it in one go, like exam day."
+   },
+   {
+    "title": "Practise by topic",
+    "detail": "Filter by year, topic or status: only the ones you got wrong, or the ones you starred."
+   },
+   {
+    "title": "Check every answer",
+    "detail": "Try first. Then tap Show answer & solution under the question."
+   }
+  ],
+  "ctaTitle": "11 days to IIM B UGAT.\n*Start with the real paper.*",
+  "ctaLine": "PYQ section of the IPM Careers study portal.",
+  "button": "study.ipmcareer.com",
+  "where": "study.ipmcareer.com/pyqs"
+ },
+ "caption": "IIM B UGAT is on 15 Nov. The real 2025 paper is the best practice you can get 👇\n\nAll 60 questions are on the IPM Careers study portal. Attempt it as a full mock, filter by topic, and check every answer and solution.\n\nstudy.ipmcareer.com (link in bio)\n\n#IIMBUGAT #IIMBangalore #PYQ #IPMCareers #MockTest",
+ "claims": [
+  {
+   "text": "All 60 questions, answers and solutions; full mock; filters",
+   "source": "study.ipmcareer.com/pyqs, IIM Bangalore UG page"
+  }
+ ]
+}
