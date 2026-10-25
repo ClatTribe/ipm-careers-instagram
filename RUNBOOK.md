@@ -26,7 +26,8 @@ bash tools/day.sh post "$DATE" --no-upload      # or: story
 - **Exit 3:** nothing planned today. For `reel`, post nothing and report it (reels are made ahead with narration; never write one yourself). For `post`, write `posts/$DATE.json` only if the calendar (`calendar.md`) has a topic
   for today; copy a post of the same format from `posts/`. Rules: `WRITING-RULES.md`. Then run step 2 again.
   If you are not sure about any fact, skip the day and say so.
-- **Exit 1:** read the log. Usually a line is too long; shorten it and retry once. Otherwise stop and report.
+- **Exit 1:** read the log. `media is not ready` (9007/2207027) is already retried by the uploader; if it still fails, report it and do not retry by hand.
+- **Otherwise on exit 1:** read the log. Usually a line is too long; shorten it and retry once. Otherwise stop and report.
 
 ## 3. Look before posting
 Open `out/$DATE-post-sheet.png` (or `out/stories/$DATE-*.png`, or `out/$DATE-reel-sheet.png`). Check: no text cut off or overlapping, no typos,
@@ -48,3 +49,6 @@ The uploader refuses to post unless the token belongs to the IPM Careers account
 3. Anything the owner must do (for example "Instagram token has 8 days left", "posts/2026-11-17.json missing").
 
 **Reel** (phone notification only, no email): whether it went live, the Instagram link, the YouTube Shorts link (from the `DONE youtube` line; it goes public at 18:30 by itself), and the answer for a pinned comment. If the log says `YOUTUBE_SKIPPED` or `PARTIAL ... YouTube failed`, say so in one line with the error. Keep it short.
+
+## Never show keys
+Do not call the Instagram, Cloudinary or YouTube APIs by hand (curl or ad-hoc scripts) and never print a URL or JSON that contains `access_token`, a secret or a refresh token. Use only the tools in `tools/`. If you must debug, pipe output through `sed -E 's/access_token=[^& "]+/access_token=HIDDEN/g'`.

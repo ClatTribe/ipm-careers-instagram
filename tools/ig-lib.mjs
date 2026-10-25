@@ -24,7 +24,11 @@ export async function graph(p, params = {}, method = "POST") {
   const qs = new URLSearchParams({ ...params, access_token: TOKEN });
   const res = await fetch(`${GRAPH}/${p}${method === "GET" ? `?${qs}` : ""}`, method === "GET" ? {} : { method, body: qs });
   const data = await res.json();
-  if (!res.ok || data.error) throw new Error(`${p}: ${data.error?.message ?? res.status}`);
+  if (!res.ok || data.error) {
+    const e = data.error ?? {};
+    const extra = [e.code && `code ${e.code}`, e.error_subcode && `subcode ${e.error_subcode}`, e.error_user_title, e.error_user_msg].filter(Boolean).join("; ");
+    throw new Error(`${p}: ${e.message ?? res.status}${extra ? ` (${extra})` : ""}`);
+  }
   return data;
 }
 
@@ -96,7 +100,19 @@ export async function waitUntil(publishAt) {
 
 /** Publishes a prepared container; returns the permalink (Stories have none, so the media id). */
 export async function publish(creationId) {
-  const { id: mediaId } = await graph(`${IG_ID}/media_publish`, { creation_id: creationId });
+  // Instagram sometimes reports a container FINISHED a little before it can be published
+  // (error 9007 / 2207027 "media is not ready"). Wait and retry; a failed publish posts nothing.
+  let mediaId;
+  for (let i = 1; ; i++) {
+    try {
+      ({ id: mediaId } = await graph(`${IG_ID}/media_publish`, { creation_id: creationId }));
+      break;
+    } catch (e) {
+      if (!/2207027|9007/.test(e.message) || i >= 8) throw e;
+      console.log(`     Instagram not ready yet (try ${i}); waiting 20 s`);
+      await sleep(20000);
+    }
+  }
   const { permalink } = await graph(mediaId, { fields: "permalink" }, "GET").catch(() => ({}));
   return permalink ?? `media ${mediaId}`;
 }
