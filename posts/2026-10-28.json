@@ -2,37 +2,47 @@
  "date": "2026-10-28",
  "content": {
   "type": "feature",
-  "feature": "Mistake Vault",
-  "promise": "Your wrong answers,\n*saved for you.*",
-  "subtitle": "Every question you get wrong in any test lands here automatically. Nothing to add, nothing to maintain.",
-  "screenshot": "screens/vault-ladder.png",
-  "screenshotCaption": "The redo ladder, on the IPM Careers study portal",
+  "feature": "IIM B UGAT mocks",
+  "promise": "15 full IIM B UGAT mocks.\n*18 days to go.*",
+  "subtitle": "All 15 are on the IPM Careers study portal. Take one whenever you have two free hours.",
+  "screenshot": "screens/iimb-mock-card.png",
+  "screenshotCaption": "The mock window on the IPM Careers study portal: open, no deadline",
   "steps": [
    {
-    "title": "Beat it 3 times",
-    "detail": "Redo it correctly after 3 days, then 7, then 21. Three clean wins and it leaves the vault for good."
+    "title": "A mock every day or two",
+    "detail": "15 mocks in 18 days. Sit each one in a single go, no pauses, like exam day."
    },
    {
-    "title": "No cheating the gap",
-    "detail": "A wrong redo resets the ladder to day 3. Locked questions open only when they are due."
+    "title": "Review before the next one",
+    "detail": "The marks are in the review. Every question you miss lands in your Mistake Vault on its own."
    },
    {
-    "title": "A short redo list, every day",
-    "detail": "The vault shows what is due today, so you know where to start.",
-    "image": "screens/vault-redo.png",
-    "sampleData": true
+    "title": "Add the real 2025 paper",
+    "detail": "All 60 questions of the IIM B UGAT 2025 paper are in the PYQ section too."
    }
   ],
-  "ctaTitle": "Stop making the *same mistake* twice.",
-  "ctaLine": "The Mistake Vault is on the IPM Careers study portal.",
+  "ctaTitle": "Start Mock 1 *today.*",
+  "ctaLine": "IIM B UGAT mocks on the IPM Careers study portal.",
   "button": "study.ipmcareer.com",
-  "where": "On the portal: Review → Mistake Vault"
+  "where": "Dashboard → Mock window"
  },
- "caption": "Getting the same kind of question wrong again and again? 👇\n\nThe Mistake Vault on the IPM Careers portal saves every question you get wrong in any test. Redo it after 3 days, then 7, then 21. Three clean wins and it leaves the vault for good.\n\nstudy.ipmcareer.com (link in bio)\n\n#IPMAT #IPMATPrep #IPMCareers #StudySmart #JIPMAT",
+ "caption": "IIM B UGAT is on 15 Nov. 18 days, 15 full mocks 👇\n\nAll 15 IIM B UGAT mocks are on the IPM Careers study portal. Take one whenever you have two free hours, review it, and redo what you missed.\n\nstudy.ipmcareer.com (link in bio)\n\n#IIMBUGAT #IIMBangalore #MockTest #IPMCareers #ExamPrep",
  "claims": [
   {
-   "text": "vault rules",
-   "source": "portal Mistake Vault page, 'How the vault works'"
+   "text": "15 IIM B UGAT mocks",
+   "source": "owner 25 Oct 2026; portal mocks page: IIM Bangalore UG 15"
+  },
+  {
+   "text": "two free hours, no deadline",
+   "source": "portal dashboard mock window card"
+  },
+  {
+   "text": "missed questions land in Mistake Vault",
+   "source": "portal Mistake Vault page"
+  },
+  {
+   "text": "60 questions of the 2025 paper",
+   "source": "study.ipmcareer.com/pyqs"
   }
  ]
 }

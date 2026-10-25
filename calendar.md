@@ -9,7 +9,7 @@ Change a topic here. If `posts/<date>.json` already exists, edit or delete it to
 | 25 Oct 2026 | Sun | For parents (carousel) | What is IPM? |
 | 26 Oct 2026 | Mon | Prep checklist (carousel) | IIM B UGAT is on 15 Nov: use the weeks left well |
 | 27 Oct 2026 | Tue | Solve in 60 sec (2 slides) | IPMAT Indore 2024 SA: triangles with integer sides, perimeter 15 |
-| 28 Oct 2026 | Wed | Inside the portal (carousel) | Mistake Vault: your wrong answers, saved for you |
+| 28 Oct 2026 | Wed | Inside the portal (carousel) | 15 full IIM B UGAT mocks, 18 days to go |
 | 29 Oct 2026 | Thu | Myth vs fact (single) | "My IPMAT Indore score works for IIM Rohtak too" |
 | 30 Oct 2026 | Fri | Word of the day (single) | Ubiquitous |
 | 31 Oct 2026 | Sat | Shortcut card (single) | Squares ending in 5 in 3 seconds |
@@ -23,7 +23,7 @@ Change a topic here. If `posts/<date>.json` already exists, edit or delete it to
 | 08 Nov 2026 | Sun | For parents (carousel) | Exam week at home: how to help |
 | 09 Nov 2026 | Mon | Prep checklist (carousel) | IIM B UGAT exam-day checklist |
 | 10 Nov 2026 | Tue | Solve in 60 sec (2 slides) | IIM B UGAT 2025: centroid (4, 11). Area of the triangle? |
-| 11 Nov 2026 | Wed | Inside the portal (carousel) | Grand Test report |
+| 11 Nov 2026 | Wed | Inside the portal (carousel) | Mistake Vault: your wrong answers, saved for you |
 | 12 Nov 2026 | Thu | Myth vs fact (single) | "Short Answer questions have negative marking" (VERIFY on AIR 1) |
 | 13 Nov 2026 | Fri | Word of the day (single) | Ambiguous |
 | 14 Nov 2026 | Sat | Shortcut card (single) | Last digit of any power: the cycle of 4 |

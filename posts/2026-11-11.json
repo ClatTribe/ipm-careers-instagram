@@ -1,0 +1,38 @@
+{
+ "date": "2026-11-11",
+ "content": {
+  "type": "feature",
+  "feature": "Mistake Vault",
+  "promise": "Your wrong answers,\n*saved for you.*",
+  "subtitle": "Every question you get wrong in any test lands here automatically. Nothing to add, nothing to maintain.",
+  "screenshot": "screens/vault-ladder.png",
+  "screenshotCaption": "The redo ladder, on the IPM Careers study portal",
+  "steps": [
+   {
+    "title": "Beat it 3 times",
+    "detail": "Redo it correctly after 3 days, then 7, then 21. Three clean wins and it leaves the vault for good."
+   },
+   {
+    "title": "No cheating the gap",
+    "detail": "A wrong redo resets the ladder to day 3. Locked questions open only when they are due."
+   },
+   {
+    "title": "A short redo list, every day",
+    "detail": "The vault shows what is due today, so you know where to start.",
+    "image": "screens/vault-redo.png",
+    "sampleData": true
+   }
+  ],
+  "ctaTitle": "Stop making the *same mistake* twice.",
+  "ctaLine": "The Mistake Vault is on the IPM Careers study portal.",
+  "button": "study.ipmcareer.com",
+  "where": "On the portal: Review → Mistake Vault"
+ },
+ "caption": "Getting the same kind of question wrong again and again? 👇\n\nThe Mistake Vault on the IPM Careers portal saves every question you get wrong in any test. Redo it after 3 days, then 7, then 21. Three clean wins and it leaves the vault for good.\n\nstudy.ipmcareer.com (link in bio)\n\n#IPMAT #IPMATPrep #IPMCareers #StudySmart #JIPMAT",
+ "claims": [
+  {
+   "text": "vault rules",
+   "source": "portal Mistake Vault page, 'How the vault works'"
+  }
+ ]
+}
