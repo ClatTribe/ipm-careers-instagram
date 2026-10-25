@@ -9,7 +9,7 @@ const EXAM = "2026-11-15";
 const days = Math.round((Date.parse(EXAM) - Date.parse(date)) / 86400000);
 const tasks = ["Take one DI and LR set today. Time it.", "Redo three questions you got wrong this week.", "Read one long article and write its main idea in one line.",
   "Sit the 2025 paper as a full mock. No pauses.", "Revise percentages and ratios: 20 quick questions.", "Solve one LR puzzle without looking at the answer.", "Review your last mock: why did each wrong answer go wrong?"];
-if (days >= 1 && days <= 18) {
+if (days >= 1 && days <= 21) {
   fs.writeFileSync(`stories/auto/${date}-countdown.json`, JSON.stringify({ type: "countdown", kicker: "IIM B UGAT · 15 NOV", days, title: days === 1 ? "day to go." : "days to go.",
     task: days === 1 ? "Pack your admit card and ID tonight. Then sleep." : days === 2 ? "Light revision only. Sleep on time tonight." : tasks[days % tasks.length], reply: "Writing IIM B UGAT? Reply with your target." }, null, 1));
   made.push(`${date}-countdown`);

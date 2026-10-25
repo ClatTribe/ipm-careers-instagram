@@ -1,0 +1,14 @@
+{
+ "date": "2026-10-25",
+ "id": "bookshelf-puzzle",
+ "video": "media/reels/2026-10-25.mp4",
+ "format": "LR puzzle (silent)",
+ "caption": "Five books, four clues. Which book is 2nd from the left? 📚\n\nComment your answer 👇\n\nLR puzzles like this come in IIM B UGAT, JIPMAT and IPMAT Rohtak.\n\n#LogicalReasoning #IIMBUGAT #JIPMAT #IPMCareers #Puzzle",
+ "answer": "R (the shelf reads S R Q T P, left to right)",
+ "claims": [
+  {
+   "text": "puzzle has one answer",
+   "source": "original, checked by computer: only S R Q T P fits"
+  }
+ ]
+}

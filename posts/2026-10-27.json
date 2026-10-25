@@ -1,0 +1,34 @@
+{
+ "content": {
+  "type": "solve",
+  "hook": "This came in *IPMAT 2024.*\nCan you solve it?",
+  "paperHead": "IPMAT INDORE 2024 · QA · SHORT ANSWER",
+  "stamp": "ASKED IN 2024",
+  "lines": [
+   "The number of triangles whose sides are of",
+   "integer lengths and whose perimeter is 15",
+   "units is ______ ."
+  ],
+  "working": [
+   "Sides a ≤ b ≤ c and a + b + c = 15",
+   "Triangle rule: a + b > c, so {purple:c ≤ 7}",
+   "c = 7: (1,7,7) (2,6,7) (3,5,7) (4,4,7)",
+   "c = 6: (3,6,6) (4,5,6)",
+   "c = 5: (5,5,5)"
+  ],
+  "answer": "7",
+  "takeaway": "Fix the {b:longest side} first. It is always less than half the perimeter."
+ },
+ "caption": "IPMAT Indore 2024, Short Answer. How many triangles with integer sides have a perimeter of 15?\n\nComment your answer before you swipe ⏱\n\n670 IPMAT Indore PYQs on the IPM Careers portal: study.ipmcareer.com (link in bio)\n\n#IPMAT #IPMAT2027 #IPMATQuant #PYQ #IPMCareers",
+ "claims": [
+  {
+   "text": "IPMAT Indore 2024 question",
+   "source": "portal PYQ bank, id 501, verified, answer 7"
+  },
+  {
+   "text": "670 IPMAT Indore PYQs",
+   "source": "study.ipmcareer.com/pyqs"
+  }
+ ],
+ "date": "2026-10-27"
+}

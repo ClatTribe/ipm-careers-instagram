@@ -3,7 +3,7 @@
  * Publishes to the IPM Careers Instagram account.
  *   node tools/upload-instagram.mjs post  posts/2026-11-02.json  [--publish-at ISO] [--dry-run]   (slides in out/white/<name>/)
  *   node tools/upload-instagram.mjs story stories/2026-11-04.json [--publish-at ISO] [--dry-run]   (image in out/stories/<name>.png)
- *   node tools/upload-instagram.mjs reel  reels/<id>.json        [--publish-at ISO] [--dry-run]   (video in out/reels/<id>.mp4)
+ *   node tools/upload-instagram.mjs reel  reels/2026-10-25.json   [--publish-at ISO] [--dry-run]   (video: the "video" path in the JSON)
  * Instagram's API cannot schedule, so with --publish-at the script prepares everything and waits.
  */
 import { existsSync, readdirSync, readFileSync } from "node:fs";
@@ -23,7 +23,7 @@ const name = path.basename(file, ".json");
 const media =
   kind === "post"
     ? (() => { const d = path.join("out/white", name); return existsSync(d) ? readdirSync(d).filter((f) => /^slide-\d+\.png$/.test(f)).sort((a, b) => parseInt(a.slice(6)) - parseInt(b.slice(6))).map((f) => path.join(d, f)) : []; })()
-    : [kind === "story" ? path.join("out/stories", name + ".png") : path.join("out/reels", (item.id ?? name) + ".mp4")].filter(existsSync);
+    : [kind === "story" ? path.join("out/stories", name + ".png") : item.video].filter((f) => f && existsSync(f));
 const caption = (item.caption ?? "").slice(0, 2200);
 const missing = REQUIRED_ENV.filter((k) => !process.env[k]);
 
