@@ -2,7 +2,7 @@
 # Everything for one day on Instagram, in order:
 #   bash tools/day.sh post  2026-11-02 [--no-upload]   feed post at 7:30 PM IST, then its "New post" Story at 7:45 PM
 #   bash tools/day.sh story 2026-11-02 [--no-upload]   morning Stories: countdown 8:00 AM (until 14 Nov), answer Story 10:00 AM if planned
-#   bash tools/day.sh reel  2026-11-02 [--no-upload]   Reel at 6:30 PM IST (Mon, Wed, Fri, Sat; video already in media/reels/)
+#   bash tools/day.sh reel  2026-11-02 [--no-upload]   Reel at 6:30 PM IST on Instagram and YouTube Shorts (Mon, Wed, Fri, Sat; video already in media/reels/)
 # Exit codes: 0 done, 3 nothing planned today, 1 failure (read the log).
 set -uo pipefail
 export NODE_USE_ENV_PROXY=1 NODE_NO_WARNINGS=1
@@ -42,9 +42,18 @@ elif [ "$MODE" = "reel" ]; then
   V=$(node -e "console.log(require('./$F').video)")
   [ -f "$V" ] || { log "FAIL: video $V missing"; exit 1; }
   ffmpeg -hide_banner -loglevel error -y -i "$V" -vf "fps=1/3,scale=240:-1,tile=8x1" -frames:v 1 "out/$DATE-reel-sheet.png" 2>/dev/null && log "review sheet: out/$DATE-reel-sheet.png"
-  [ "$UPLOAD" = "0" ] && { log "checked only (--no-upload)"; exit 0; }
+  [ "$UPLOAD" = "0" ] && { node tools/upload-youtube.mjs "$F" --dry-run --publish-at "${DATE}T18:30:00+05:30"; log "checked only (--no-upload)"; exit 0; }
+  # YouTube first: it is uploaded now and scheduled by YouTube itself to go public at 18:30.
+  # A YouTube problem never blocks Instagram; it is reported at the end. Never upload twice in one run.
+  YT=ok
+  if [ -z "${IPM_YOUTUBE_REFRESH_TOKEN:-}" ]; then YT=skipped; log "YOUTUBE_SKIPPED: YouTube keys are not set"
+  elif [ -f "out/$DATE-youtube.txt" ]; then log "YouTube already uploaded in this run: $(cat "out/$DATE-youtube.txt")"
+  else node tools/upload-youtube.mjs "$F" --publish-at "${DATE}T18:30:00+05:30" | tee "out/$DATE-youtube.log"; [ "${PIPESTATUS[0]}" = "0" ] && grep DONE "out/$DATE-youtube.log" > "out/$DATE-youtube.txt" || YT=failed
+  fi
   node tools/upload-instagram.mjs reel "$F" --publish-at "${DATE}T18:30:00+05:30" || exit 1
   node tools/share-reel.mjs "$DATE" | tee "out/$DATE-reel-share.txt" || log "WARN: could not make the download link"
+  # exit 0 even if YouTube failed: Instagram is live, and a retry would post it twice
+  [ "$YT" = "failed" ] && { log "PARTIAL: Instagram live, YouTube failed (see out/$DATE-youtube.log). Do not re-run."; exit 0; }
   log "DONE"
 elif [ "$MODE" = "story" ]; then
   # morning Stories: countdown at 08:00 (until 14 Nov) and, when stories/<date>-answer.json exists, an answer Story at 10:00

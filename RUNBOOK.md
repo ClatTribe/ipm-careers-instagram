@@ -47,4 +47,4 @@ The uploader refuses to post unless the token belongs to the IPM Careers account
 2. The full caption and the download links, copied exactly from `out/$DATE-share.txt`.
 3. Anything the owner must do (for example "Instagram token has 8 days left", "posts/2026-11-17.json missing").
 
-**Reel** (phone notification only, no email; reels go to YouTube through a separate automation): whether it went live, the Instagram link, and the answer for a pinned comment. Keep it short.
+**Reel** (phone notification only, no email): whether it went live, the Instagram link, the YouTube Shorts link (from the `DONE youtube` line; it goes public at 18:30 by itself), and the answer for a pinned comment. If the log says `YOUTUBE_SKIPPED` or `PARTIAL ... YouTube failed`, say so in one line with the error. Keep it short.

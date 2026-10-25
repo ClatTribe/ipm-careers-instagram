@@ -35,3 +35,10 @@ The key lasts 60 days. The current one expires on the date in `token-expiry.txt`
 email warns you. To renew: developers.facebook.com → your app → Instagram → API setup with Instagram login →
 Generate token for @ipmcareers → paste it into `IPM_INSTAGRAM_ACCESS_TOKEN` in the environment settings, and
 change the date in `token-expiry.txt` to 60 days later.
+
+## YouTube Shorts (reels)
+Every reel also goes to the IPM Careers YouTube channel as a Short, scheduled for 6:30 PM IST (`tools/upload-youtube.mjs`, called by `tools/day.sh reel`).
+- Keys: `IPM_YOUTUBE_CLIENT_ID`, `IPM_YOUTUBE_CLIENT_SECRET`, `IPM_YOUTUBE_REFRESH_TOKEN` in the cloud environment settings, made once with `tools/youtube-login.py` on the owner's Mac (scopes: upload + read channel only). The uploader refuses any channel other than @ipmcareers.
+- The Google project "IPM Careers YouTube Engine" is **In production**, so the key does not expire after 7 days. Its privacy policy is https://register.ipmcareer.com/privacy-policy.html
+- If Shorts arrive locked as private, the project needs Google's audit: Google Cloud Console, YouTube Data API v3, "API audit and quota extension" form.
+- Check the key: `node tools/upload-youtube.mjs --check`
