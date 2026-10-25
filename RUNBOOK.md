@@ -42,6 +42,7 @@ The uploader refuses to post unless the token belongs to the IPM Careers account
 
 ## 5. Final report
 **Post** (becomes the owner's evening email and phone notification). The owner re-uploads each post to YouTube by hand, so the report must contain, in this order:
+0. First line, exactly: `IPM Careers daily post` (the owner's Gmail filter forwards emails using this line).
 1. Date, format, topic, and the Instagram link (or the error).
 2. The full caption and the download links, copied exactly from `out/$DATE-share.txt`.
 3. Anything the owner must do (for example "Instagram token has 8 days left", "posts/2026-11-17.json missing").
