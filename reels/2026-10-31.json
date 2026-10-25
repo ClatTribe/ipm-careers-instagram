@@ -1,0 +1,14 @@
+{
+ "date": "2026-10-31",
+ "id": "pyq-iimb-2025-hcf",
+ "video": "media/reels/2026-10-31.mp4",
+ "format": "PYQ (voice)",
+ "caption": "This came in IIM B UGAT 2025 👀\n\nHCF 14, LCM 168, m < n and m divides 84. What is the largest m?\n\nPause, try it, then watch the solution. The full 2025 paper is on the IPM Careers portal: study.ipmcareer.com\n\nVoice: Piper TTS, LibriTTS dataset (CC BY 4.0)\n\n#IIMBUGAT #IIMBangalore #PYQ #IPMCareers #Quant",
+ "answer": "(b) 42: m = 14a, n = 14b with ab = 12, so (a, b) = (3, 4) gives m = 42, n = 56",
+ "claims": [
+  {
+   "text": "IIM B UGAT 2025 question",
+   "source": "Portal PYQ bank, IIM B UGAT 2025 (verified), answer 42"
+  }
+ ]
+}

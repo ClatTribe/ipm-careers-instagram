@@ -1,0 +1,14 @@
+{
+ "date": "2026-10-28",
+ "id": "pyq-iimb-2025-donors",
+ "video": "media/reels/2026-10-28.mp4",
+ "format": "PYQ (voice)",
+ "caption": "This came in IIM B UGAT 2025 👀\n\n25,000 donors grow by 10% every 6 months. After how many years do they reach 33,275?\n\nPause, try it, then watch the 20-second solution. The full 2025 paper is on the IPM Careers portal: study.ipmcareer.com\n\nVoice: Piper TTS, LibriTTS dataset (CC BY 4.0)\n\n#IIMBUGAT #IIMBangalore #PYQ #IPMCareers #Quant",
+ "answer": "(c) 1.5 years: 33,275 ÷ 25,000 = 1.331 = 1.1³, three half-years",
+ "claims": [
+  {
+   "text": "IIM B UGAT 2025 question",
+   "source": "Portal PYQ bank, IIM B UGAT 2025 (verified), answer 1.5"
+  }
+ ]
+}
