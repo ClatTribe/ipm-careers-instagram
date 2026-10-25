@@ -11,7 +11,7 @@ Never print a token or key.
 ## 1. Set up
 ```bash
 DATE=$(TZ=Asia/Kolkata date +%F)
-git clone --depth 1 <THIS REPO URL> ~/ipm && cd ~/ipm
+git clone --depth 1 https://github.com/ClatTribe/ipm-careers-instagram.git ~/ipm && cd ~/ipm
 npm ci --no-audit --no-fund
 export NODE_USE_ENV_PROXY=1 NODE_NO_WARNINGS=1
 pip3 install -q pillow 2>/dev/null || true
