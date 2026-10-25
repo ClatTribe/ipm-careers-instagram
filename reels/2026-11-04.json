@@ -1,0 +1,14 @@
+{
+ "date": "2026-11-04",
+ "id": "pyq-iimb-2025-series",
+ "video": "media/reels/2026-11-04.mp4",
+ "format": "PYQ (voice)",
+ "caption": "This came in IIM B UGAT 2025 👀\n\n16, 23, 37, 65, 121, ?, 457, ? Find the missing numbers.\n\nPause, try it, then watch the trick. The full 2025 paper is on the IPM Careers portal: study.ipmcareer.com\n\nVoice: Piper TTS, LibriTTS dataset (CC BY 4.0)\n\n#IIMBUGAT #IIMBangalore #PYQ #IPMCareers #LogicalReasoning",
+ "answer": "(c) 233 and 905: the gaps double (7, 14, 28, 56, 112, 224, 448)",
+ "claims": [
+  {
+   "text": "IIM B UGAT 2025 question",
+   "source": "Portal PYQ bank, IIM B UGAT 2025 (verified), answer 233, 905"
+  }
+ ]
+}

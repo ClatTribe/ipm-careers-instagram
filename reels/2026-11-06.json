@@ -1,0 +1,14 @@
+{
+ "date": "2026-11-06",
+ "id": "round-table-puzzle",
+ "video": "media/reels/2026-11-06.mp4",
+ "format": "LR puzzle (silent)",
+ "caption": "6 friends, a round table, 4 clues. Who sits opposite A? 🪑\n\nTry it before the reveal. Circular seating comes up in IIM B UGAT, JIPMAT and IPMAT Rohtak LR.\n\n#LogicalReasoning #IIMBUGAT #JIPMAT #IPMCareers #Puzzle",
+ "answer": "E (clockwise from A: A, C, B, E, F, D)",
+ "claims": [
+  {
+   "text": "one answer",
+   "source": "original, checked by computer: only one arrangement fits, every clue needed"
+  }
+ ]
+}
