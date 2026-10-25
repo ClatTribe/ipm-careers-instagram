@@ -15,7 +15,7 @@ It does not change any file of the comment engine. Standard library only; uses t
 import http.server, json, os, secrets, subprocess, sys, urllib.parse, webbrowser
 
 SCOPES = "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly"
-PORT = 8765
+PORT = 0  # 0 = let the Mac pick any free port (Desktop clients accept any loopback port)
 
 path = next((p for p in ["credentials/credentials.json", "credentials.json"] if os.path.exists(p)), None)
 if not path:
@@ -25,18 +25,12 @@ kind = "installed" if "installed" in raw else "web" if "web" in raw else None
 if not kind:
     sys.exit("credentials.json is not a Google OAuth client file.")
 c = raw[kind]
-redirect = f"http://localhost:{PORT}/"
 if kind == "web":
     ok = [u for u in c.get("redirect_uris", []) if u.startswith("http://localhost")]
     if not ok:
         sys.exit("This is a 'Web' client without a localhost redirect. Tell Claude: 'web client, no localhost'.")
-    redirect = ok[0] if ok[0].endswith("/") or "?" in ok[0] else ok[0]
+    redirect = ok[0]
     PORT = urllib.parse.urlparse(redirect).port or 80
-
-state = secrets.token_urlsafe(16)
-url = "https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode({
-    "client_id": c["client_id"], "redirect_uri": redirect, "response_type": "code", "scope": SCOPES,
-    "access_type": "offline", "prompt": "consent", "state": state, "include_granted_scopes": "false"})
 
 got = {}
 class H(http.server.BaseHTTPRequestHandler):
@@ -48,7 +42,18 @@ class H(http.server.BaseHTTPRequestHandler):
         self.wfile.write(b"<h2>Done. You can close this tab and go back to Terminal.</h2>")
     def log_message(self, *a): pass
 
-srv = http.server.HTTPServer(("localhost", PORT), H)
+try:
+    srv = http.server.HTTPServer(("127.0.0.1", PORT), H)
+except OSError:
+    sys.exit(f"Port {PORT} is busy on this Mac. Close other apps or restart the Mac, then run it again.")
+if kind == "installed":
+    redirect = f"http://127.0.0.1:{srv.server_address[1]}/"
+
+state = secrets.token_urlsafe(16)
+url = "https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode({
+    "client_id": c["client_id"], "redirect_uri": redirect, "response_type": "code", "scope": SCOPES,
+    "access_type": "offline", "prompt": "consent", "state": state, "include_granted_scopes": "false"})
+
 print("\nOpening Google login in your browser...")
 print("1. Pick the Google account that manages the IPM Careers YouTube channel.")
 print("2. If asked to choose a channel, pick IPM Careers.")
