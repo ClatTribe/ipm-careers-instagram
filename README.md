@@ -26,3 +26,9 @@ bash tools/day.sh post 2026-11-02 --no-upload                   # everything exc
   (plus the shared `CLOUDINARY_*`, already there). The uploader refuses to post to any other account.
 - Allowed domain: `graph.instagram.com` (only for an Instagram Login token starting with IGAA; a Facebook
   System User token uses `graph.facebook.com`, already allowed, and never expires).
+
+## Renewing the Instagram key (every ~2 months)
+The key lasts 60 days. The current one expires on the date in `token-expiry.txt`; from 10 days before, the daily
+email warns you. To renew: developers.facebook.com → your app → Instagram → API setup with Instagram login →
+Generate token for @ipmcareers → paste it into `IPM_INSTAGRAM_ACCESS_TOKEN` in the environment settings, and
+change the date in `token-expiry.txt` to 60 days later.

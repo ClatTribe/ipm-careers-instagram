@@ -37,13 +37,16 @@ export async function checkAccount() {
   return me.username;
 }
 
-/** Days left on an Instagram Login token (null for tokens that do not expire or cannot be checked). */
-export async function tokenDaysLeft() {
-  if (!TOKEN.startsWith("IGAA")) return null;
+/**
+ * Days left on the Instagram key. Instagram Login keys last 60 days and renewing one gives a NEW key
+ * (which would have to be pasted into the settings again), so we do not renew here; we count down
+ * from the expiry date written in token-expiry.txt when the key was added.
+ */
+export function tokenDaysLeft() {
+  if (!TOKEN.startsWith("IGAA")) return null; // System User keys do not expire
   try {
-    const r = await fetch(`${GRAPH.replace("/v21.0", "")}/refresh_access_token?grant_type=ig_refresh_token&access_token=${TOKEN}`);
-    const d = await r.json();
-    return d.expires_in ? Math.round(d.expires_in / 86400) : null;
+    const exp = readFileSync(new URL("../token-expiry.txt", import.meta.url), "utf8").trim();
+    return Math.floor((Date.parse(exp) - Date.now()) / 86400000);
   } catch { return null; }
 }
 

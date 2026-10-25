@@ -35,8 +35,8 @@ if (DRY) {
   console.log(`  env missing: ${missing.length ? missing.join(", ") : "none"}`);
   if (!missing.length) {
     try { console.log(`  account:     @${await checkAccount()} (matches)`); } catch (e) { console.log(`  account:     FAIL ${e.message}`); process.exit(1); }
-    const days = await tokenDaysLeft();
-    if (days !== null) console.log(`  token:       about ${days} days left${days < 10 ? "  << WARN: renew it" : ""}`);
+    const days = tokenDaysLeft();
+    if (days !== null) console.log(`  token:       about ${days} days left${days <= 10 ? "  << WARN: make a new key (README)" : ""}`);
   }
   process.exit(missing.length || !media.length ? 1 : 0);
 }
@@ -64,8 +64,8 @@ try {
   await waitUntil(publishAt);
   const link = await publish(creationId);
   console.log(`DONE instagram ${kind}: ${link}`);
-  const days = await tokenDaysLeft();
-  if (days !== null && days < 10) console.log(`WARN instagram token has about ${days} days left`);
+  const days = tokenDaysLeft();
+  if (days !== null && days <= 10) console.log(`WARN the Instagram key expires in about ${days} days: make a new one and paste it into IPM_INSTAGRAM_ACCESS_TOKEN (README), then update token-expiry.txt`);
 } catch (e) {
   console.error(`FAIL instagram ${kind}: ${e.message}`);
   process.exitCode = 1;
