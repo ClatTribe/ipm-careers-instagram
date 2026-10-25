@@ -1,0 +1,14 @@
+{
+ "date": "2026-11-07",
+ "id": "portal-study-plan",
+ "video": "media/reels/2026-11-07.mp4",
+ "format": "Portal feature (English, voice)",
+ "caption": "Don't know what to study today? 🤔\n\nOn the IPM Careers study portal, My Plan is built every morning from your own test history. Three tasks a day, your weakest chapter first, and a full mock every Sunday.\n\nstudy.ipmcareer.com → My Plan\n\nScreens show sample data. Voice: Piper TTS, LibriTTS dataset (CC BY 4.0)\n\n#IPMAT #IIMBUGAT #StudyPlan #IPMCareers #ExamPrep",
+ "answer": "",
+ "claims": [
+  {
+   "text": "built every morning from test history; weakest chapters first; Sunday full mock",
+   "source": "study.ipmcareer.com/plan, filmed 25 Oct 2026"
+  }
+ ]
+}
