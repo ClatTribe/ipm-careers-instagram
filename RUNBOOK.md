@@ -6,7 +6,7 @@ Never print a token or key.
 | Task | Time (IST) | Command |
 |---|---|---|
 | Daily feed post + "New post" Story | starts 18:55, posts 19:30, Story 19:45 | `bash tools/day.sh post $DATE` |
-| Countdown Story (until 14 Nov) | starts 07:40, posts 08:00 | `bash tools/day.sh story $DATE` |
+| Countdown Story (until 14 Nov), plus an answer Story at 10:00 on days with `stories/$DATE-answer.json` | starts 07:40, posts 08:00 (and 10:00) | `bash tools/day.sh story $DATE` |
 | Reel (Mon, Wed, Fri, Sat) | starts 17:53, posts 18:30 | `bash tools/day.sh reel $DATE` |
 
 ## 1. Set up

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Everything for one day on Instagram, in order:
 #   bash tools/day.sh post  2026-11-02 [--no-upload]   feed post at 7:30 PM IST, then its "New post" Story at 7:45 PM
-#   bash tools/day.sh story 2026-11-02 [--no-upload]   morning countdown Story (8:00 AM IST, until 14 Nov)
+#   bash tools/day.sh story 2026-11-02 [--no-upload]   morning Stories: countdown 8:00 AM (until 14 Nov), answer Story 10:00 AM if planned
 #   bash tools/day.sh reel  2026-11-02 [--no-upload]   Reel at 6:30 PM IST (Mon, Wed, Fri, Sat; video already in media/reels/)
 # Exit codes: 0 done, 3 nothing planned today, 1 failure (read the log).
 set -uo pipefail
@@ -47,11 +47,13 @@ elif [ "$MODE" = "reel" ]; then
   node tools/share-reel.mjs "$DATE" | tee "out/$DATE-reel-share.txt" || log "WARN: could not make the download link"
   log "DONE"
 elif [ "$MODE" = "story" ]; then
+  # morning Stories: countdown at 08:00 (until 14 Nov) and, when stories/<date>-answer.json exists, an answer Story at 10:00
   out=$(node tools/make-stories.mjs "$DATE")
-  [ -f "stories/auto/$DATE-countdown.json" ] || { log "NO_STORY: no countdown today"; exit 3; }
-  node tools/check.mjs "stories/auto/$DATE-countdown.json" || exit 1
-  node tools/render-story.mjs "stories/auto/$DATE-countdown.json"
+  CD="stories/auto/$DATE-countdown.json"; ANS="stories/$DATE-answer.json"
+  [ -f "$CD" ] || [ -f "$ANS" ] || { log "NO_STORY: nothing planned this morning"; exit 3; }
+  for f in "$CD" "$ANS"; do [ -f "$f" ] && { node tools/check.mjs "$f" || exit 1; node tools/render-story.mjs "$f"; }; done
   [ "$UPLOAD" = "0" ] && { log "rendered only (--no-upload)"; exit 0; }
-  node tools/upload-instagram.mjs story "stories/auto/$DATE-countdown.json" --publish-at "${DATE}T08:00:00+05:30" || exit 1
+  [ -f "$CD" ] && { node tools/upload-instagram.mjs story "$CD" --publish-at "${DATE}T08:00:00+05:30" || exit 1; }
+  [ -f "$ANS" ] && { node tools/upload-instagram.mjs story "$ANS" --publish-at "${DATE}T10:00:00+05:30" || exit 1; }
   log "DONE"
 fi

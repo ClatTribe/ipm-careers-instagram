@@ -1,0 +1,24 @@
+{
+ "type": "answer",
+ "pill": "Yesterday's puzzle",
+ "title": "Which book was\n*2nd from the left?*",
+ "question": "5 books, 4 clues: P at one end, S somewhere left of P, R immediately right of S, exactly 1 book between P and Q.",
+ "chips": [
+  "S",
+  "R",
+  "Q",
+  "T",
+  "P"
+ ],
+ "colors": [
+  "#2A6FCB",
+  "#1A8754",
+  "#E9A425",
+  "#D64545",
+  "#893783"
+ ],
+ "mark": 1,
+ "answer": "R",
+ "why": "Only one order fits all 4 clues: S R Q T P.",
+ "cta": "Got it right? Reply with a 🔥"
+}

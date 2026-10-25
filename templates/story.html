@@ -40,6 +40,14 @@
 <script>
 const md = (s = "") => String(s).replace(/\*([^*]+)\*/g, "<em>$1</em>").replace(/\n/g, "<br>");
 const T = {
+  answer: (c) => `<div class="bg"></div><div class="safe">
+      <div style="display:flex;justify-content:space-between;align-items:center"><img class="logo" src="../public/brand/logo-full.png"><span class="pill">${md(c.pill)}</span></div>
+      <div class="mid"><h2>${md(c.title)}</h2>
+        <div class="sub" style="font-size:40px;margin-top:24px">${md(c.question)}</div>
+        <div style="display:flex;gap:18px;margin-top:56px;justify-content:center">${c.chips.map((x, i) => `<div style="width:130px;height:180px;border-radius:16px;background:${c.colors[i]};color:#fff;font:800 70px Inter;display:flex;align-items:center;justify-content:center;${i === c.mark ? "outline:8px solid #E9A425;outline-offset:6px" : ""}">${x}</div>`).join("")}</div>
+        <div class="hand" style="font-size:88px;font-weight:800;margin-top:70px">Answer: <span style="background:linear-gradient(transparent 40%,rgba(255,179,71,.55) 40%,rgba(255,179,71,.55) 90%,transparent 90%);color:#1A8754;padding:0 8px">${md(c.answer)}</span></div>
+        <div class="sub" style="font-size:40px">${md(c.why)}</div>
+        <div class="bar" style="margin-top:50px"><span class="dot"></span>${md(c.cta)}</div></div></div>`,
   newpost: (c) => `<div class="bg"></div><div class="safe">
       <div style="display:flex;justify-content:space-between;align-items:center"><img class="logo" src="../public/brand/logo-full.png"><span class="pill">New post</span></div>
       <div class="mid" style="align-items:center">
