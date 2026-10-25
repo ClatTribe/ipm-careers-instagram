@@ -27,7 +27,7 @@ if [ "$MODE" = "post" ]; then
   node tools/check.mjs "$F" || { log "FAIL: safety check"; exit 1; }
   node tools/render.mjs --theme=white "$F" | tee "out/$DATE-render.log"
   grep -q WARN "out/$DATE-render.log" && { log "FAIL: text too tall on a slide (see log)"; exit 1; }
-  sheet "out/$DATE-post-sheet.png" $(ls out/white/$DATE/slide-*.png | sort -t- -k2 -n) && log "review sheet: out/$DATE-post-sheet.png"
+  sheet "out/$DATE-post-sheet.png" $(ls out/white/$DATE/slide-*.png | sort -t- -k2 -n) && log "review sheet: out/$DATE-post-sheet.png" || log "WARN: no review sheet (Pillow problem); look at out/white/$DATE/slide-*.png directly"
   node tools/make-stories.mjs "$DATE" >/dev/null
   node tools/render-story.mjs "stories/auto/$DATE-newpost.json"
   [ "$UPLOAD" = "0" ] && { log "rendered only (--no-upload)"; exit 0; }

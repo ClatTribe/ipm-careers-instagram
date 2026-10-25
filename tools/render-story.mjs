@@ -1,11 +1,10 @@
 // Renders Stories to PNG (1080 x 1920):  node tools/render-story.mjs stories/<file>.json ...
-import { chromium } from "playwright";
+import { launchBrowser } from "./browser.mjs";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const exe = fs.readdirSync("/opt/pw-browsers").find((d) => d.startsWith("chromium-"));
-const browser = await chromium.launch(exe ? { executablePath: `/opt/pw-browsers/${exe}/chrome-linux/chrome` } : {});
+const browser = await launchBrowser();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
 await page.goto("file://" + path.join(ROOT, "templates/story.html"));
 fs.mkdirSync(path.join(ROOT, "out/stories"), { recursive: true });

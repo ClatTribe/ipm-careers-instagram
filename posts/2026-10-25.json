@@ -12,7 +12,7 @@
    },
    {
     "q": "Which exam does my child need?",
-    "a": "It depends on the IIM. IPMAT Indore covers IIM Indore and several others. JIPMAT covers IIM Jammu and IIM Bodh Gaya. IPMAT Rohtak is for IIM Rohtak."
+    "a": "It depends on the IIM. IPMAT Indore: IIM Indore, Ranchi, Sirmaur, Amritsar, Sambalpur, Shillong and IIFT. JIPMAT: IIM Jammu and Bodh Gaya. IPMAT Rohtak: IIM Rohtak."
    },
    {
     "q": "When should preparation start?",
@@ -25,7 +25,7 @@
  "claims": [
   {
    "text": "IPM exams to IIMs",
-   "source": "IPM Careers context; confirm on AIR 1 before posting"
+   "source": "AIR 1 Command Center (register.ipmcareer.com/air1commandcenter), checked 25 Oct 2026: IPMAT Indore = IIM Indore, Ranchi, Sirmaur, Amritsar, Sambalpur, Shillong, IIFT; JIPMAT = IIM Jammu and Bodh Gaya; IPMAT Rohtak = IIM Rohtak"
   }
  ]
 }
