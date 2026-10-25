@@ -40,8 +40,10 @@ bash tools/day.sh post "$DATE"                                       # waits unt
 ```
 The uploader refuses to post unless the token belongs to the IPM Careers account.
 
-## 5. Final report (becomes the owner's email and phone notification)
-The owner re-uploads each post to YouTube by hand, so the report must contain, in this order:
+## 5. Final report
+**Post** (becomes the owner's evening email and phone notification). The owner re-uploads each post to YouTube by hand, so the report must contain, in this order:
 1. Date, format, topic, and the Instagram link (or the error).
-2. The full caption and the download links, copied exactly from `out/$DATE-share.txt` (post) or `out/$DATE-reel-share.txt` (reel, with the answer for a pinned comment).
+2. The full caption and the download links, copied exactly from `out/$DATE-share.txt`.
 3. Anything the owner must do (for example "Instagram token has 8 days left", "posts/2026-11-17.json missing").
+
+**Reel** (phone notification only, no email; reels go to YouTube through a separate automation): whether it went live, the Instagram link, and the answer for a pinned comment. Keep it short.
