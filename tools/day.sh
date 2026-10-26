@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Everything for one day on Instagram, in order:
-#   bash tools/day.sh post  2026-11-02 [--no-upload]   feed post at 7:30 PM IST, then its "New post" Story at 7:45 PM
-#   bash tools/day.sh story 2026-11-02 [--no-upload]   morning Stories: countdown 8:00 AM (until 14 Nov), answer Story 10:00 AM if planned
+#   bash tools/day.sh post  2026-11-02 [--no-upload]   feed post at 7:30 PM IST, then its "New post" Story right after
+#   bash tools/day.sh story 2026-11-02 [--no-upload]   morning Stories: countdown 8:00 AM (until 14 Nov), then the answer Story if planned
 #   bash tools/day.sh reel  2026-11-02 [--no-upload]   Reel at 6:30 PM IST on Instagram and YouTube Shorts (Mon, Wed, Fri, Sat; video already in media/reels/)
 # Exit codes: 0 done, 3 nothing planned today, 1 failure (read the log).
 set -uo pipefail
@@ -33,7 +33,7 @@ if [ "$MODE" = "post" ]; then
   [ "$UPLOAD" = "0" ] && { log "rendered only (--no-upload)"; exit 0; }
   node tools/upload-instagram.mjs post "$F" --publish-at "${DATE}T19:30:00+05:30" || exit 1
   node tools/share-links.mjs "$DATE" | tee "out/$DATE-share.txt" || log "WARN: could not make the download links"
-  node tools/upload-instagram.mjs story "stories/auto/$DATE-newpost.json" --publish-at "${DATE}T19:45:00+05:30" || { log "PARTIAL: post live, Story failed"; exit 1; }
+  node tools/upload-instagram.mjs story "stories/auto/$DATE-newpost.json" --publish-at "${DATE}T19:31:00+05:30" || { log "PARTIAL: post live, Story failed"; exit 1; }
   log "DONE"
 elif [ "$MODE" = "reel" ]; then
   F="reels/$DATE.json"
@@ -56,13 +56,13 @@ elif [ "$MODE" = "reel" ]; then
   [ "$YT" = "failed" ] && { log "PARTIAL: Instagram live, YouTube failed (see out/$DATE-youtube.log). Do not re-run."; exit 0; }
   log "DONE"
 elif [ "$MODE" = "story" ]; then
-  # morning Stories: countdown at 08:00 (until 14 Nov) and, when stories/<date>-answer.json exists, an answer Story at 10:00
+  # morning Stories: countdown at 08:00 (until 14 Nov) and, when stories/<date>-answer.json exists, an answer Story right after
   out=$(node tools/make-stories.mjs "$DATE")
   CD="stories/auto/$DATE-countdown.json"; ANS="stories/$DATE-answer.json"
   [ -f "$CD" ] || [ -f "$ANS" ] || { log "NO_STORY: nothing planned this morning"; exit 3; }
   for f in "$CD" "$ANS"; do [ -f "$f" ] && { node tools/check.mjs "$f" || exit 1; node tools/render-story.mjs "$f"; }; done
   [ "$UPLOAD" = "0" ] && { log "rendered only (--no-upload)"; exit 0; }
   [ -f "$CD" ] && { node tools/upload-instagram.mjs story "$CD" --publish-at "${DATE}T08:00:00+05:30" || exit 1; }
-  [ -f "$ANS" ] && { node tools/upload-instagram.mjs story "$ANS" --publish-at "${DATE}T10:00:00+05:30" || exit 1; }
+  [ -f "$ANS" ] && { node tools/upload-instagram.mjs story "$ANS" --publish-at "${DATE}T08:01:00+05:30" || exit 1; }
   log "DONE"
 fi

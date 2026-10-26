@@ -5,9 +5,13 @@ Never print a token or key.
 
 | Task | Time (IST) | Command |
 |---|---|---|
-| Daily feed post + "New post" Story | starts 18:55, posts 19:30, Story 19:45 | `bash tools/day.sh post $DATE` |
-| Countdown Story (until 14 Nov), plus an answer Story at 10:00 on days with `stories/$DATE-answer.json` | starts 07:40, posts 08:00 (and 10:00) | `bash tools/day.sh story $DATE` |
-| Reel (Mon, Wed, Fri, Sat) | starts 17:53, posts 18:30 | `bash tools/day.sh reel $DATE` |
+| Daily feed post + "New post" Story | starts 19:21, posts 19:30, Story right after | `bash tools/day.sh post $DATE` |
+| Countdown Story (until 14 Nov), plus an answer Story right after it on days with `stories/$DATE-answer.json` | starts 07:51, posts 08:00 | `bash tools/day.sh story $DATE` |
+| Reel (Mon, Wed, Fri, Sat) on Instagram + YouTube Shorts | starts 18:21, posts 18:30 | `bash tools/day.sh reel $DATE` |
+
+**Run the upload command in the FOREGROUND** (Bash tool, `timeout: 600000`) and stay in the same turn until it prints DONE, PARTIAL or FAIL.
+Never start it in the background and never end your turn while it waits for the posting time: an idle session is shut down after
+about 30 minutes and the upload dies with it. The schedule starts each run only a few minutes before posting time, so the wait is short.
 
 ## 1. Set up
 ```bash
@@ -37,7 +41,7 @@ If anything is wrong, fix the JSON and redo step 2 (at most 2 retries); if still
 ## 4. Post
 ```bash
 node tools/upload-instagram.mjs post posts/$DATE.json --dry-run     # checks keys and that the account is @$IPM_INSTAGRAM_USERNAME
-bash tools/day.sh post "$DATE"                                       # waits until 19:30 IST, then 19:45 for the Story
+bash tools/day.sh post "$DATE"                                       # FOREGROUND (timeout 600000): waits until 19:30 IST, then posts the Story right after
 ```
 The uploader refuses to post unless the token belongs to the IPM Careers account.
 

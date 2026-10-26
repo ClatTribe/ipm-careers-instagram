@@ -3,7 +3,7 @@
 | What | When (IST) | How |
 |---|---|---|
 | Feed post (white theme) | 7:30 PM daily | `posts/<date>.json`, rendered by `templates/post.html` |
-| "New post" Story | 7:45 PM daily | made automatically from the day's post |
+| "New post" Story | 7:31 PM daily | made automatically from the day's post |
 | IIM B UGAT countdown Story | 8:00 AM, until 14 Nov | made automatically (`tools/make-stories.mjs`) |
 
 A Claude scheduled task follows `RUNBOOK.md` every day: render, safety check, look at the slides, post, report.
