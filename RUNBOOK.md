@@ -52,7 +52,7 @@ The uploader refuses to post unless the token belongs to the IPM Careers account
 2. The full caption and the download links, copied exactly from `out/$DATE-share.txt`.
 3. Anything the owner must do (for example "Instagram token has 8 days left", "posts/2026-11-17.json missing").
 
-**Reel** (phone notification only, no email): whether it went live, the Instagram link, the YouTube Shorts link (from the `DONE youtube` line; it goes public at 18:30 by itself), and the answer for a pinned comment. If the log says `YOUTUBE_SKIPPED` or `PARTIAL ... YouTube failed`, say so in one line with the error. Keep it short.
+**Reel** (phone notification only, no email): whether it went live, the Instagram link, the YouTube Shorts link (from the `DONE youtube` line; it goes public at 18:30 by itself), and the answer for a pinned comment (for reels with no answer in the video, say "pin this after 24 hours, not now"). If the log says `YOUTUBE_SKIPPED` or `PARTIAL ... YouTube failed`, say so in one line with the error. Keep it short.
 
 ## Never show keys
 Do not call the Instagram, Cloudinary or YouTube APIs by hand (curl or ad-hoc scripts) and never print a URL or JSON that contains `access_token`, a secret or a refresh token. Use only the tools in `tools/`. If you must debug, pipe output through `sed -E 's/access_token=[^& "]+/access_token=HIDDEN/g'`.

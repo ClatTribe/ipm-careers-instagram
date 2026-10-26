@@ -1,0 +1,22 @@
+{
+ "type": "answer",
+ "pill": "Yesterday's question",
+ "title": "Spot the error:\n*which part was wrong?*",
+ "question": "\"Neither the teacher nor the students was ready for the surprise test on Monday.\"",
+ "chips": [
+  "A",
+  "B",
+  "C",
+  "D"
+ ],
+ "colors": [
+  "#2A6FCB",
+  "#1A8754",
+  "#E9A425",
+  "#D64545"
+ ],
+ "mark": 1,
+ "answer": "B",
+ "why": "\"was ready\" should be \"were ready\". With neither... nor, the verb agrees with the nearer subject: the students.",
+ "cta": "Got it right? Reply with a 🔥"
+}
