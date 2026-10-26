@@ -49,7 +49,7 @@ if (!CHECK) {
   const title = (yt.title ?? firstLine).replace(/\s+/g, " ").trim().slice(0, 100);
   const desc = yt.description ?? caption;
   const description = (desc.includes("#Shorts") ? desc : `${desc}\n\n#Shorts`).slice(0, 5000);
-  const future = publishAt && new Date(publishAt).getTime() > Date.now() + 5 * 60 * 1000;
+  const future = publishAt && new Date(publishAt).getTime() > Date.now() + 2 * 60 * 1000;
   body = {
     snippet: { title, description, tags: (yt.tags ?? hashtags).slice(0, 15), categoryId: "27", defaultLanguage: "en", defaultAudioLanguage: "en" },
     status: {
