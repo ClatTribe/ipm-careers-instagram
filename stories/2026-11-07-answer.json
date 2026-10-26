@@ -1,0 +1,26 @@
+{
+ "type": "answer",
+ "pill": "Yesterday's puzzle",
+ "title": "Round table:\n*who sits opposite A?*",
+ "question": "Clockwise from A, the only order that fits all 4 clues:",
+ "chips": [
+  "A",
+  "C",
+  "B",
+  "E",
+  "F",
+  "D"
+ ],
+ "colors": [
+  "#893783",
+  "#E9A425",
+  "#2A6FCB",
+  "#1F2430",
+  "#1A8754",
+  "#D64545"
+ ],
+ "mark": 3,
+ "answer": "E",
+ "why": "C is to A's left, B next to C, D opposite B, F next to D. That leaves E, opposite A.",
+ "cta": "Got it right? Reply with a 🔥"
+}

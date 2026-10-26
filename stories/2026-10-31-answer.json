@@ -1,0 +1,21 @@
+{
+ "type": "answer",
+ "pill": "Yesterday's question",
+ "title": "Up 20%, then down 20%:\n*back to 100?*",
+ "question": "100 goes up 20% in 2024, then down 20% in 2025.",
+ "chips": [
+  "100",
+  "120",
+  "96"
+ ],
+ "colors": [
+  "#2A6FCB",
+  "#1A8754",
+  "#D64545"
+ ],
+ "mark": 2,
+ "answer": "BELOW",
+ "why": "100 + 20% = 120, then 120 − 20% = 96. Shortcut: a + b + ab/100 = 20 − 20 − 4 = −4%.",
+ "cta": "Got it right? Reply with a 🔥",
+ "chipSize": 54
+}
