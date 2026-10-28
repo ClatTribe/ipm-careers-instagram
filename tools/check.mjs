@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // Safety checks for a post/story/reel JSON:  node tools/check.mjs posts/2026-11-02.json
 // Blocks: em/en dashes, competitor names, promises, too many hashtags, a VERIFY claim, missing caption,
-// and bad YouTube metadata (title over 100 chars, < or >, missing YouTube video file).
-import { existsSync, readFileSync } from "node:fs";
+// bad YouTube metadata (title over 100 chars, < or >, missing YouTube video file), and a feed caption
+// that opens with the same 5 words as another post from the 7 days before it.
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 const file = process.argv[2];
 const j = JSON.parse(readFileSync(file, "utf8"));
 const text = JSON.stringify(j);
@@ -17,6 +18,19 @@ if (j.caption !== undefined) {
   if (!j.caption.trim()) problems.push("empty caption");
   if (j.caption.length > 2200) problems.push("caption longer than 2200 characters");
   if ((j.caption.match(/#\w+/g) ?? []).length > 5) problems.push("more than 5 hashtags");
+}
+// Feed posts: the caption must not open with the same 5 words as another post from the 7 days before it
+if (j.caption && j.date && /(^|\/)posts\//.test(file)) {
+  const open5 = (c) => c.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, " ").split(/\s+/).filter(Boolean).slice(0, 5).join(" ");
+  const me = open5(j.caption);
+  const day = (d) => Date.parse(`${d}T00:00:00Z`) / 86400000;
+  const dir = new URL("../posts/", import.meta.url);
+  for (const f of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+    if (file.endsWith(`posts/${f}`)) continue;
+    const o = JSON.parse(readFileSync(new URL(f, dir), "utf8"));
+    const gap = day(j.date) - day(o.date ?? "");
+    if (o.caption && gap > 0 && gap <= 7 && open5(o.caption) === me) problems.push(`caption opens like posts/${f} (${o.date}): "${me}..."; write a different first line`);
+  }
 }
 if (j.youtube) {
   // YouTube Shorts metadata (tools/upload-youtube.mjs)

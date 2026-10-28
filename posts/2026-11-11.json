@@ -2,37 +2,46 @@
  "date": "2026-11-11",
  "content": {
   "type": "feature",
-  "feature": "Mistake Vault",
-  "promise": "Your wrong answers,\n*saved for you.*",
-  "subtitle": "Every question you get wrong in any test lands here automatically. Nothing to add, nothing to maintain.",
-  "screenshot": "screens/vault-ladder.png",
-  "screenshotCaption": "The redo ladder, on the IPM Careers study portal",
+  "feature": "My Plan",
+  "promise": "What to study today?\n*Your plan is ready.*",
+  "subtitle": "Built from your test history every morning. Your weakest chapters get the spotlight.",
+  "screenshot": "screens/plan-top.png",
+  "sampleData": true,
+  "screenshotCaption": "Today's plan, on the IPM Careers study portal",
   "steps": [
    {
-    "title": "Beat it 3 times",
-    "detail": "Redo it correctly after 3 days, then 7, then 21. Three clean wins and it leaves the vault for good."
+    "title": "Today's three",
+    "detail": "Three tasks a day: the daily base, your weakest chapter, and a chapter you have never tried.",
+    "image": "screens/plan-three.png",
+    "sampleData": true
    },
    {
-    "title": "No cheating the gap",
-    "detail": "A wrong redo resets the ladder to day 3. Locked questions open only when they are due."
+    "title": "Weakest chapter first",
+    "detail": "Your chapter map ranks the chapters you have attempted, weakest first. Fixing the weakest moves your score most.",
+    "image": "screens/plan-map.png",
+    "sampleData": true
    },
    {
-    "title": "A short redo list, every day",
-    "detail": "The vault shows what is due today, so you know where to start.",
-    "image": "screens/vault-redo.png",
+    "title": "Sunday never moves",
+    "detail": "A full mock every Sunday, for exam rhythm. The rest of the week reshuffles as your scores change.",
+    "image": "screens/plan-week.png",
     "sampleData": true
    }
   ],
-  "ctaTitle": "Stop making the *same mistake* twice.",
-  "ctaLine": "The Mistake Vault is on the IPM Careers study portal.",
+  "ctaTitle": "Stop guessing.\n*Start your plan.*",
+  "ctaLine": "My Plan is on the IPM Careers study portal.",
   "button": "study.ipmcareer.com",
-  "where": "On the portal: Review → Mistake Vault"
+  "where": "On the portal: Menu → My Plan"
  },
- "caption": "Getting the same kind of question wrong again and again? 👇\n\nThe Mistake Vault on the IPM Careers portal saves every question you get wrong in any test. Redo it after 3 days, then 7, then 21. Three clean wins and it leaves the vault for good.\n\nstudy.ipmcareer.com (link in bio)\n\n#IPMAT #IPMATPrep #IPMCareers #StudySmart #JIPMAT",
+ "caption": "Opened your books and stared at the chapter list? 👇\n\nMy Plan on the IPM Careers study portal is built from your test history every morning: three tasks a day, your weakest chapter first, and a full mock every Sunday.\n\nstudy.ipmcareer.com (link in bio)\n\n#IPMAT #IPMATPrep #IPMCareers #StudyPlan #JIPMAT",
  "claims": [
   {
-   "text": "vault rules",
-   "source": "portal Mistake Vault page, 'How the vault works'"
+   "text": "Built from your test history every morning; Today's three; weakest first; full mock every Sunday, Sunday never moves; reshuffles as your scores change",
+   "source": "portal My Plan page text (study.ipmcareer.com/plan), captured 25 Oct 2026"
+  },
+  {
+   "text": "Fixing the weakest moves your score most",
+   "source": "portal My Plan page: 'Fixing this moves your score most.'"
   }
  ]
 }

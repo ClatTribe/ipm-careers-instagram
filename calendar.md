@@ -16,14 +16,14 @@ Change a topic here. If `posts/<date>.json` already exists, edit or delete it to
 | 01 Nov 2026 | Sun | For parents (carousel) | Class 11 or Class 12: when should IPM prep start? |
 | 02 Nov 2026 | Mon | Prep checklist (carousel) | IIM B UGAT: 5 mistakes to avoid in the exam hall |
 | 03 Nov 2026 | Tue | Solve in 60 sec (2 slides) | IIM B UGAT 2025: alloys 40%, 50%, 80% mixed to 55%. Third alloy? |
-| 04 Nov 2026 | Wed | Inside the portal (carousel) | PYQ Papers: the real IIM B UGAT 2025 paper |
+| 04 Nov 2026 | Wed | Inside the portal (carousel) | Doubts: ask anything, Samjhao AI answers in seconds, mentor video if still stuck |
 | 05 Nov 2026 | Thu | Myth vs fact (single) | "IPMAT is only for maths toppers" |
 | 06 Nov 2026 | Fri | Word of the day (single) | Meticulous |
 | 07 Nov 2026 | Sat | Shortcut card (single) | Multiply any 2-digit number by 11 |
 | 08 Nov 2026 | Sun | For parents (carousel) | Exam week at home: how to help |
 | 09 Nov 2026 | Mon | Prep checklist (carousel) | IIM B UGAT exam-day checklist |
 | 10 Nov 2026 | Tue | Solve in 60 sec (2 slides) | IIM B UGAT 2025: centroid (4, 11). Area of the triangle? |
-| 11 Nov 2026 | Wed | Inside the portal (carousel) | Mistake Vault: your wrong answers, saved for you |
+| 11 Nov 2026 | Wed | Inside the portal (carousel) | My Plan: today's three tasks, weakest chapter first, full mock every Sunday |
 | 12 Nov 2026 | Thu | Myth vs fact (single) | "Short Answer questions have negative marking" (VERIFY on AIR 1) |
 | 13 Nov 2026 | Fri | Word of the day (single) | Ambiguous |
 | 14 Nov 2026 | Sat | Shortcut card (single) | Last digit of any power: the cycle of 4 |

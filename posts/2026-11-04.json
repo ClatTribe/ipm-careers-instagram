@@ -2,35 +2,53 @@
  "date": "2026-11-04",
  "content": {
   "type": "feature",
-  "feature": "PYQ Papers",
-  "promise": "The real IIM B UGAT 2025 paper,\n*on your phone.*",
-  "subtitle": "All 60 questions, with answers and solutions, in the PYQ section of the IPM Careers study portal.",
-  "screenshot": "screens/pyq-iimb.png",
-  "screenshotCaption": "The IIM Bangalore UG paper, on the IPM Careers study portal",
+  "feature": "Doubts",
+  "promise": "Stuck on a question?\n*Ask. Answer in seconds.*",
+  "subtitle": "Ask anything on the IPM Careers study portal. The answer stays here, forever findable.",
+  "screenshot": "screens/doubts-ask.png",
+  "sampleData": true,
+  "screenshotCaption": "Your doubts, on the IPM Careers study portal",
   "steps": [
    {
-    "title": "Attempt it as a full mock",
-    "detail": "One button turns the whole paper into a mock. Sit it in one go, like exam day."
+    "title": "Type it, or pick a wrong answer",
+    "detail": "Type any doubt, on any topic. Or tap Pick from my wrong answers to ask about a question you missed."
    },
    {
-    "title": "Practise by topic",
-    "detail": "Filter by year, topic or status: only the ones you got wrong, or the ones you starred."
+    "title": "AI answers in seconds",
+    "detail": "Samjhao AI writes out the working, step by step.",
+    "image": "screens/doubts-samjhao.png"
    },
    {
-    "title": "Check every answer",
-    "detail": "Try first. Then tap Show answer & solution under the question."
+    "title": "Not clear? Ask a mentor",
+    "detail": "A mentor replies with a video, usually within a day.",
+    "image": "screens/doubts-mentor.png",
+    "sampleData": true
+   },
+   {
+    "title": "Saved for revision",
+    "detail": "Every answer stays saved here. Exam week revision = scrolling your own doubts.",
+    "image": "screens/doubts-saved.png",
+    "sampleData": true
    }
   ],
-  "ctaTitle": "11 days to IIM B UGAT.\n*Start with the real paper.*",
-  "ctaLine": "PYQ section of the IPM Careers study portal.",
+  "ctaTitle": "Don't stay *stuck.*",
+  "ctaLine": "Doubts is on the IPM Careers study portal.",
   "button": "study.ipmcareer.com",
-  "where": "study.ipmcareer.com/pyqs"
+  "where": "On the portal: Review → Doubts"
  },
- "caption": "IIM B UGAT is on 15 Nov. The real 2025 paper is the best practice you can get 👇\n\nAll 60 questions are on the IPM Careers study portal. Attempt it as a full mock, filter by topic, and check every answer and solution.\n\nstudy.ipmcareer.com (link in bio)\n\n#IIMBUGAT #IIMBangalore #PYQ #IPMCareers #MockTest",
+ "caption": "Stuck on a question at 11 PM? 👇\n\nAsk it on the IPM Careers study portal. Samjhao AI answers in seconds. Still not clear? A mentor replies with a video, usually within a day. Every answer stays saved for revision.\n\nstudy.ipmcareer.com (link in bio)\n\n#IPMAT #IPMATPrep #IPMCareers #JIPMAT #StudySmart",
  "claims": [
   {
-   "text": "All 60 questions, answers and solutions; full mock; filters",
-   "source": "study.ipmcareer.com/pyqs, IIM Bangalore UG page"
+   "text": "Ask anything, answer stays forever findable; pick from wrong answers; AI answers in seconds, saved forever",
+   "source": "portal Doubts page text (study.ipmcareer.com, Review > Doubts), captured 25 Oct 2026"
+  },
+  {
+   "text": "a mentor replies with a video, usually within a day",
+   "source": "portal Doubts page, under 'Not clear? Ask a mentor', captured 22 Oct 2026"
+  },
+  {
+   "text": "Every answer stays saved here. Exam week revision = scrolling your own doubts.",
+   "source": "portal Doubts page footer"
   }
  ]
 }
