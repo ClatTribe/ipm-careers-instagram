@@ -42,6 +42,12 @@ elif [ "$MODE" = "reel" ]; then
   V=$(node -e "console.log(require('./$F').video)")
   [ -f "$V" ] || { log "FAIL: video $V missing"; exit 1; }
   ffmpeg -hide_banner -loglevel error -y -i "$V" -vf "fps=1/3,scale=240:-1,tile=8x1" -frames:v 1 "out/$DATE-reel-sheet.png" 2>/dev/null && log "review sheet: out/$DATE-reel-sheet.png"
+  # optional YouTube cut (e.g. the version with the answer reveal); Instagram always uses $V
+  YV=$(node -e "console.log(require('./$F').youtube?.video ?? '')")
+  if [ -n "$YV" ]; then
+    [ -f "$YV" ] || { log "FAIL: YouTube video $YV missing"; exit 1; }
+    ffmpeg -hide_banner -loglevel error -y -i "$YV" -vf "fps=1/3,scale=240:-1,tile=12x1" -frames:v 1 "out/$DATE-reel-yt-sheet.png" 2>/dev/null && log "YouTube cut: $YV (review sheet: out/$DATE-reel-yt-sheet.png)"
+  fi
   [ "$UPLOAD" = "0" ] && { node tools/upload-youtube.mjs "$F" --dry-run --publish-at "${DATE}T18:30:00+05:30"; log "checked only (--no-upload)"; exit 0; }
   # YouTube first: it is uploaded now and scheduled by YouTube itself to go public at 18:30.
   # A YouTube problem never blocks Instagram; it is reported at the end. Never upload twice in one run.

@@ -9,8 +9,8 @@
  * With --publish-at in the future, the video is uploaded as private and YouTube makes it public at
  * exactly that time. Otherwise it goes public immediately.
  *
- * Title and description come from the reel JSON: an optional "youtube": {title, description, tags}
- * block, else the first line of the Instagram caption and the caption itself.
+ * Title, description and video come from the reel JSON: an optional "youtube": {video, title, description, tags}
+ * block, else the reel video, the first line of the Instagram caption and the caption itself.
  *
  * Needs IPM_YOUTUBE_CLIENT_ID, IPM_YOUTUBE_CLIENT_SECRET, IPM_YOUTUBE_REFRESH_TOKEN
  * (made once with tools/youtube-login.py; scopes youtube.upload + youtube.readonly).
@@ -41,8 +41,8 @@ const missing = ["IPM_YOUTUBE_CLIENT_ID", "IPM_YOUTUBE_CLIENT_SECRET", "IPM_YOUT
 let body, file;
 if (!CHECK) {
   const reel = JSON.parse(readFileSync(jsonPath, "utf8"));
-  file = reel.video;
   const yt = reel.youtube ?? {};
+  file = yt.video ?? reel.video; // YouTube can get its own cut (e.g. with the answer reveal)
   const caption = reel.caption ?? "";
   const hashtags = [...caption.matchAll(/#(\w+)/g)].map((m) => m[1]);
   const firstLine = caption.split("\n").find((l) => l.trim()) ?? reel.id;

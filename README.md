@@ -42,3 +42,4 @@ Every reel also goes to the IPM Careers YouTube channel as a Short, scheduled fo
 - The Google project "IPM Careers YouTube Engine" is **In production**, so the key does not expire after 7 days. Its privacy policy is https://register.ipmcareer.com/privacy-policy.html
 - If Shorts arrive locked as private, the project needs Google's audit: Google Cloud Console, YouTube Data API v3, "API audit and quota extension" form.
 - Check the key: `node tools/upload-youtube.mjs --check`
+- **Two cuts:** a reel can have its own YouTube cut in `reels/<date>.json` → `youtube.video` (e.g. `media/reels/<date>-yt.mp4` with the answer reveal at the end, since Shorts reward watching to the end), while Instagram keeps the no-reveal cut that asks for comments. `youtube.title`/`description`/`tags` set the Shorts metadata (title under 100 characters, exam keyword + hashtags, no `<` or `>`).
