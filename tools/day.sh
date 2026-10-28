@@ -31,8 +31,11 @@ if [ "$MODE" = "post" ]; then
   node tools/make-stories.mjs "$DATE" >/dev/null
   node tools/render-story.mjs "stories/auto/$DATE-newpost.json"
   [ "$UPLOAD" = "0" ] && { log "rendered only (--no-upload)"; exit 0; }
-  node tools/upload-instagram.mjs post "$F" --publish-at "${DATE}T19:30:00+05:30" || exit 1
+  node tools/upload-instagram.mjs post "$F" --publish-at "${DATE}T19:30:00+05:30" | tee "out/$DATE-post.log"; [ "${PIPESTATUS[0]}" = "0" ] || exit 1
   node tools/share-links.mjs "$DATE" | tee "out/$DATE-share.txt" || log "WARN: could not make the download links"
+  # the owner's evening email (caption + slide links for the YouTube re-upload); never blocks posting
+  { echo "IPM Careers daily post"; echo; grep -o "https://www.instagram.com/[^ ]*" "out/$DATE-post.log" | head -1 | sed 's/^/Instagram: /'; echo; cat "out/$DATE-share.txt"; } > "out/$DATE-email.txt"
+  node tools/send-email.mjs "IPM Careers daily post: $DATE" "out/$DATE-email.txt" || log "WARN: email not sent"
   node tools/upload-instagram.mjs story "stories/auto/$DATE-newpost.json" --publish-at "${DATE}T19:31:00+05:30" || { log "PARTIAL: post live, Story failed"; exit 1; }
   log "DONE"
 elif [ "$MODE" = "reel" ]; then

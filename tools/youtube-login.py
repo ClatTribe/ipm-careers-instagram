@@ -14,7 +14,9 @@ It does not change any file of the comment engine. Standard library only; uses t
 """
 import http.server, json, os, secrets, subprocess, sys, urllib.parse, webbrowser
 
-SCOPES = "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly"
+GMAIL = "gmail" in sys.argv[1:]  # python3 youtube-login.py gmail  -> key that can only SEND email (for the daily post email)
+SCOPES = ("https://www.googleapis.com/auth/gmail.send" if GMAIL else
+          "https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly")
 PORT = 0  # 0 = let the Mac pick any free port (Desktop clients accept any loopback port)
 
 path = next((p for p in ["credentials/credentials.json", "credentials.json"] if os.path.exists(p)), None)
@@ -77,6 +79,15 @@ tok = curl(["https://oauth2.googleapis.com/token",
                                           "redirect_uri": redirect, "grant_type": "authorization_code"})])
 if "refresh_token" not in tok:
     sys.exit("Google did not return a key: " + str(tok.get("error_description") or tok.get("error") or tok) + "\nTell Claude this message.")
+
+if GMAIL:
+    out = os.path.expanduser("~/Desktop/ipm-gmail-key.txt")
+    with open(out, "w") as f:
+        f.write(f"IPM_GMAIL_REFRESH_TOKEN={tok['refresh_token']}\n")
+    os.chmod(out, 0o600)
+    print("SAVED: ipm-gmail-key.txt is on your Desktop (1 line).")
+    print("This key can only SEND email from the account you just picked. It cannot read your mail.")
+    sys.exit(0)
 
 ch = curl(["-H", "Authorization: Bearer " + tok["access_token"],
            "https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true"])

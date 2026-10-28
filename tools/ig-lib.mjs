@@ -5,16 +5,21 @@
  *
  * Environment variables (IPM_ prefix keeps them apart from EduAbroad's keys in the same environment):
  *   IPM_INSTAGRAM_ACCESS_TOKEN, IPM_INSTAGRAM_BUSINESS_ACCOUNT_ID, IPM_INSTAGRAM_USERNAME (e.g. ipmcareers)
+ *   IPM_INSTAGRAM_PAGE_TOKEN (optional, never-expiring System User key; used when it works, see checkAccount)
  *   CLOUDINARY_CLOUD_NAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET (shared)
  */
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
-const TOKEN = process.env.IPM_INSTAGRAM_ACCESS_TOKEN ?? "";
-export const IG_ID = process.env.IPM_INSTAGRAM_BUSINESS_ACCOUNT_ID ?? "";
+let TOKEN = process.env.IPM_INSTAGRAM_ACCESS_TOKEN ?? "";
+export let IG_ID = process.env.IPM_INSTAGRAM_BUSINESS_ACCOUNT_ID ?? "";
 // "IGAA..." = Instagram Login token (graph.instagram.com); otherwise a Facebook Page / System User token
-export const GRAPH = TOKEN.startsWith("IGAA") ? "https://graph.instagram.com/v21.0" : "https://graph.facebook.com/v21.0";
+export let GRAPH = TOKEN.startsWith("IGAA") ? "https://graph.instagram.com/v21.0" : "https://graph.facebook.com/v21.0";
+// Never-expiring System User key (optional). checkAccount() switches to it when it works for the right
+// account, and falls back to IPM_INSTAGRAM_ACCESS_TOKEN otherwise (so adding it can never break posting).
+const PAGE_TOKEN = process.env.IPM_INSTAGRAM_PAGE_TOKEN ?? "";
+const PAGE_IG_ID = process.env.IPM_INSTAGRAM_PAGE_ACCOUNT_ID || "17841439684789656";
 const CLD = { cloud: process.env.CLOUDINARY_CLOUD_NAME, key: process.env.CLOUDINARY_API_KEY, secret: process.env.CLOUDINARY_API_SECRET };
 
 export const REQUIRED_ENV = ["IPM_INSTAGRAM_ACCESS_TOKEN", "IPM_INSTAGRAM_BUSINESS_ACCOUNT_ID", "IPM_INSTAGRAM_USERNAME", "CLOUDINARY_CLOUD_NAME", "CLOUDINARY_API_KEY", "CLOUDINARY_API_SECRET"];
@@ -34,8 +39,18 @@ export async function graph(p, params = {}, method = "POST") {
 
 /** Safety check: refuse to post unless the token belongs to the IPM Careers account. */
 export async function checkAccount() {
-  const me = await graph(IG_ID, { fields: "username" }, "GET");
   const want = (process.env.IPM_INSTAGRAM_USERNAME ?? "").replace(/^@/, "").toLowerCase();
+  if (PAGE_TOKEN && TOKEN !== PAGE_TOKEN) {
+    try {
+      const qs = new URLSearchParams({ fields: "username", access_token: PAGE_TOKEN });
+      const r = await (await fetch(`https://graph.facebook.com/v21.0/${PAGE_IG_ID}?${qs}`)).json();
+      if (want && r.username?.toLowerCase() === want) {
+        TOKEN = PAGE_TOKEN; IG_ID = PAGE_IG_ID; GRAPH = "https://graph.facebook.com/v21.0";
+        console.log("     key: never-expiring System User key");
+      } else console.log(`     WARN new key not usable (${r.error?.message ?? `account @${r.username}`}); using the old key`);
+    } catch (e) { console.log(`     WARN new key check failed (${e.message}); using the old key`); }
+  }
+  const me = await graph(IG_ID, { fields: "username" }, "GET");
   if (!want || me.username?.toLowerCase() !== want)
     throw new Error(`token is for @${me.username}, expected @${want || "(IPM_INSTAGRAM_USERNAME not set)"}; not posting`);
   return me.username;

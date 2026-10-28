@@ -46,7 +46,7 @@ bash tools/day.sh post "$DATE"                                       # FOREGROUN
 The uploader refuses to post unless the token belongs to the IPM Careers account.
 
 ## 5. Final report
-**Post** (becomes the owner's evening email and phone notification). The owner re-uploads each post to YouTube by hand, so the report must contain, in this order:
+**Post** (the phone notification; `day.sh` also emails the caption and links itself via `tools/send-email.mjs` when `IPM_GMAIL_REFRESH_TOKEN` is set. If the post is skipped or fails, send the report yourself: write it to a file and run `node tools/send-email.mjs "IPM Careers daily post: $DATE NOT POSTED" file`). The owner re-uploads each post to YouTube by hand, so the report must contain, in this order:
 0. First line, exactly: `IPM Careers daily post` (the owner's Gmail filter forwards emails using this line).
 1. Date, format, topic, and the Instagram link (or the error).
 2. The full caption and the download links, copied exactly from `out/$DATE-share.txt`.
