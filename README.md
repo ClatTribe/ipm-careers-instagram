@@ -43,3 +43,9 @@ Every reel also goes to the IPM Careers YouTube channel as a Short, scheduled fo
 - If Shorts arrive locked as private, the project needs Google's audit: Google Cloud Console, YouTube Data API v3, "API audit and quota extension" form.
 - Check the key: `node tools/upload-youtube.mjs --check`
 - **Two cuts:** a reel can have its own YouTube cut in `reels/<date>.json` → `youtube.video` (e.g. `media/reels/<date>-yt.mp4` with the answer reveal at the end, since Shorts reward watching to the end), while Instagram keeps the no-reveal cut that asks for comments. `youtube.title`/`description`/`tags` set the Shorts metadata (title under 100 characters, exam keyword + hashtags, no `<` or `>`).
+
+## Question reels from 6 Nov 2026
+- Every question reel (PYQ and challenge) has a voice-over (ElevenLabs, voice "Monika", Indian English) and shows the solution in the video.
+- The same file goes to Instagram and YouTube (no separate "-yt" version, no next-morning answer Story).
+- Exam names are spelled out in the voice ("I I M B, U G A T"). No voice credit line is needed in captions.
+- Made in the ipm-question-shorts project: `npx tsx scripts/make-voice.ts <id> --eleven` (needs ELEVENLABS_API_KEY, ELEVEN_VOICE_ID=2zRM7PkgwBPiau2jvVXc).
