@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-11",
+ "id": "pyq-iimb-2025-directions",
+ "video": "media/reels/2026-11-11.mp4",
+ "format": "PYQ (voice: ElevenLabs, Monika; solution in the video; same file on Instagram and YouTube)",
+ "caption": "This came in IIM B UGAT 2025 👀\n\nAnju drives 18 km west, turns right for 14 km, right for 9 km, then right for 2 km. How far is she from the start?\n\nPause, try it, and comment your answer before the solution shows 👇\n\nThe full 2025 paper is on the IPM Careers portal: study.ipmcareer.com\n\n#IIMBUGAT #IIMBangalore #PYQ #IPMCareers #LogicalReasoning",
+ "answer": "(a) 15 km: F is 9 km west and 12 km north of the start, and the square root of (81 + 144) is 15",
+ "claims": [
+  {
+   "text": "IIM B UGAT 2025 question",
+   "source": "Portal PYQ bank, IIM B UGAT 2025 (verified), answer 15 km; path rechecked by code"
+  }
+ ],
+ "youtube": {
+  "title": "IIM B UGAT 2025 PYQ: how far is F? Directions in 30 sec | #iimbangalore #ipmat #shorts",
+  "description": "This came in IIM B UGAT 2025 👀\n\nAnju drives 18 km west, turns right for 14 km, right for 9 km, then right for 2 km. How far is she from the start?\n\nPause, try it, then watch the solution. The full 2025 paper is on the IPM Careers portal: study.ipmcareer.com\n\n#IIMBUGAT #IIMBangalore #PYQ #IPMCareers",
+  "tags": [
+   "IIM B UGAT",
+   "IIM Bangalore",
+   "IIM B UGAT 2025",
+   "PYQ",
+   "direction sense",
+   "logical reasoning",
+   "IPMAT",
+   "IPMAT 2027",
+   "IPM Careers"
+  ]
+ }
+}
