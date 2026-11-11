@@ -1,0 +1,36 @@
+{
+ "date": "2026-11-19",
+ "content": {
+  "type": "solve",
+  "hook": "From *IPMAT Indore 2024.*\nCan you solve it?",
+  "paperHead": "IPMAT INDORE 2024 · QA · MCQ",
+  "stamp": "ASKED IN 2024",
+  "lines": [
+   "The smallest possible number of students in",
+   "a class if the girls in the class are less",
+   "than 50% but more than 48% is"
+  ],
+  "options": [
+   "27",
+   "100",
+   "200",
+   "25"
+  ],
+  "working": [
+   "g girls out of n: 0.48n < g < 0.5n",
+   "n = 25: 12 < g < 12.5, no whole number",
+   "n = 26: 12.48 < g < 13, no whole number",
+   "n = 27: 12.96 < g < 13.5, so g = {purple:13}",
+   "Smallest class = {purple:27}"
+  ],
+  "answer": "27",
+  "takeaway": "Try the {b:smallest} options first. 25 and 26 fail, 27 works."
+ },
+ "caption": "IPMAT Indore 2024: girls are more than 48% but less than 50% of a class. Smallest possible class size? ⏱ 60 seconds.\n\nComment your answer, then swipe for the solution.\n\nAll IPMAT papers: study.ipmcareer.com (link in bio)\n\n#IPMAT #IPMATIndore #PYQ #IPMCareers #IPMAT2027",
+ "claims": [
+  {
+   "text": "IPMAT Indore 2024 question",
+   "source": "portal PYQ bank, id 446, verified, answer 27; rechecked by code (n = 27, g = 13)"
+  }
+ ]
+}

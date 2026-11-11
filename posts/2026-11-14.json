@@ -1,0 +1,17 @@
+{
+ "date": "2026-11-14",
+ "content": {
+  "type": "shortcut",
+  "kicker": "Quant · Number system",
+  "title": "Last digit of any power,\n*in 10 seconds.*",
+  "formulaLabel": "THE TRICK",
+  "formula": "aⁿ: use n ÷ 4",
+  "legend": "last digits repeat every 4 powers: divide n by 4 and use the remainder (take 4 if it is 0)",
+  "example": [
+   "7²³: cycle is 7, 9, 3, 1",
+   "23 ÷ 4 leaves 3 → {green:3}"
+  ]
+ },
+ "caption": "Last digit of any power in 10 seconds ✍️\n\n7²³: the cycle is 7, 9, 3, 1, and 23 ÷ 4 leaves 3, so it ends in 3.\n\nYour turn: last digit of 3²⁰²⁶? Comment below 👇\n\n#IPMAT #IPMATQuant #MathsTricks #IPMCareers #JIPMAT",
+ "claims": []
+}

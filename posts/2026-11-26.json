@@ -1,0 +1,29 @@
+{
+ "date": "2026-11-26",
+ "content": {
+  "type": "solve",
+  "hook": "From *IPMAT Indore 2022.*\nCan you solve it?",
+  "paperHead": "IPMAT INDORE 2022 · QA · SHORT ANSWER",
+  "stamp": "ASKED IN 2022",
+  "lines": [
+   "The area enclosed by",
+   "2|x| + 3|y| ≤ 6 is ________ sq. units."
+  ],
+  "working": [
+   "|x| and |y|: the shape is the same in all 4 quadrants",
+   "First quadrant: 2x + 3y = 6",
+   "It meets the axes at (3, 0) and (0, 2)",
+   "Triangle area = ½ × 3 × 2 = 3",
+   "4 quadrants: 4 × 3 = {purple:12}"
+  ],
+  "answer": "12",
+  "takeaway": "Mod signs mean {b:symmetry}. Solve one quadrant, then multiply by 4."
+ },
+ "caption": "IPMAT Indore 2022, Short Answer: what area does 2|x| + 3|y| ≤ 6 enclose? ⏱ 60 seconds.\n\nComment your answer, then swipe for the solution.\n\nAll IPMAT papers: study.ipmcareer.com (link in bio)\n\n#IPMAT #IPMATIndore #PYQ #IPMCareers #IPMAT2027",
+ "claims": [
+  {
+   "text": "IPMAT Indore 2022 question",
+   "source": "portal PYQ bank, id 449, verified, answer 12; rechecked by code (shoelace area of (3,0),(0,2),(−3,0),(0,−2) = 12)"
+  }
+ ]
+}

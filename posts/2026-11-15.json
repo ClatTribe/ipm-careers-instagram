@@ -1,0 +1,35 @@
+{
+ "date": "2026-11-15",
+ "content": {
+  "type": "parents",
+  "kicker": "For parents",
+  "title": "Exam day is done.\n*What comes next?*",
+  "subtitle": "IIM B UGAT is today. Three ways to help your child plan the next step.",
+  "qa": [
+   {
+    "q": "Should we discuss the paper tonight?",
+    "a": "Let them rest first. A short chat tomorrow about what went well and what felt hard helps more than a post-mortem tonight."
+   },
+   {
+    "q": "What is the next big exam?",
+    "a": "For most IPM aspirants it is IPMAT Indore 2027, which IIM Indore has announced for Saturday, 24 April 2027."
+   },
+   {
+    "q": "How can I help now?",
+    "a": "Help them settle into a steady weekly routine: regular practice, one mock a week and enough sleep.",
+    "note": "Always check the official websites for dates and eligibility."
+   }
+  ]
+ },
+ "caption": "Exam day is done. Three ways to help your child plan what comes next 👇\n\nQuestions? Message us on WhatsApp: wa.me/918299470392\n\n#IIMBUGAT #Parents #IPMAT2027 #IPMCareers #IPMAT",
+ "claims": [
+  {
+   "text": "IIM B UGAT on 15 Nov",
+   "source": "owner, 23 Oct 2026"
+  },
+  {
+   "text": "IPMAT Indore 2027 on Saturday, 24 April 2027, afternoon shift",
+   "source": "AIR 1 Command Center (register.ipmcareer.com/air1commandcenter), checked 11 Nov 2026: \"Saturday, 24 April 2027 · Afternoon shift. Official date announced by IIM Indore on 9 Nov 2026.\""
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "date": "2026-11-30",
+ "content": {
+  "type": "checklist",
+  "kicker": "IPMAT 2027 · mock review",
+  "title": "Review a mock\n*in 30 minutes.*",
+  "subtitle": "The marks are in the review, not in the mock. Five steps.",
+  "steps": [
+   {
+    "title": "Sort every question",
+    "detail": "Mark each one: right, wrong, skipped or guessed."
+   },
+   {
+    "title": "Wrongs first",
+    "detail": "For each wrong answer, write one line: concept gap, silly mistake or time pressure."
+   },
+   {
+    "title": "Check the skipped ones",
+    "detail": "Some skipped questions were easy. Find them: that is free marks next time."
+   },
+   {
+    "title": "Note the time sinks",
+    "detail": "List questions that took over two minutes and learn a faster method for each."
+   },
+   {
+    "title": "Redo, then retest",
+    "detail": "Redo the wrong ones today, and again a few days later."
+   }
+  ],
+  "saveTitle": "Save this for *your next mock.*",
+  "saveLine": "Send it to a friend who takes mocks but never reviews them."
+ },
+ "caption": "The marks are in the review, not in the mock 👇\n\nReview any mock in 30 minutes:\n1. Sort every question\n2. Wrongs first\n3. Check the skipped ones\n4. Note the time sinks\n5. Redo, then retest\n\nSave this 📌\n\n#IPMAT #IPMAT2027 #MockTest #IPMCareers #IPMATPrep",
+ "claims": []
+}
