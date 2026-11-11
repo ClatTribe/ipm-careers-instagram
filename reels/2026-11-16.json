@@ -1,0 +1,32 @@
+{
+ "date": "2026-11-16",
+ "id": "pyq-ipmat-2025-circle",
+ "video": "media/reels/2026-11-16.mp4",
+ "format": "PYQ (voice: ElevenLabs, Monika; solution in the video; same file on Instagram and YouTube)",
+ "caption": "This came in IPMAT Indore 2025 👀\n\nA circle touches the y-axis at (0, 4) and passes through (−2, 0). What is its radius? (a) 4 (b) 5 (c) 6 (d) 7\n\nPause, try it, and comment your answer before the solution shows 👇\n\nEvery IPMAT Indore paper from 2019 to 2026 is on the IPM Careers portal: study.ipmcareer.com\n\n#IPMAT #IPMAT2027 #IPMATIndore #PYQ #IPMCareers",
+ "answer": "(b) 5: the centre is (−r, 4); r² = (r − 2)² + 4² gives 4r = 20, so r = 5",
+ "claims": [
+  {
+   "text": "IPMAT Indore 2025 question",
+   "source": "Portal PYQ bank, IPMAT Indore 2025, question 521 (verified), answer 5; rechecked by code"
+  },
+  {
+   "text": "papers from 2019 to 2026 on the portal",
+   "source": "Portal PYQ page: IPMAT Indore years 2019 to 2026 listed (captured)"
+  }
+ ],
+ "youtube": {
+  "title": "IPMAT 2025 PYQ: find the radius in 30 sec | IPMAT 2027 Quant | #ipmat #ipmat2027 #shorts",
+  "description": "This came in IPMAT Indore 2025 👀\n\nA circle touches the y-axis at (0, 4) and passes through (−2, 0). What is its radius?\n\nPause, try it, then watch the solution. Every IPMAT Indore paper from 2019 to 2026 is on the IPM Careers portal: study.ipmcareer.com\n\n#IPMAT #IPMAT2027 #IPMATIndore #IPMCareers",
+  "tags": [
+   "IPMAT",
+   "IPMAT 2027",
+   "IPMAT Indore",
+   "IPMAT 2025",
+   "PYQ",
+   "coordinate geometry",
+   "circle",
+   "IPM Careers"
+  ]
+ }
+}
