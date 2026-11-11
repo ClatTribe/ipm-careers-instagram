@@ -1,29 +1,18 @@
 {
  "date": "2026-11-26",
  "content": {
-  "type": "solve",
-  "hook": "From *IPMAT Indore 2022.*\nCan you solve it?",
-  "paperHead": "IPMAT INDORE 2022 · QA · SHORT ANSWER",
-  "stamp": "ASKED IN 2022",
-  "lines": [
-   "The area enclosed by",
-   "2|x| + 3|y| ≤ 6 is ________ sq. units."
-  ],
-  "working": [
-   "|x| and |y|: the shape is the same in all 4 quadrants",
-   "First quadrant: 2x + 3y = 6",
-   "It meets the axes at (3, 0) and (0, 2)",
-   "Triangle area = ½ × 3 × 2 = 3",
-   "4 quadrants: 4 × 3 = {purple:12}"
-  ],
-  "answer": "12",
-  "takeaway": "Mod signs mean {b:symmetry}. Solve one quadrant, then multiply by 4."
+  "type": "shortcut",
+  "kicker": "Quant · Number system",
+  "title": "Divisible by 3, 9 or 11?\n*Check in 5 seconds.*",
+  "formulaLabel": "THE RULES",
+  "formula": "digit sum, alt sum",
+  "legend": "3 or 9: add the digits. 11: the alternate-digit difference is 0 or a multiple of 11",
+  "example": [
+   "7425: digit sum 18",
+   "→ divisible by 3 and 9",
+   "(5 + 4) − (2 + 7) = 0 → {green:by 11}"
+  ]
  },
- "caption": "IPMAT Indore 2022, Short Answer: what area does 2|x| + 3|y| ≤ 6 enclose? ⏱ 60 seconds.\n\nComment your answer, then swipe for the solution.\n\nAll IPMAT papers: study.ipmcareer.com (link in bio)\n\n#IPMAT #IPMATIndore #PYQ #IPMCareers #IPMAT2027",
- "claims": [
-  {
-   "text": "IPMAT Indore 2022 question",
-   "source": "portal PYQ bank, id 449, verified, answer 12; rechecked by code (shoelace area of (3,0),(0,2),(−3,0),(0,−2) = 12)"
-  }
- ]
+ "caption": "Divisible by 3, 9 or 11? Check in 5 seconds 📌\n\n3 and 9: add the digits. 7425 → 18, so it divides by both.\n11: alternate sum. (5 + 4) − (2 + 7) = 0, so 7425 divides by 11 too.\n\nSave this for your next number system set.\n\n#IPMAT #IPMAT2027 #MathsTricks #IPMCareers #NumberSystem",
+ "claims": []
 }

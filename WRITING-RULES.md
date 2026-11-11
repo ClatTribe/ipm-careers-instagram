@@ -9,5 +9,5 @@
   Never claim a reply time for doubts.
 - Never name competitors. Never promise a seat, score or result.
 - Captions: at most 5 hashtags; one call to action (study.ipmcareer.com, or WhatsApp wa.me/918299470392).
-- Weekly formats: Mon checklist, Tue solve in 60 sec, Wed inside the portal, Thu myth vs fact, Fri word of the day,
+- Weekly formats (from 16 Nov 2026): Mon checklist, Thu shortcut card, Sun for parents. No "solve a question" feed posts (the reels solve questions). Older formats were: Tue solve in 60 sec, Wed inside the portal, Thu myth vs fact, Fri word of the day,
   Sat shortcut card, Sun for parents. Copy an existing post of the same format.
