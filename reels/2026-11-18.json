@@ -1,0 +1,27 @@
+{
+ "date": "2026-11-18",
+ "id": "race-finish-puzzle",
+ "video": "media/reels/2026-11-18.mp4",
+ "format": "LR puzzle (Voiced (ElevenLabs, Monika); solution in the video; same file on Instagram and YouTube)",
+ "caption": "5 runners, 4 clues. Who finished 4th? 🏃\n\n1. T finished first.\n2. P finished right after Q.\n3. P finished before R.\n4. Exactly one runner between Q and S.\n\nPause, try it, and comment your answer before the solution shows 👇\n\nRanking puzzles like this come up in IPMAT Rohtak, JIPMAT and IIM B UGAT LR.\n\n#LogicalReasoning #IPMAT #IPMAT2027 #IPMCareers #Puzzle",
+ "answer": "S (1st to 5th: T, Q, P, S, R)",
+ "claims": [
+  {
+   "text": "one answer",
+   "source": "original, checked by computer over all 120 orders: exactly one fits, and dropping any clue gives more than one"
+  }
+ ],
+ "youtube": {
+  "title": "5 runners, 4 clues: who finished 4th? | IPMAT 2027 LR | #ipmat #ipmat2027 #shorts",
+  "description": "5 runners, 4 clues. Who finished 4th? 🏃\n\nPause, try it, then watch the solution.\n\nRanking puzzles like this come up in IPMAT Rohtak, JIPMAT and IIM B UGAT LR.\n\n#LogicalReasoning #IPMAT #IPMAT2027 #IPMCareers",
+  "tags": [
+   "IPMAT",
+   "IPMAT 2027",
+   "IPMAT Rohtak",
+   "JIPMAT",
+   "logical reasoning",
+   "ranking puzzle",
+   "IPM Careers"
+  ]
+ }
+}

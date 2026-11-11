@@ -1,0 +1,32 @@
+{
+ "date": "2026-11-20",
+ "id": "pyq-ipmat-2024-fruits",
+ "video": "media/reels/2026-11-20.mp4",
+ "format": "PYQ, Short Answer (Voiced (ElevenLabs, Monika); solution in the video; same file on Instagram and YouTube)",
+ "caption": "This came in IPMAT Indore 2024 👀\n\nOranges : apples : bananas = 3 : 6 : 7. The number of oranges is a multiple of both 5 and 6. What is the minimum number of fruits?\n\nPause, try it, and comment your answer before the solution shows 👇\n\nEvery IPMAT Indore paper from 2019 to 2026 is on the IPM Careers portal: study.ipmcareer.com\n\n#IPMAT #IPMAT2027 #IPMATIndore #PYQ #IPMCareers",
+ "answer": "160: oranges 3k must be a multiple of 30, so k = 10 and the total is 16k = 160",
+ "claims": [
+  {
+   "text": "IPMAT Indore 2024 question",
+   "source": "Portal PYQ bank, IPMAT Indore 2024, question 416 (verified), answer 160; rechecked by code"
+  },
+  {
+   "text": "papers from 2019 to 2026 on the portal",
+   "source": "Portal PYQ page: IPMAT Indore years 2019 to 2026 listed (captured)"
+  }
+ ],
+ "youtube": {
+  "title": "IPMAT 2024 PYQ: the fewest fruits? Ratio trick | IPMAT 2027 Quant | #ipmat #ipmat2027 #shorts",
+  "description": "This came in IPMAT Indore 2024 👀\n\nOranges : apples : bananas = 3 : 6 : 7, and the oranges are a multiple of both 5 and 6. What is the minimum number of fruits?\n\nPause, try it, then watch the solution. Every IPMAT Indore paper from 2019 to 2026 is on the IPM Careers portal: study.ipmcareer.com\n\n#IPMAT #IPMAT2027 #IPMATIndore #IPMCareers",
+  "tags": [
+   "IPMAT",
+   "IPMAT 2027",
+   "IPMAT Indore",
+   "IPMAT 2024",
+   "PYQ",
+   "ratio",
+   "short answer",
+   "IPM Careers"
+  ]
+ }
+}
