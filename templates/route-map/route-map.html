@@ -87,6 +87,8 @@ function coverMap(D) {
     const y0 = hubY[key], y1 = g.row, end = g.st[g.st.length - 1];
     const pts = straight.includes(key) ? `${hubX},${y0} ${end},${y1}` : `${hubX},${y0} ${g.bend},${y0} ${g.bend + Math.abs(y1 - y0)},${y1} ${end},${y1}`;
     s += `<polyline points="${pts}" fill="none" stroke="${ln.color}" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" ${ln.dashed ? 'stroke-dasharray="2 26"' : ''}/>`;
+    // optional line title written on the track just after the bend (campus maps)
+    if (g.title) s += `<text x="${g.titleX || (straight.includes(key) ? hubX : g.bend + Math.abs(y1 - y0)) + 18}" y="${y1 - 26}" font-size="${g.titleSize || 26}" font-weight="800" fill="${ln.ink || '#1E1A13'}">${g.title}</text>`;
     g.st.forEach((x, k) => {
       s += `<circle cx="${x}" cy="${y1}" r="15" fill="#fff" stroke="${ln.color}" stroke-width="8"/>`;
       const parts = g.lab[k].split('|'), ly = g.below[k] ? y1 + 50 : y1 - 30 - (parts.length - 1) * 27;
@@ -96,7 +98,8 @@ function coverMap(D) {
   const hy = C.hubRect || [270, 180];
   s += `<rect x="${hubX - 34}" y="${hy[0]}" width="68" height="${hy[1]}" rx="34" fill="#fff" stroke="#1E1A13" stroke-width="7"/>`;
   (C.hubLabel || ['After', 'Class 12']).forEach((t, i) => { s += `<text x="${hubX}" y="${hy[0] + hy[1] + 50 + i * 28}" text-anchor="middle" font-size="22" font-weight="800" fill="#1E1A13">${t}</text>`; });
-  return `<svg width="1000" height="680" viewBox="0 0 1000 680">${s}</svg>`;
+  const mh = C.mapH || 680;
+  return `<svg width="1000" height="${mh}" viewBox="0 0 1000 ${mh}">${s}</svg>`;
 }
 
 function render(D) {
@@ -105,18 +108,18 @@ function render(D) {
     app.innerHTML = `<div class="glow" style="background:#893783;left:-300px;top:-260px"></div>
       ${head((D.cover && D.cover.pill) || 'IPM CAREERS GUIDE')}
       <div style="position:absolute;top:178px;left:72px;right:72px">
-        <h1>${(D.cover && D.cover.title) || 'IIM Route Map <b>2027</b>'}</h1>
+        <h1${D.cover && D.cover.titleSize ? ` style="font-size:${D.cover.titleSize}px"` : ''}>${(D.cover && D.cover.title) || 'IIM Route Map <b>2027</b>'}</h1>
         <div class="sub">${(D.cover && D.cover.sub) || 'Which exam takes you to <em>which IIM?</em>'}</div>
       </div>
-      <div style="position:absolute;top:385px;left:40px">${coverMap(D)}</div>
-      <div class="legend" style="top:1088px">${D.lines.map(l => `<div class="lg"><i style="background:${l.color};${l.dashed ? 'background:repeating-linear-gradient(90deg,' + l.color + ' 0 8px,transparent 8px 16px)' : ''}"></i>${l.short}<span>${l.legendRight || `${l.stations.length} stop${l.stations.length > 1 ? 's' : ''}`}</span></div>`).join('')}</div>
+      <div style="position:absolute;top:${(D.cover && D.cover.mapTop) || 385}px;left:40px">${coverMap(D)}</div>
+      <div class="legend" style="top:${(D.cover && D.cover.legendTop) || 1088}px">${D.lines.map(l => `<div class="lg"><i style="background:${l.color};${l.dashed ? 'background:repeating-linear-gradient(90deg,' + l.color + ' 0 8px,transparent 8px 16px)' : ''}"></i>${l.short}<span>${l.legendRight || `${l.stations.length} stop${l.stations.length > 1 ? 's' : ''}`}</span></div>`).join('')}</div>
       ${foot(1, total, '<span class="swipe">Swipe →</span>')}`;
     return;
   }
   if (S <= D.lines.length + 1) {
     const l = D.lines[S - 2], n = l.stations.length, big = n <= 3;
     // optional route strip: Class 12 interchange -> this line's stops, drawn large
-    let strip = '', cardTop = 400;
+    let strip = '', cardTop = l.cardTop || 400;
     if (big) {
       const xs = l.stripX || (n === 1 ? [760] : n === 2 ? [560, 820] : [430, 640, 850]);
       let g = `<polyline points="80,90 ${xs[xs.length - 1]},90" fill="none" stroke="${l.color}" stroke-width="20" stroke-linecap="round" ${l.dashed ? 'stroke-dasharray="2 34"' : ''}/>`;
@@ -128,7 +131,7 @@ function render(D) {
       cardTop = 584;
     }
     const hasVia = l.stations.some((x) => x.via);
-    const gap = n > 4 ? 80 : hasVia ? 112 : 128, padTop = n > 4 ? 38 : 44, x0 = 60;
+    const gap = l.gap || (n > 4 ? 80 : hasVia ? 112 : 128), padTop = n > 4 ? 38 : 44, x0 = 60;
     const cardH = padTop * 2 + (n - 1) * gap + (hasVia ? 86 : 64);
     const stations = l.stations.map((st, k) => `
       <div class="stn" style="position:absolute;left:${x0}px;top:${padTop + k * gap - 4}px;right:40px">
@@ -147,7 +150,7 @@ function render(D) {
       </div>
       ${strip}
       <div class="card" style="top:${cardTop}px;height:${cardH}px">${track}${stations}</div>
-      <div class="ticket" style="top:${tTop}px"><div class="stub" style="background:${l.color}"><span>ROUTE PASS</span></div><div class="perf"></div>
+      <div class="ticket" style="top:${tTop}px${l.ticketMin ? `;min-height:${l.ticketMin}px` : ''}"><div class="stub" style="background:${l.color}"><span>ROUTE PASS</span></div><div class="perf"></div>
         <div class="body">${rows.map(([k, v]) => `<div class="k">${k}</div><div class="v">${v}</div>`).join('')}</div></div>
       ${foot(S, total, 'ipmcareer.com')}`;
     // a station name that wraps to a second line pushes the stops below it (and the card + ticket) down
