@@ -1,0 +1,59 @@
+{
+ "content": {
+  "type": "route-map",
+  "template": "templates/route-map/route-map.html",
+  "data": "templates/route-map/nmims.json",
+  "slides": "out/route-map-nmims/",
+  "slide_count": 4,
+  "note": "Undated sample: never auto-posts. Render with node tools/render-route-map.mjs templates/route-map/nmims.json out/route-map-nmims. If NPAT 2027 dates are announced, update the Timetable line and the ticket NOTE first. christuniversity.in, www.christuniversity.in, espro.christuniversity.in, nmims.edu, www.nmims.edu, npat.nmims.edu, applications.nmims.edu were blocked by the network proxy on 12 Nov 2026, so no official-site claim is used and no campus is named."
+ },
+ "caption": "Save this for when NPAT 2027 opens 📌\n\nYour NMIMS route map for 2027. One exam, four programmes:\n\n🔴 IPM (5 years)\n🔴 BBA (3 years)\n🔴 BBA (International Business)\n🔴 Bachelor in Business Management & Marketing\n\nThe timetable line:\n🟠 2027 dates: not announced yet\n🟠 Last cycle: 28 Jan to 26 May 2026\n🟠 2026 fee: ₹2,000\n🟠 Check npat.nmims.edu, the official site\n\nIs NMIMS on your list with IPMAT? Tell us in the comments 👇\nSend this to the friend who keeps asking \"when is NPAT?\"\n\n#NPAT2027 #NMIMS #IPMAT2027 #IPMCareers",
+ "claims": [
+  {
+   "claim": "NMIMS programmes through NPAT 2027: IPM (5 years), BBA (3 years), BBA (International Business), Bachelor in Business Management & Marketing",
+   "quote": "NMIMS (NPAT 2027) / IPM (5 Years), BBA (3 Years), BBA (International Business), Bachelor in Business Management & Marketing",
+   "source": "AIR 1 Command Center forms page, https://register.ipmcareer.com/air1commandcenter/forms (page says \"Updated 1 Nov 2026\", checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Exam accepted: NPAT 2027",
+   "quote": "Exam Accepted: NPAT 2027",
+   "source": "AIR 1 Command Center forms page, https://register.ipmcareer.com/air1commandcenter/forms (page says \"Updated 1 Nov 2026\", checked 12 Nov 2026)"
+  },
+  {
+   "claim": "NPAT 2027 dates not announced yet",
+   "quote": "2027 dates: Not announced yet",
+   "source": "AIR 1 Command Center forms page, https://register.ipmcareer.com/air1commandcenter/forms (page says \"Updated 1 Nov 2026\", checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Last cycle: 28 Jan to 26 May 2026",
+   "quote": "LAST CYCLE 28 Jan to 26 May 2026",
+   "source": "AIR 1 Command Center forms page, https://register.ipmcareer.com/air1commandcenter/forms (page says \"Updated 1 Nov 2026\", checked 12 Nov 2026)"
+  },
+  {
+   "claim": "2026 fee ₹2,000",
+   "quote": "2026 fee ₹2,000",
+   "source": "AIR 1 Command Center forms page, https://register.ipmcareer.com/air1commandcenter/forms (page says \"Updated 1 Nov 2026\", checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Official site npat.nmims.edu",
+   "quote": "Official site link on the NMIMS (NPAT 2027) card: https://npat.nmims.edu/",
+   "source": "AIR 1 Command Center forms page, https://register.ipmcareer.com/air1commandcenter/forms (page says \"Updated 1 Nov 2026\", checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Portal: 1,988 past-paper questions (IPMAT Indore 2019 to 2026, IPMAT Rohtak 2019 to 2023, JIPMAT 2021 to 2025, IIM B UGAT 2025)",
+   "source": "IPM Careers study portal, PYQ Papers page (study.ipmcareer.com, captured 26 Oct 2026)"
+  },
+  {
+   "claim": "Portal: full mocks including 15 IIM B UGAT mocks, Mistake Vault, Samjhao AI and ask a mentor",
+   "source": "IPM Careers study portal captures (study.ipmcareer.com, Oct 2026)"
+  },
+  {
+   "claim": "CUET, NMIMS and CHRIST prep: coming soon on the IPM Careers portal",
+   "source": "Owner brief for this carousel (the directive's own wording); not a feature claim about today's portal"
+  },
+  {
+   "claim": "QR code opens https://study.ipmcareer.com",
+   "source": "Same qr-study.png as the IIM Route Map (decoded with OpenCV after generation)"
+  }
+ ]
+}

@@ -1,0 +1,189 @@
+{
+ "cover": {
+  "title": "CHRIST Route Map <b>2027</b>",
+  "sub": "Three BBA stops, <em>one entrance test.</em>",
+  "order": [
+   "prog",
+   "dates"
+  ],
+  "hubY": {
+   "prog": 320,
+   "dates": 400
+  },
+  "straight": [],
+  "geo": {
+   "prog": {
+    "row": 150,
+    "bend": 134,
+    "st": [
+     420,
+     640,
+     870
+    ],
+    "lab": [
+     "BBA",
+     "BBA (Hons)",
+     "BBA (Hons|with Research)"
+    ],
+    "below": [
+     0,
+     0,
+     0
+    ]
+   },
+   "dates": {
+    "row": 500,
+    "bend": 134,
+    "st": [
+     330,
+     520,
+     720,
+     900
+    ],
+    "lab": [
+     "Apply by|25 Nov",
+     "Test|5 Dec",
+     "Interviews|11 to 13 Dec",
+     "Final list|21 Dec"
+    ],
+    "below": [
+     1,
+     1,
+     1,
+     1
+    ]
+   }
+  }
+ },
+ "pill": "CHRIST ROUTE MAP 2027",
+ "lines": [
+  {
+   "key": "prog",
+   "no": "01",
+   "name": "Programme line",
+   "short": "Programmes",
+   "legendRight": "3 stops",
+   "badge": "3 stops, 1 test",
+   "color": "#2A6FCB",
+   "tint": "#EAF1FB",
+   "ink": "#1A4A8A",
+   "stations": [
+    {
+     "name": "BBA",
+     "programme": "Through the Christ University Entrance Test"
+    },
+    {
+     "name": "BBA (Hons)",
+     "programme": "Through the Christ University Entrance Test"
+    },
+    {
+     "name": "BBA (Hons with Research)",
+     "short": "BBA (Hons|with Research)",
+     "programme": "Through the Christ University Entrance Test"
+    }
+   ],
+   "exam": "Christ University Entrance Test",
+   "ticket": [
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "TO",
+     "BBA · BBA (Hons) · BBA (Hons with Research)"
+    ],
+    [
+     "EXAM",
+     "Christ University Entrance Test"
+    ],
+    [
+     "NOTE",
+     "Last date 25 Nov 2026, exam 5 Dec 2026"
+    ]
+   ],
+   "stripX": [
+    400,
+    600,
+    800
+   ]
+  },
+  {
+   "key": "dates",
+   "no": "02",
+   "name": "Selection line",
+   "short": "Selection",
+   "legendRight": "4 dates",
+   "badge": "4 stops, Nov to Dec 2026",
+   "color": "#893783",
+   "tint": "#F6ECF5",
+   "ink": "#5A1E56",
+   "stations": [
+    {
+     "name": "Last date to apply",
+     "programme": "25 Nov 2026"
+    },
+    {
+     "name": "Christ University Entrance Test",
+     "programme": "5 Dec 2026"
+    },
+    {
+     "name": "Skill assessment, micro presentation and interview",
+     "programme": "11 to 13 Dec 2026"
+    },
+    {
+     "name": "Final list",
+     "programme": "21 Dec 2026"
+    }
+   ],
+   "exam": "Christ University Entrance Test",
+   "ticket": [
+    [
+     "FROM",
+     "Your application"
+    ],
+    [
+     "TO",
+     "Final list, 21 Dec 2026"
+    ],
+    [
+     "EXAM",
+     "Christ University Entrance Test, 5 Dec 2026"
+    ],
+    [
+     "NOTE",
+     "Apply only on the official portal"
+    ]
+   ]
+  }
+ ],
+ "promo": {
+  "title": "Your IPMAT prep,<br>in <b>one place.</b>",
+  "banner": "CUET, NMIMS and CHRIST prep:<br><b>coming soon</b> on the IPM Careers portal",
+  "bannerTop": 340,
+  "cardTop": 450,
+  "label": "ON THE PORTAL TODAY",
+  "btn": "Start practising →",
+  "bullets": [
+   {
+    "title": "1,988 past-paper questions",
+    "detail": "IPMAT Indore 2019 to 2026 · IPMAT Rohtak 2019 to 2023 · JIPMAT 2021 to 2025 · IIM B UGAT 2025"
+   },
+   {
+    "title": "Full mocks, exam conditions",
+    "detail": "Including 15 full IIM B UGAT mocks"
+   },
+   {
+    "title": "Mistake Vault",
+    "detail": "Every question you miss is saved for a timed redo"
+   },
+   {
+    "title": "Doubts, with Samjhao AI",
+    "detail": "AI answers in seconds, or ask a mentor"
+   }
+  ]
+ },
+ "sources": {
+  "air1_forms": "AIR 1 Command Center forms page, https://register.ipmcareer.com/air1commandcenter/forms (page says \"Updated 1 Nov 2026\", checked 12 Nov 2026)",
+  "portal_pyq": "IPM Careers study portal, PYQ Papers page (study.ipmcareer.com, captured 26 Oct 2026)"
+ }
+}

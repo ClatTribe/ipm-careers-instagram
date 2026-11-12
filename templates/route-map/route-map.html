@@ -76,22 +76,26 @@ function coverMap(D) {
     rohtak: { row: 498, bend: 160, st: [500], lab: ['Rohtak'], below: [0] },
     own:    { row: 624, bend: 134, st: [470, 690, 920], lab: ['Kozhikode', 'Bangalore', 'Udaipur'], below: [0, 0, 0] },
   };
-  const order = ['indore', 'ugat', 'jipmat', 'rohtak', 'own'];
-  const hubX = 70, hubY = { indore: 300, ugat: 330, jipmat: 360, rohtak: 390, own: 420 };
+  const C = D.cover || {};
+  if (C.geo) Object.assign(G, C.geo);
+  const order = C.order || ['indore', 'ugat', 'jipmat', 'rohtak', 'own'];
+  const hubX = 70, hubY = C.hubY || { indore: 300, ugat: 330, jipmat: 360, rohtak: 390, own: 420 };
+  const straight = C.straight || ['jipmat'];
   let s = '';
   order.forEach((key) => {
     const ln = D.lines.find((l) => l.key === key), g = G[key];
     const y0 = hubY[key], y1 = g.row, end = g.st[g.st.length - 1];
-    const pts = key === 'jipmat' ? `${hubX},${y0} ${end},${y1}` : `${hubX},${y0} ${g.bend},${y0} ${g.bend + Math.abs(y1 - y0)},${y1} ${end},${y1}`;
+    const pts = straight.includes(key) ? `${hubX},${y0} ${end},${y1}` : `${hubX},${y0} ${g.bend},${y0} ${g.bend + Math.abs(y1 - y0)},${y1} ${end},${y1}`;
     s += `<polyline points="${pts}" fill="none" stroke="${ln.color}" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" ${ln.dashed ? 'stroke-dasharray="2 26"' : ''}/>`;
     g.st.forEach((x, k) => {
       s += `<circle cx="${x}" cy="${y1}" r="15" fill="#fff" stroke="${ln.color}" stroke-width="8"/>`;
-      s += `<text x="${x}" y="${g.below[k] ? y1 + 50 : y1 - 30}" text-anchor="middle" font-size="23" font-weight="700" fill="#1E1A13">${g.lab[k]}</text>`;
+      const parts = g.lab[k].split('|'), ly = g.below[k] ? y1 + 50 : y1 - 30 - (parts.length - 1) * 27;
+      s += `<text x="${x}" y="${ly}" text-anchor="middle" font-size="23" font-weight="700" fill="#1E1A13">${parts.map((t, i) => `<tspan x="${x}" dy="${i ? 27 : 0}">${t}</tspan>`).join('')}</text>`;
     });
   });
-  s += `<rect x="${hubX - 34}" y="270" width="68" height="180" rx="34" fill="#fff" stroke="#1E1A13" stroke-width="7"/>`;
-  s += `<text x="${hubX}" y="500" text-anchor="middle" font-size="22" font-weight="800" fill="#1E1A13">After</text>`;
-  s += `<text x="${hubX}" y="528" text-anchor="middle" font-size="22" font-weight="800" fill="#1E1A13">Class 12</text>`;
+  const hy = C.hubRect || [270, 180];
+  s += `<rect x="${hubX - 34}" y="${hy[0]}" width="68" height="${hy[1]}" rx="34" fill="#fff" stroke="#1E1A13" stroke-width="7"/>`;
+  (C.hubLabel || ['After', 'Class 12']).forEach((t, i) => { s += `<text x="${hubX}" y="${hy[0] + hy[1] + 50 + i * 28}" text-anchor="middle" font-size="22" font-weight="800" fill="#1E1A13">${t}</text>`; });
   return `<svg width="1000" height="680" viewBox="0 0 1000 680">${s}</svg>`;
 }
 
@@ -99,13 +103,13 @@ function render(D) {
   const total = D.lines.length + 2, app = document.getElementById('app');
   if (S === 1) {
     app.innerHTML = `<div class="glow" style="background:#893783;left:-300px;top:-260px"></div>
-      ${head('IPM CAREERS GUIDE')}
+      ${head((D.cover && D.cover.pill) || 'IPM CAREERS GUIDE')}
       <div style="position:absolute;top:178px;left:72px;right:72px">
-        <h1>IIM Route Map <b>2027</b></h1>
-        <div class="sub">Which exam takes you to <em>which IIM?</em></div>
+        <h1>${(D.cover && D.cover.title) || 'IIM Route Map <b>2027</b>'}</h1>
+        <div class="sub">${(D.cover && D.cover.sub) || 'Which exam takes you to <em>which IIM?</em>'}</div>
       </div>
       <div style="position:absolute;top:385px;left:40px">${coverMap(D)}</div>
-      <div class="legend" style="top:1088px">${D.lines.map(l => `<div class="lg"><i style="background:${l.color};${l.dashed ? 'background:repeating-linear-gradient(90deg,' + l.color + ' 0 8px,transparent 8px 16px)' : ''}"></i>${l.short}<span>${l.stations.length} stop${l.stations.length > 1 ? 's' : ''}</span></div>`).join('')}</div>
+      <div class="legend" style="top:1088px">${D.lines.map(l => `<div class="lg"><i style="background:${l.color};${l.dashed ? 'background:repeating-linear-gradient(90deg,' + l.color + ' 0 8px,transparent 8px 16px)' : ''}"></i>${l.short}<span>${l.legendRight || `${l.stations.length} stop${l.stations.length > 1 ? 's' : ''}`}</span></div>`).join('')}</div>
       ${foot(1, total, '<span class="swipe">Swipe →</span>')}`;
     return;
   }
@@ -114,12 +118,13 @@ function render(D) {
     // optional route strip: Class 12 interchange -> this line's stops, drawn large
     let strip = '', cardTop = 400;
     if (big) {
-      const xs = n === 1 ? [760] : n === 2 ? [560, 820] : [430, 640, 850];
+      const xs = l.stripX || (n === 1 ? [760] : n === 2 ? [560, 820] : [430, 640, 850]);
       let g = `<polyline points="80,90 ${xs[xs.length - 1]},90" fill="none" stroke="${l.color}" stroke-width="20" stroke-linecap="round" ${l.dashed ? 'stroke-dasharray="2 34"' : ''}/>`;
-      g += `<rect x="40" y="50" width="120" height="80" rx="40" fill="#fff" stroke="#1E1A13" stroke-width="8"/><text x="100" y="168" text-anchor="middle" font-size="22" font-weight="800" fill="#1E1A13">Class 12</text>`;
-      xs.forEach((x, k) => { const nm = l.stations[k].name.replace('IIM ', '');
-        g += `<circle cx="${x}" cy="90" r="24" fill="#fff" stroke="${l.color}" stroke-width="11"/><text x="${x}" y="168" text-anchor="middle" font-size="26" font-weight="800" fill="#1E1A13">${nm}</text>`; });
-      strip = `<svg style="position:absolute;left:72px;top:368px" width="936" height="190" viewBox="0 0 936 190">${g}</svg>`;
+      g += `<rect x="40" y="50" width="120" height="80" rx="40" fill="#fff" stroke="#1E1A13" stroke-width="8"/><text x="100" y="168" text-anchor="middle" font-size="22" font-weight="800" fill="#1E1A13">${D.hubShort || 'Class 12'}</text>`;
+      xs.forEach((x, k) => { const nm = l.stations[k].short || l.stations[k].name.replace('IIM ', '');
+        const parts = nm.split('|');
+        g += `<circle cx="${x}" cy="90" r="24" fill="#fff" stroke="${l.color}" stroke-width="11"/><text x="${x}" y="${parts.length > 1 ? 156 : 168}" text-anchor="middle" font-size="26" font-weight="800" fill="#1E1A13">${parts.map((t, i) => `<tspan x="${x}" dy="${i ? 30 : 0}">${t}</tspan>`).join('')}</text>`; });
+      strip = `<svg style="position:absolute;left:72px;top:368px" width="936" height="200" viewBox="0 0 936 200">${g}</svg>`;
       cardTop = 584;
     }
     const hasVia = l.stations.some((x) => x.via);
@@ -132,9 +137,9 @@ function render(D) {
       </div>`).join('');
     const track = n > 1 ? `<div style="position:absolute;left:${x0 + 13}px;top:${padTop + 14}px;width:12px;height:${(n - 1) * gap}px;border-radius:6px;${l.dashed ? `background:repeating-linear-gradient(180deg,${l.color} 0 14px,transparent 14px 28px)` : `background:${l.color}`}"></div>` : '';
     const tTop = cardTop + cardH + 30;
-    const rows = [['FROM', 'After Class 12'], ['TO', n > 2 ? `${n} stops on this line` : l.stations.map((x) => x.name).join(' · ')], ['EXAM', l.exam], ['NOTE', l.fact]];
+    const rows = l.ticket || [['FROM', 'After Class 12'], ['TO', n > 2 ? `${n} stops on this line` : l.stations.map((x) => x.name).join(' · ')], ['EXAM', l.exam], ['NOTE', l.fact]];
     app.innerHTML = `<div class="glow" style="background:${l.color};right:-360px;top:-300px"></div>
-      ${head('IIM ROUTE MAP 2027')}
+      ${head(D.pill || 'IIM ROUTE MAP 2027')}
       <div style="position:absolute;top:176px;left:72px;right:72px;display:flex;gap:30px;align-items:flex-end">
         <div class="no" style="color:${l.color}">${l.no}</div>
         <div style="padding-bottom:8px"><div class="lname">${l.name}</div>
@@ -145,6 +150,19 @@ function render(D) {
       <div class="ticket" style="top:${tTop}px"><div class="stub" style="background:${l.color}"><span>ROUTE PASS</span></div><div class="perf"></div>
         <div class="body">${rows.map(([k, v]) => `<div class="k">${k}</div><div class="v">${v}</div>`).join('')}</div></div>
       ${foot(S, total, 'ipmcareer.com')}`;
+    // a station name that wraps to a second line pushes the stops below it (and the card + ticket) down
+    // (runs once the web fonts are in, since wrapping depends on them)
+    document.fonts.ready.then(() => {
+      const nms = [...app.querySelectorAll('.card .stn .nm')], one = Math.min(...nms.map((e) => e.offsetHeight));
+      let extra = 0;
+      nms.forEach((nm, k) => { const el = nm.closest('.stn'); el.style.top = (parseInt(el.style.top) + extra) + 'px'; if (k < n - 1) extra += nm.offsetHeight - one; });
+      const last = nms[n - 1].offsetHeight - one;
+      if (extra + last) {
+        const card = app.querySelector('.card'), tk = app.querySelector('.ticket'), tr = card.firstElementChild;
+        card.style.height = (parseInt(card.style.height) + extra + last) + 'px'; tk.style.top = (parseInt(tk.style.top) + extra + last) + 'px';
+        if (tr && !tr.classList.contains('stn')) tr.style.height = ((n - 1) * gap + extra) + 'px';
+      }
+    });
     // short lines: centre the strip + card + ticket block in the space between the header and the footer
     if (big) {
       const tk = app.querySelector('.ticket'), bottom = tk.offsetTop + tk.offsetHeight;
@@ -155,16 +173,17 @@ function render(D) {
   }
   const P = D.promo;
   app.innerHTML = `<div class="glow" style="background:#893783;left:-320px;bottom:-380px"></div>
-    ${head('IPM CAREERS STUDY PORTAL')}
+    ${head(P.pill || 'IPM CAREERS STUDY PORTAL')}
     <div style="position:absolute;top:170px;left:72px;right:72px">
-      <h1 style="font-size:72px">Practise every line<br>in <b>one place.</b></h1>
+      <h1 style="font-size:72px">${P.title || 'Practise every line<br>in <b>one place.</b>'}</h1>
     </div>
-    <div class="card" style="top:350px;padding:28px 40px 14px">
-      <div style="font:800 24px Inter;letter-spacing:.14em;color:var(--gold);margin-bottom:8px">WHAT'S ON THE PORTAL</div>
+    ${P.banner ? `<div style="position:absolute;top:${P.bannerTop || 352}px;left:72px;right:72px;display:flex;gap:16px;align-items:center;background:#FDF3E1;border:2px solid #F3DDB3;border-radius:22px;padding:18px 24px;font:700 26px/1.3 Inter;color:#7A4D05"><span style="font-size:34px">⏳</span><span>${P.banner}</span></div>` : ''}
+    <div class="card" style="top:${P.cardTop || 350}px;padding:28px 40px 14px">
+      <div style="font:800 24px Inter;letter-spacing:.14em;color:var(--gold);margin-bottom:8px">${P.label || "WHAT'S ON THE PORTAL"}</div>
       ${P.bullets.map(b => `<div class="bul"><div class="ck">✓</div><div><b>${b.title}</b><span>${b.detail}</span></div></div>`).join('')}
     </div>
     <div style="position:absolute;left:72px;right:72px;bottom:118px;display:flex;align-items:center;justify-content:space-between">
-      <div><div class="btn">Start practising →</div><div style="font:700 30px Inter;color:var(--purple);margin-top:18px;margin-left:8px">study.ipmcareer.com</div></div>
+      <div><div class="btn">${P.btn || 'Start practising →'}</div><div style="font:700 30px Inter;color:var(--purple);margin-top:18px;margin-left:8px">study.ipmcareer.com</div></div>
       <div style="text-align:center"><div style="background:#fff;border-radius:22px;padding:12px;box-shadow:0 18px 40px rgba(30,26,19,.12);border:1.5px solid #F0EAF1"><img src="qr-study.png" style="width:190px;height:190px;display:block"></div>
       <div style="font:600 20px Inter;color:var(--ink3);margin-top:10px">Scan to open</div></div>
     </div>

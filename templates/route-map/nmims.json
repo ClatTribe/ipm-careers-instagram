@@ -1,0 +1,191 @@
+{
+ "cover": {
+  "title": "NMIMS Route Map <b>2027</b>",
+  "sub": "One exam, <em>four programmes.</em>",
+  "order": [
+   "npat",
+   "timetable"
+  ],
+  "hubY": {
+   "npat": 320,
+   "timetable": 400
+  },
+  "straight": [],
+  "geo": {
+   "npat": {
+    "row": 150,
+    "bend": 134,
+    "st": [
+     370,
+     540,
+     720,
+     900
+    ],
+    "lab": [
+     "IPM",
+     "BBA",
+     "BBA (Intl|Business)",
+     "Business Mgmt|& Marketing"
+    ],
+    "below": [
+     0,
+     0,
+     0,
+     0
+    ]
+   },
+   "timetable": {
+    "row": 500,
+    "bend": 134,
+    "st": [
+     340,
+     540,
+     740,
+     910
+    ],
+    "lab": [
+     "2027 dates|not out yet",
+     "Last cycle|Jan to May 2026",
+     "2026 fee|₹2,000",
+     "Check|official site"
+    ],
+    "below": [
+     1,
+     1,
+     1,
+     1
+    ]
+   }
+  }
+ },
+ "pill": "NMIMS ROUTE MAP 2027",
+ "lines": [
+  {
+   "key": "npat",
+   "no": "01",
+   "name": "NPAT 2027 line",
+   "short": "NPAT 2027",
+   "legendRight": "4 stops",
+   "badge": "4 stops, 1 exam",
+   "color": "#D9534F",
+   "tint": "#FCEDEC",
+   "ink": "#8E2A27",
+   "stations": [
+    {
+     "name": "IPM",
+     "programme": "5 years"
+    },
+    {
+     "name": "BBA",
+     "programme": "3 years"
+    },
+    {
+     "name": "BBA (International Business)",
+     "programme": "Through NPAT 2027"
+    },
+    {
+     "name": "Bachelor in Business Management & Marketing",
+     "programme": "Through NPAT 2027"
+    }
+   ],
+   "exam": "NPAT 2027",
+   "ticket": [
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "TO",
+     "4 programmes on this line"
+    ],
+    [
+     "EXAM",
+     "NPAT 2027"
+    ],
+    [
+     "NOTE",
+     "2027 dates not announced yet, check the official site"
+    ]
+   ]
+  },
+  {
+   "key": "timetable",
+   "no": "02",
+   "name": "Timetable line",
+   "short": "Timetable",
+   "legendRight": "not out yet",
+   "badge": "2027 dates not out yet",
+   "dashed": true,
+   "color": "#D98A0B",
+   "tint": "#FDF3E1",
+   "ink": "#7A4D05",
+   "stations": [
+    {
+     "name": "2027 dates",
+     "programme": "Not announced yet"
+    },
+    {
+     "name": "Last cycle",
+     "programme": "28 Jan to 26 May 2026"
+    },
+    {
+     "name": "2026 fee",
+     "programme": "₹2,000"
+    },
+    {
+     "name": "Where to check",
+     "programme": "npat.nmims.edu, the official site"
+    }
+   ],
+   "exam": "NPAT 2027",
+   "ticket": [
+    [
+     "NOW",
+     "2027 dates not announced yet"
+    ],
+    [
+     "BEFORE",
+     "Last cycle: 28 Jan to 26 May 2026"
+    ],
+    [
+     "FEE",
+     "₹2,000 in 2026"
+    ],
+    [
+     "CHECK",
+     "npat.nmims.edu"
+    ]
+   ]
+  }
+ ],
+ "promo": {
+  "title": "Your IPMAT prep,<br>in <b>one place.</b>",
+  "banner": "CUET, NMIMS and CHRIST prep:<br><b>coming soon</b> on the IPM Careers portal",
+  "bannerTop": 340,
+  "cardTop": 450,
+  "label": "ON THE PORTAL TODAY",
+  "btn": "Start practising →",
+  "bullets": [
+   {
+    "title": "1,988 past-paper questions",
+    "detail": "IPMAT Indore 2019 to 2026 · IPMAT Rohtak 2019 to 2023 · JIPMAT 2021 to 2025 · IIM B UGAT 2025"
+   },
+   {
+    "title": "Full mocks, exam conditions",
+    "detail": "Including 15 full IIM B UGAT mocks"
+   },
+   {
+    "title": "Mistake Vault",
+    "detail": "Every question you miss is saved for a timed redo"
+   },
+   {
+    "title": "Doubts, with Samjhao AI",
+    "detail": "AI answers in seconds, or ask a mentor"
+   }
+  ]
+ },
+ "sources": {
+  "air1_forms": "AIR 1 Command Center forms page, https://register.ipmcareer.com/air1commandcenter/forms (page says \"Updated 1 Nov 2026\", checked 12 Nov 2026)",
+  "portal_pyq": "IPM Careers study portal, PYQ Papers page (study.ipmcareer.com, captured 26 Oct 2026)"
+ }
+}
