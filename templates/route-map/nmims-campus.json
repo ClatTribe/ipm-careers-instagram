@@ -1,0 +1,425 @@
+{
+ "cover": {
+  "title": "NMIMS Campus<br>Route Map <b>2027</b>",
+  "titleSize": 84,
+  "sub": "One NPAT, <em>seven campuses.</em>",
+  "order": [
+   "mumbai",
+   "navi",
+   "blr",
+   "more"
+  ],
+  "hubY": {
+   "mumbai": 270,
+   "navi": 310,
+   "blr": 350,
+   "more": 390
+  },
+  "straight": [],
+  "geo": {
+   "mumbai": {
+    "row": 70,
+    "bend": 134,
+    "st": [
+     510,
+     580,
+     650,
+     720,
+     790,
+     860,
+     930
+    ],
+    "lab": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "below": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "title": "Mumbai",
+    "titleX": 380
+   },
+   "navi": {
+    "row": 210,
+    "bend": 134,
+    "st": [
+     720,
+     790,
+     860,
+     930
+    ],
+    "lab": [
+     "",
+     "",
+     "",
+     ""
+    ],
+    "below": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "title": "Navi Mumbai",
+    "titleX": 380
+   },
+   "blr": {
+    "row": 350,
+    "bend": 134,
+    "st": [
+     720,
+     790,
+     860,
+     930
+    ],
+    "lab": [
+     "",
+     "",
+     "",
+     ""
+    ],
+    "below": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "title": "Bengaluru",
+    "titleX": 380
+   },
+   "more": {
+    "row": 490,
+    "bend": 134,
+    "st": [
+     480,
+     630,
+     780,
+     930
+    ],
+    "lab": [
+     "Hyderabad",
+     "Indore",
+     "Chandigarh",
+     "Ahmedabad"
+    ],
+    "below": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "title": "BBA + B.Com",
+    "titleX": 380
+   }
+  },
+  "hubRect": [
+   250,
+   160
+  ],
+  "mapTop": 480,
+  "mapH": 600,
+  "legendTop": 1080,
+  "pill": "NMIMS CAMPUS MAP 2027"
+ },
+ "pill": "NMIMS CAMPUS MAP 2027",
+ "lines": [
+  {
+   "key": "mumbai",
+   "no": "01",
+   "name": "Mumbai",
+   "short": "Mumbai",
+   "legendRight": "7 BBA routes",
+   "badge": "7 BBA routes, 11 programmes",
+   "color": "#893783",
+   "tint": "#F6ECF5",
+   "ink": "#5A1E56",
+   "stations": [
+    {
+     "name": "BBA",
+     "programme": "3 years, plus a 4th Honours year option"
+    },
+    {
+     "name": "BBA (FinTech)",
+     "programme": "3 years · only at Mumbai"
+    },
+    {
+     "name": "Integrated BBA-MBA",
+     "programme": "5 years · only at Mumbai"
+    },
+    {
+     "name": "BBA (Branding & Advertising)",
+     "programme": "3 years · only at Mumbai"
+    },
+    {
+     "name": "BBA (International Business)",
+     "programme": "First 2 years Mumbai, final year London"
+    },
+    {
+     "name": "BBA (Management & Marketing)",
+     "programme": "3 years · only at Mumbai"
+    },
+    {
+     "name": "BBA (Finance)",
+     "programme": "3 years · only at Mumbai"
+    }
+   ],
+   "exam": "NMIMS-NPAT 2027",
+   "ticket": [
+    [
+     "WHERE",
+     "Vile Parle West, Mumbai"
+    ],
+    [
+     "ALSO",
+     "B.Com, B.Sc. (Finance), B.Sc. (Economics), B.A. Liberal Arts"
+    ],
+    [
+     "SOURCE",
+     "npat.nmims.edu, Mumbai campus page"
+    ]
+   ],
+   "ticketMin": 240,
+   "gap": 86,
+   "cardTop": 320
+  },
+  {
+   "key": "navi",
+   "no": "02",
+   "name": "Navi Mumbai",
+   "short": "Navi Mumbai",
+   "legendRight": "4 programmes",
+   "badge": "4 programmes via NPAT",
+   "color": "#2A6FCB",
+   "tint": "#EAF1FB",
+   "ink": "#1A4A8A",
+   "stations": [
+    {
+     "name": "BBA",
+     "programme": "3 years, plus a 4th Honours year option"
+    },
+    {
+     "name": "B.Com",
+     "programme": "3 years, plus a 4th Honours year option"
+    },
+    {
+     "name": "B.Sc. (Finance)",
+     "programme": "One of 3 campuses that offer it"
+    },
+    {
+     "name": "B.Sc. (Economics)",
+     "programme": "One of 3 campuses that offer it"
+    }
+   ],
+   "exam": "NMIMS-NPAT 2027",
+   "ticket": [
+    [
+     "WHERE",
+     "Kharghar, Navi Mumbai"
+    ],
+    [
+     "SINCE",
+     "Officially inaugurated in 2017"
+    ],
+    [
+     "EXAM",
+     "NMIMS-NPAT 2027"
+    ],
+    [
+     "SOURCE",
+     "npat.nmims.edu, Navi Mumbai campus page"
+    ]
+   ],
+   "ticketMin": 252
+  },
+  {
+   "key": "blr",
+   "no": "03",
+   "name": "Bengaluru",
+   "short": "Bengaluru",
+   "legendRight": "4 programmes",
+   "badge": "4 programmes via NPAT",
+   "color": "#1A8754",
+   "tint": "#E7F5EE",
+   "ink": "#0F5A37",
+   "stations": [
+    {
+     "name": "BBA",
+     "programme": "3 years, plus a 4th Honours year option"
+    },
+    {
+     "name": "B.Com",
+     "programme": "3 years, plus a 4th Honours year option"
+    },
+    {
+     "name": "B.Sc. (Finance)",
+     "programme": "One of 3 campuses that offer it"
+    },
+    {
+     "name": "B.Sc. (Economics)",
+     "programme": "One of 3 campuses that offer it"
+    }
+   ],
+   "exam": "NMIMS-NPAT 2027",
+   "ticket": [
+    [
+     "WHERE",
+     "Off Bannerghatta Road, Bengaluru"
+    ],
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "EXAM",
+     "NMIMS-NPAT 2027"
+    ],
+    [
+     "SOURCE",
+     "npat.nmims.edu, Bengaluru campus page"
+    ]
+   ],
+   "ticketMin": 252
+  },
+  {
+   "key": "more",
+   "no": "04",
+   "name": "Four more campuses",
+   "short": "4 more campuses",
+   "legendRight": "4 campuses",
+   "badge": "BBA and B.Com at each",
+   "color": "#D98A0B",
+   "tint": "#FDF3E1",
+   "ink": "#7A4D05",
+   "stations": [
+    {
+     "name": "Hyderabad",
+     "programme": "BBA, B.Com · 90-acre, fully residential campus"
+    },
+    {
+     "name": "Indore",
+     "programme": "BBA, B.Com · campus spread over 25 acres"
+    },
+    {
+     "name": "Chandigarh",
+     "programme": "BBA, B.Com · first NMIMS campus in North India"
+    },
+    {
+     "name": "Ahmedabad",
+     "programme": "BBA, B.Com · new off-campus centre at Sanand"
+    }
+   ],
+   "exam": "NMIMS-NPAT 2027",
+   "ticket": [
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "TO",
+     "BBA or B.Com at any of these 4"
+    ],
+    [
+     "EXAM",
+     "NMIMS-NPAT 2027"
+    ],
+    [
+     "SOURCE",
+     "npat.nmims.edu, each campus page"
+    ]
+   ],
+   "ticketMin": 252
+  },
+  {
+   "key": "rules",
+   "no": "05",
+   "name": "NPAT rules line",
+   "short": "NPAT rules",
+   "legendRight": "5 stops",
+   "badge": "5 rules from the official FAQ",
+   "color": "#1E1A13",
+   "tint": "#F1EFEC",
+   "ink": "#1E1A13",
+   "stations": [
+    {
+     "name": "Up to 5 programmes",
+     "programme": "Apply to a maximum of five"
+    },
+    {
+     "name": "One form, every campus",
+     "programme": "Pick campus preferences while registering"
+    },
+    {
+     "name": "3 attempts",
+     "programme": "1 main + 2 retakes, highest score counts"
+    },
+    {
+     "name": "SAT / ACT route",
+     "programme": "You can also apply with SAT or ACT scores"
+    },
+    {
+     "name": "Phase 2 upgrade",
+     "programme": "Move up by merit number and seats left"
+    }
+   ],
+   "gap": 104,
+   "cardTop": 350,
+   "exam": "NMIMS-NPAT 2027",
+   "ticketMin": 252,
+   "ticket": [
+    [
+     "EXAM",
+     "NMIMS-NPAT 2027"
+    ],
+    [
+     "DATES",
+     "2027 dates not on npat.nmims.edu yet (checked 12 Nov 2026)"
+    ],
+    [
+     "SLOT",
+     "Rescheduling is not possible"
+    ],
+    [
+     "CHECK",
+     "npat.nmims.edu"
+    ]
+   ]
+  }
+ ],
+ "promo": {
+  "title": "Your IPMAT prep,<br>in <b>one place.</b>",
+  "banner": "CUET, NMIMS and CHRIST prep:<br><b>coming soon</b> on the IPM Careers portal",
+  "bannerTop": 340,
+  "cardTop": 450,
+  "label": "ON THE PORTAL TODAY",
+  "btn": "Start practising →",
+  "bullets": [
+   {
+    "title": "1,988 past-paper questions",
+    "detail": "IPMAT Indore 2019 to 2026 · IPMAT Rohtak 2019 to 2023 · JIPMAT 2021 to 2025 · IIM B UGAT 2025"
+   },
+   {
+    "title": "Full mocks, exam conditions",
+    "detail": "Including 15 full IIM B UGAT mocks"
+   },
+   {
+    "title": "Mistake Vault",
+    "detail": "Every question you miss is saved for a timed redo"
+   },
+   {
+    "title": "Doubts, with Samjhao AI",
+    "detail": "AI answers in seconds, or ask a mentor"
+   }
+  ]
+ }
+}

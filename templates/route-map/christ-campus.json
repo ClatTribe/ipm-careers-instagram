@@ -1,0 +1,565 @@
+{
+ "cover": {
+  "title": "CHRIST Campus<br>Route Map <b>2027</b>",
+  "titleSize": 84,
+  "sub": "One entrance test, <em>six campuses.</em>",
+  "order": [
+   "central",
+   "brc",
+   "kengeri",
+   "ypr",
+   "ncr",
+   "pune"
+  ],
+  "hubY": {
+   "central": 250,
+   "brc": 280,
+   "kengeri": 310,
+   "ypr": 340,
+   "ncr": 370,
+   "pune": 400
+  },
+  "straight": [],
+  "geo": {
+   "central": {
+    "row": 60,
+    "bend": 134,
+    "st": [
+     800,
+     870,
+     940
+    ],
+    "lab": [
+     "",
+     "",
+     ""
+    ],
+    "below": [
+     0,
+     0,
+     0
+    ],
+    "title": "Bangalore Central",
+    "titleX": 380
+   },
+   "brc": {
+    "row": 160,
+    "bend": 134,
+    "st": [
+     730,
+     800,
+     870,
+     940
+    ],
+    "lab": [
+     "",
+     "",
+     "",
+     ""
+    ],
+    "below": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "title": "Bannerghatta Road",
+    "titleX": 380
+   },
+   "kengeri": {
+    "row": 260,
+    "bend": 134,
+    "st": [
+     870,
+     940
+    ],
+    "lab": [
+     "",
+     ""
+    ],
+    "below": [
+     0,
+     0
+    ],
+    "title": "Kengeri",
+    "titleX": 380
+   },
+   "ypr": {
+    "row": 360,
+    "bend": 134,
+    "st": [
+     660,
+     730,
+     800,
+     870,
+     940
+    ],
+    "lab": [
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "below": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "title": "Yeshwanthpur",
+    "titleX": 380
+   },
+   "ncr": {
+    "row": 460,
+    "bend": 134,
+    "st": [
+     590,
+     660,
+     730,
+     800,
+     870,
+     940
+    ],
+    "lab": [
+     "",
+     "",
+     "",
+     "",
+     "",
+     ""
+    ],
+    "below": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "title": "Delhi NCR",
+    "titleX": 380
+   },
+   "pune": {
+    "row": 560,
+    "bend": 134,
+    "st": [
+     800,
+     870,
+     940
+    ],
+    "lab": [
+     "",
+     "",
+     ""
+    ],
+    "below": [
+     0,
+     0,
+     0
+    ],
+    "title": "Pune Lavasa",
+    "titleX": 380
+   }
+  },
+  "hubRect": [
+   230,
+   190
+  ],
+  "mapTop": 470,
+  "mapH": 600,
+  "legendTop": 1080,
+  "pill": "CHRIST CAMPUS MAP 2027"
+ },
+ "pill": "CHRIST CAMPUS MAP 2027",
+ "lines": [
+  {
+   "key": "central",
+   "no": "01",
+   "name": "Bangalore Central",
+   "short": "Central",
+   "legendRight": "3 BBA routes",
+   "badge": "3 BBA routes in 2027",
+   "color": "#2A6FCB",
+   "tint": "#EAF1FB",
+   "ink": "#1A4A8A",
+   "stations": [
+    {
+     "name": "BBA",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Decision Science)",
+     "short": "Decision|Science",
+     "programme": "Its own paper: adds design thinking"
+    },
+    {
+     "name": "BBA LLB (Hon)",
+     "short": "BBA LLB",
+     "programme": "Law paper, same as BA LLB"
+    }
+   ],
+   "exam": "CHRIST Entrance Test",
+   "ticket": [
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "TEST",
+     "Online entrance test, then SA, MP and PI"
+    ],
+    [
+     "ALSO",
+     "BCom, BSc, BA, BCA, BHM and BA LLB"
+    ],
+    [
+     "SOURCE",
+     "christuniversity.in, 2027 UG ET list"
+    ]
+   ],
+   "ticketMin": 252
+  },
+  {
+   "key": "brc",
+   "no": "02",
+   "name": "Bannerghatta Road",
+   "short": "Bannerghatta Rd",
+   "legendRight": "4 BBA routes",
+   "badge": "4 BBA routes in 2027",
+   "color": "#893783",
+   "tint": "#F6ECF5",
+   "ink": "#5A1E56",
+   "stations": [
+    {
+     "name": "BBA (Finance and Economics)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Finance and International Business)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Marketing and Tourism)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Strategy and Business Analytics)",
+     "programme": "Hon / Hon with Research options"
+    }
+   ],
+   "exam": "CHRIST Entrance Test",
+   "ticket": [
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "TEST",
+     "Online entrance test, then SA, MP and PI"
+    ],
+    [
+     "ALSO",
+     "BA and BSc programmes"
+    ],
+    [
+     "SOURCE",
+     "christuniversity.in, 2027 UG ET list"
+    ]
+   ],
+   "ticketMin": 252
+  },
+  {
+   "key": "kengeri",
+   "no": "03",
+   "name": "Kengeri",
+   "short": "Kengeri",
+   "legendRight": "2 BBA routes",
+   "badge": "2 BBA routes in 2027",
+   "color": "#1A8754",
+   "tint": "#E7F5EE",
+   "ink": "#0F5A37",
+   "stations": [
+    {
+     "name": "BBA",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Applied Finance with FinTech)",
+     "short": "Applied Finance|with FinTech",
+     "programme": "Same BBA test paper"
+    }
+   ],
+   "exam": "CHRIST Entrance Test",
+   "ticket": [
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "TEST",
+     "Online entrance test, then SA, MP and PI"
+    ],
+    [
+     "ALSO",
+     "BSc (Psychology) and BTech programmes"
+    ],
+    [
+     "SOURCE",
+     "christuniversity.in, 2027 UG ET list"
+    ]
+   ],
+   "ticketMin": 252,
+   "stripX": [
+    560,
+    820
+   ]
+  },
+  {
+   "key": "ypr",
+   "no": "04",
+   "name": "Yeshwanthpur",
+   "short": "Yeshwanthpur",
+   "legendRight": "5 BBA routes",
+   "badge": "5 BBA routes in 2027",
+   "color": "#D98A0B",
+   "tint": "#FDF3E1",
+   "ink": "#7A4D05",
+   "stations": [
+    {
+     "name": "BBA",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Finance and Economics)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Finance and International Business)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Finance and Marketing Analytics)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Strategy and Business Analytics)",
+     "programme": "Hon / Hon with Research options"
+    }
+   ],
+   "exam": "CHRIST Entrance Test",
+   "ticket": [
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "TEST",
+     "Online entrance test, then SA, MP and PI"
+    ],
+    [
+     "ALSO",
+     "BA, BCA, BCom and BSc programmes"
+    ],
+    [
+     "SOURCE",
+     "christuniversity.in, 2027 UG ET list"
+    ]
+   ],
+   "ticketMin": 252,
+   "gap": 104,
+   "cardTop": 350
+  },
+  {
+   "key": "ncr",
+   "no": "05",
+   "name": "Delhi NCR",
+   "short": "Delhi NCR",
+   "legendRight": "6 BBA routes",
+   "badge": "6 BBA routes in 2027",
+   "color": "#D9534F",
+   "tint": "#FCEDEC",
+   "ink": "#8E2A27",
+   "stations": [
+    {
+     "name": "BBA",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Finance and Marketing Analytics)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (FinTech)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Marketing and Supply Chain Management)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Strategy and Business Analytics)",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA LLB (Honours)",
+     "programme": "Law paper, same as BA LLB"
+    }
+   ],
+   "exam": "CHRIST Entrance Test",
+   "ticket": [
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "TEST",
+     "Online entrance test, then SA, MP and PI"
+    ],
+    [
+     "ALSO",
+     "BA, BSc, BCom, BCA and BA LLB"
+    ],
+    [
+     "SOURCE",
+     "christuniversity.in, 2027 UG ET list"
+    ]
+   ],
+   "ticketMin": 252,
+   "gap": 94,
+   "cardTop": 330
+  },
+  {
+   "key": "pune",
+   "no": "06",
+   "name": "Pune Lavasa",
+   "short": "Pune Lavasa",
+   "legendRight": "3 BBA routes",
+   "badge": "3 BBA routes in 2027",
+   "color": "#138A8A",
+   "tint": "#E6F4F4",
+   "ink": "#0B5757",
+   "stations": [
+    {
+     "name": "BBA",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA (Business Analytics)",
+     "short": "Business|Analytics",
+     "programme": "Hon / Hon with Research options"
+    },
+    {
+     "name": "BBA LLB (Honours)",
+     "short": "BBA LLB",
+     "programme": "Law paper, same as BA LLB"
+    }
+   ],
+   "exam": "CHRIST Entrance Test",
+   "ticket": [
+    [
+     "FROM",
+     "After Class 12"
+    ],
+    [
+     "TEST",
+     "Online entrance test, then SA, MP and PI"
+    ],
+    [
+     "ALSO",
+     "BA LLB, BCA, BCom and BSc"
+    ],
+    [
+     "SOURCE",
+     "christuniversity.in, 2027 UG ET list"
+    ]
+   ],
+   "ticketMin": 252
+  },
+  {
+   "key": "test",
+   "no": "07",
+   "name": "Test line",
+   "short": "BBA test + dates",
+   "legendRight": "5 stops",
+   "badge": "BBA paper: 120 marks",
+   "color": "#1E1A13",
+   "tint": "#F1EFEC",
+   "ink": "#1E1A13",
+   "stations": [
+    {
+     "name": "English + General Knowledge",
+     "programme": "45 marks (English 25, GK 20)"
+    },
+    {
+     "name": "Reasoning",
+     "programme": "25 marks"
+    },
+    {
+     "name": "Maths + Data Interpretation",
+     "programme": "40 marks (Maths 20, DI 20)"
+    },
+    {
+     "name": "Fundamental Accounting",
+     "programme": "10 marks"
+    },
+    {
+     "name": "SA, MP and PI",
+     "programme": "Write 10 min, speak 90 sec, 10 min interview"
+    }
+   ],
+   "gap": 104,
+   "cardTop": 350,
+   "exam": "CHRIST Entrance Test",
+   "ticket": [
+    [
+     "APPLY BY",
+     "25 Nov 2026, 5 PM"
+    ],
+    [
+     "TEST",
+     "5 Dec 2026, online"
+    ],
+    [
+     "SA·MP·PI",
+     "11 to 13 Dec 2026, in person"
+    ],
+    [
+     "LIST",
+     "21 Dec 2026"
+    ],
+    [
+     "MARKING",
+     "+1 right, minus 0.25 wrong, 0 blank"
+    ]
+   ]
+  }
+ ],
+ "promo": {
+  "title": "Your IPMAT prep,<br>in <b>one place.</b>",
+  "banner": "CUET, NMIMS and CHRIST prep:<br><b>coming soon</b> on the IPM Careers portal",
+  "bannerTop": 340,
+  "cardTop": 450,
+  "label": "ON THE PORTAL TODAY",
+  "btn": "Start practising →",
+  "bullets": [
+   {
+    "title": "1,988 past-paper questions",
+    "detail": "IPMAT Indore 2019 to 2026 · IPMAT Rohtak 2019 to 2023 · JIPMAT 2021 to 2025 · IIM B UGAT 2025"
+   },
+   {
+    "title": "Full mocks, exam conditions",
+    "detail": "Including 15 full IIM B UGAT mocks"
+   },
+   {
+    "title": "Mistake Vault",
+    "detail": "Every question you miss is saved for a timed redo"
+   },
+   {
+    "title": "Doubts, with Samjhao AI",
+    "detail": "AI answers in seconds, or ask a mentor"
+   }
+  ]
+ }
+}

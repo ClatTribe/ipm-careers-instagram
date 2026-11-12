@@ -1,0 +1,84 @@
+{
+ "content": {
+  "type": "route-map",
+  "template": "templates/route-map/route-map.html",
+  "data": "templates/route-map/christ-campus.json",
+  "slides": "out/route-map-christ-campus/",
+  "slide_count": 9,
+  "note": "Undated sample: never auto-posts. Render with node tools/render-route-map.mjs templates/route-map/christ-campus.json out/route-map-christ-campus. Separate from the scheduled 4-slide CHRIST Route Map (templates/route-map/christ.json). The Test line carries Selection Process I dates (last date 25 Nov 2026): post before then, or replace that ticket. Only the BBA family is listed per campus; other programmes appear in each ALSO row. Fees left out (none published on these pages for 2027). Sources: official christuniversity.in pages and PDFs only."
+ },
+ "caption": "Save this before you fill the CHRIST form 📌\n\nCHRIST has six campuses with entrance-test BBA routes for 2027. Here is every one:\n\n🔵 Bangalore Central: BBA, BBA (Decision Science), BBA LLB\n🟣 Bannerghatta Road: 4 BBA routes\n🟢 Kengeri: BBA, BBA (Applied Finance with FinTech)\n🟠 Yeshwanthpur: 5 BBA routes\n🔴 Delhi NCR: 6 BBA routes, incl. BBA LLB\n🩵 Pune Lavasa: BBA, BBA (Business Analytics), BBA LLB\n\nThe BBA paper: 120 marks in 90 minutes. English + GK 45, Reasoning 25, Maths + DI 40, Fundamental Accounting 10. Wrong answers cost 0.25.\n\nKey dates: apply by 25 Nov 2026, test on 5 Dec, SA, MP and PI from 11 to 13 Dec, final list on 21 Dec.\n\nApply only on christuniversity.in.\n\nWhich campus is your first choice? Tell us in the comments 👇\nSend this to the friend who still thinks CHRIST has one BBA.\n\n#ChristUniversity #BBA2027 #IPMAT2027 #IPMCareers",
+ "claims": [
+  {
+   "claim": "Six campuses publish UG Entrance Test (ET) programme lists for 2027: Bangalore Central, Kengeri, Bannerghatta Road, Yeshwanthpur, Delhi NCR, Pune Lavasa",
+   "quote": "Entrance Test (ET) Programmes & Selection Process / Bangalore Central / Kengeri / Bannerghatta Road / Yeshwanthpur / Delhi NCR / Pune Lavasa",
+   "source": "https://christuniversity.in/admission/2027-ugpgsp (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Bangalore Central BBA routes: BBA, BBA (Decision Science), BBA LLB (Hon); also BCom, BSc, BA, BCA, BHM, BA LLB",
+   "quote": "BANGALORE CENTRAL CAMPUS UG / BBA / (Hon/Hon with Research) / BBA (Decision Science) / Bachelor of Hotel Management (BHM) / BCom ... / BA LLB (Hon) / BBA LLB (Hon) / Bachelor of Computer Applications (BCA ...) / BSc (...)",
+   "source": "https://christuniversity.in/uploads/userfiles/file/ADMISSIONS/2027/BCC/1%20BCC%20UG%20ET%20DETAILS%202027.pdf (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Bannerghatta Road BBA routes: Finance and Economics, Finance and International Business, Marketing and Tourism, Strategy and Business Analytics (all Hon/Hon with Research); also BA and BSc",
+   "quote": "BANGALORE BANNERGHATTA ROAD CAMPUS UG / BBA (Finance and Economics/Hon/Hon with Research) / BBA (Finance and International Business/Hon/Hon with Research) / BBA (Marketing and Tourism/Hon/Hon with Research) / BBA (Strategy and Business Analytics/Hon/Hon with Research)",
+   "source": "https://christuniversity.in/uploads/userfiles/file/ADMISSIONS/2027/BRC/3%20BRC%20UG%20ET%20DETAILS%202027.pdf (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Kengeri BBA routes: BBA, BBA (Applied Finance with FinTech); also BSc (Psychology) and BTech",
+   "quote": "BANGALORE KENGERI CAMPUS UG / BBA / (Hon/Hon with Research) / BBA (Applied Finance with FinTech) / BSc (Psychology/Hon/Hon with Research) / BTech (...)",
+   "source": "https://christuniversity.in/uploads/userfiles/file/ADMISSIONS/2027/BKC/5%20BKC%20UG%20ET%20DETAILS%202027%20-%20I.pdf (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Yeshwanthpur BBA routes: BBA, Finance and Economics, Finance and International Business, Finance and Marketing Analytics, Strategy and Business Analytics; also BA, BCA, BCom, BSc",
+   "quote": "BANGALORE YESHWANTHPUR CAMPUS UG / BBA / (Hon/Hon with Research) / BBA (Finance and Economics/Hon/Hon with Research) / BBA (Finance and International Business/Hon/Hon with Research) / BBA (Finance and Marketing Analytics/Hon/Hon with Research) / BBA (Strategy and Business Analytics/Hon/Hon with Research)",
+   "source": "https://christuniversity.in/uploads/userfiles/file/ADMISSIONS/2027/BYC/7%20BYC%20UG%20ET%20DETAILS%202027-I.pdf (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Delhi NCR BBA routes: BBA, Finance and Marketing Analytics, FinTech, Marketing and Supply Chain Management, Strategy and Business Analytics, BBA LLB (Honours); also BA, BSc, BCom, BCA, BA LLB",
+   "quote": "DELHI NCR CAMPUS UG / BBA/(Hon/Hon with Research) / BBA (Finance and Marketing Analytics/Hon/Hon with Research) / BBA (FinTech/Hon/Hon with Research) / BBA (Marketing and Supply Chain Management/Hon/Hon with Research) / BBA (Strategy and Business Analytics/Hon/Hon with Research) / BBA LLB (Honours)",
+   "source": "https://christuniversity.in/uploads/userfiles/file/ADMISSIONS/2027/DNC/9%20DNC%20UG%20ET%20DETAILS%202027%20-%20I.pdf (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Pune Lavasa BBA routes: BBA, BBA (Business Analytics), BBA LLB (Honours); also BA LLB, BCA, BCom, BSc",
+   "quote": "PUNE LAVASA CAMPUS UG / BA LLB (Honours) / BBA LLB (Honours) / BBA/ (Hon/Hon with Research) / BBA (Business Analytics/Hon/Hon with Research) / BCA/ ... / BCom (Financial Analytics ...) / BSc (...)",
+   "source": "https://christuniversity.in/uploads/userfiles/file/ADMISSIONS/2027/PLC/11%20PLC%20UG%20ET%20DETAILS%202027.pdf (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Selection steps: online entrance test, then SA, MP and PI in person at the venue chosen in the form; SA = write on a topic for up to 10 minutes, MP = talk for 90 seconds, PI = 10 minutes",
+   "quote": "Skill Assessment (SA): Candidates will be asked to write on a given topic for not more than one A4 size sheet and for not more than 10 minutes. / Micro Presentation (MP): Candidate should be able to talk for 90seconds / Personal interview (PI): duration: 10 minutes / Entrance Test: ONLINE / SA_MP_PI: VENUE BASED",
+   "source": "https://christuniversity.in/uploads/userfiles/file/ADMISSIONS/2027/BCC/1%20BCC%20UG%20ET%20DETAILS%202027.pdf (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "BBA paper: English 25 + GK 20 = 45, Fundamental Accounting 10, Reasoning 25, Maths 20 + DI 20 = 40, total 120; 90 minutes; +1 / minus 0.25 / 0 for unattempted",
+   "quote": "BBA | BBA (Business Analytics) | BBA (Finance and Economics) ... English (25) | General Knowledge (20) 45 / Fundamental Accounting 10 / Reasoning 25 / Mathematics (20) | Data Analysis & Interpretation (20) 40 / TOTAL MARKS 120 ... Entrance test duration: 90 Minutes except if otherwise specified ... Each question carries 1 mark for the right answer and a negative mark of 0.25 for the wrong answer. No marks are awarded or deducted for unattempted questions.",
+   "source": "https://christuniversity.in/uploads/userfiles/file/ADMISSIONS/2027/BCC/CHRIST-CUET%20GUIDELINES%20&%20TEST%20PATTERN%20-%202027-UG-II.pdf (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "BBA (Decision Science) has its own paper including design thinking; BBA LLB uses the same paper as BA LLB",
+   "quote": "BBA (Decision Science) ... Quantitive Aptitude (10) | Design Thinking for problem Solving (10) 20 / Pattern Recongnition 12 ... BALLB | BBALLB English (30) | General Knowledge (30) 60 ...",
+   "source": "https://christuniversity.in/uploads/userfiles/file/ADMISSIONS/2027/BCC/CHRIST-CUET%20GUIDELINES%20&%20TEST%20PATTERN%20-%202027-UG-II.pdf (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Dates (Selection Process I): apply by 25 Nov 2026 5 PM (ET programmes), test 5 Dec 2026 online, SA/MP/PI 11 to 13 Dec 2026, final list 21 Dec 2026",
+   "quote": "November 25, 2026 17:00 Hrs Last day of submitting the application online for Entrance Test Programmes / December 05, 2026 ... Entrance Test: Online / Entrance Test Programmes December 11, 2026 To December 13, 2026 ... Skill Assessment (SA) Micro Presentation (MP) Personal interview (PI) / December 21, 2026 22:00 Hrs Publishing of Final selection list",
+   "source": "https://christuniversity.in/admission/ugpg-selection-process-dates-2027 (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Portal: 1,988 past-paper questions (IPMAT Indore 2019 to 2026, IPMAT Rohtak 2019 to 2023, JIPMAT 2021 to 2025, IIM B UGAT 2025)",
+   "source": "IPM Careers study portal, PYQ Papers page (study.ipmcareer.com, captured 26 Oct 2026)"
+  },
+  {
+   "claim": "Portal: full mocks including 15 IIM B UGAT mocks, Mistake Vault, Samjhao AI and ask a mentor",
+   "source": "IPM Careers study portal captures (study.ipmcareer.com, Oct 2026)"
+  },
+  {
+   "claim": "CUET, NMIMS and CHRIST prep: coming soon on the IPM Careers portal",
+   "source": "Owner brief for this carousel (the directive's own wording); not a feature claim about today's portal"
+  },
+  {
+   "claim": "QR code opens https://study.ipmcareer.com",
+   "source": "Same qr-study.png as the IIM Route Map (decoded with OpenCV after generation)"
+  }
+ ]
+}
