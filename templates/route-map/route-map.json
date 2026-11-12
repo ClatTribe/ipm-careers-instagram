@@ -1,0 +1,168 @@
+{
+ "lines": [
+  {
+   "key": "indore",
+   "no": "01",
+   "name": "IPMAT Indore line",
+   "short": "IPMAT Indore",
+   "badge": "7 stops",
+   "color": "#893783",
+   "tint": "#F6ECF5",
+   "ink": "#5A1E56",
+   "factIcon": "📅",
+   "fact": "Saturday, 24 April 2027, afternoon shift",
+   "stations": [
+    {
+     "name": "IIM Indore",
+     "programme": "IPM · 5 years"
+    },
+    {
+     "name": "IIM Ranchi",
+     "programme": "IPM · 5 years"
+    },
+    {
+     "name": "IIM Amritsar",
+     "programme": "IPM · 5 years"
+    },
+    {
+     "name": "IIM Shillong",
+     "programme": "IPM · 5 years"
+    },
+    {
+     "name": "IIM Sirmaur",
+     "programme": "BMS · 4 years"
+    },
+    {
+     "name": "IIM Sambalpur",
+     "programme": "B.S. Management & Public Policy · 4 years"
+    },
+    {
+     "name": "IIFT",
+     "programme": "IPM · 5 years"
+    }
+   ],
+   "exam": "IPMAT Indore 2027"
+  },
+  {
+   "key": "jipmat",
+   "no": "02",
+   "name": "JIPMAT line",
+   "short": "JIPMAT",
+   "badge": "2 stops",
+   "color": "#1A8754",
+   "tint": "#E7F5EE",
+   "ink": "#0F5A37",
+   "factIcon": "⏳",
+   "fact": "2027 dates not announced yet",
+   "stations": [
+    {
+     "name": "IIM Jammu",
+     "programme": "IPM · 5 years"
+    },
+    {
+     "name": "IIM Bodh Gaya",
+     "programme": "IPM · 5 years"
+    }
+   ],
+   "exam": "JIPMAT 2027"
+  },
+  {
+   "key": "rohtak",
+   "no": "03",
+   "name": "IPMAT Rohtak line",
+   "short": "IPMAT Rohtak",
+   "badge": "1 stop",
+   "color": "#D98A0B",
+   "tint": "#FDF3E1",
+   "ink": "#7A4D05",
+   "factIcon": "⏳",
+   "fact": "2027 dates not announced yet",
+   "stations": [
+    {
+     "name": "IIM Rohtak",
+     "programme": "IPM · 5 years"
+    }
+   ],
+   "exam": "IPMAT Rohtak 2027"
+  },
+  {
+   "key": "ugat",
+   "no": "04",
+   "name": "IIM B UGAT line",
+   "short": "IIM B UGAT",
+   "badge": "1 stop",
+   "color": "#2A6FCB",
+   "tint": "#EAF1FB",
+   "ink": "#1A4A8A",
+   "factIcon": "📝",
+   "fact": "The 2025 paper had 60 questions: QA, VARC, DI & LR",
+   "stations": [
+    {
+     "name": "IIM Bangalore",
+     "programme": "Undergraduate programme"
+    }
+   ],
+   "exam": "IIM B UGAT"
+  },
+  {
+   "key": "own",
+   "no": "05",
+   "name": "Own-route stops",
+   "short": "Own tests",
+   "badge": "3 stops, own tests",
+   "color": "#D9534F",
+   "tint": "#FCEDEC",
+   "ink": "#8E2A27",
+   "factIcon": "🔎",
+   "dashed": true,
+   "fact": "Check each official site for 2027 dates",
+   "stations": [
+    {
+     "name": "IIM Kozhikode",
+     "programme": "BMS · 4 years",
+     "via": "IIMK BMS Aptitude Test"
+    },
+    {
+     "name": "IIM Bangalore",
+     "programme": "BBA in Digital Business & Entrepreneurship",
+     "via": "IIMB DBE Entrance Test"
+    },
+    {
+     "name": "IIM Udaipur",
+     "programme": "BBA · 4 years",
+     "via": "Class 12 scores, no entrance test"
+    }
+   ],
+   "exam": "Their own tests (see each stop)"
+  }
+ ],
+ "promo": {
+  "bullets": [
+   {
+    "title": "1,988 past-paper questions",
+    "detail": "IPMAT Indore 2019 to 2026 · IPMAT Rohtak 2019 to 2023 · JIPMAT 2021 to 2025 · IIM B UGAT 2025"
+   },
+   {
+    "title": "Full mocks, exam conditions",
+    "detail": "Including 15 full IIM B UGAT mocks"
+   },
+   {
+    "title": "Mistake Vault",
+    "detail": "Every question you miss is saved for a timed redo"
+   },
+   {
+    "title": "My Plan",
+    "detail": "Built from your test history, every morning"
+   },
+   {
+    "title": "Doubts, with Samjhao AI",
+    "detail": "AI answers in seconds, or ask a mentor"
+   }
+  ]
+ },
+ "sources": {
+  "air1_forms": "AIR 1 Command Center forms page, register.ipmcareer.com/air1commandcenter/forms (checked 12 Nov 2026)",
+  "air1_faq": "AIR 1 Command Center FAQ, register.ipmcareer.com/air1commandcenter (checked 12 Nov 2026): 'IPMAT Indore (IIM Indore, Ranchi, Sirmaur, Amritsar, Sambalpur, Shillong, IIFT), IPMAT Rohtak and JIPMAT (IIM Jammu and Bodh Gaya)'",
+  "portal_pyq": "IPM Careers study portal, PYQ Papers page (study.ipmcareer.com, captured 26 Oct 2026)"
+ }
+}

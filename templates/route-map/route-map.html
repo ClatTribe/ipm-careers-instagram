@@ -1,0 +1,173 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- IIM Route Map carousel (1080 x 1350). Open with ?s=1 .. ?s=7. Data: route-map.json (every claim has a source there). -->
+<style>
+  @font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
+  @font-face { font-family: Fraunces; src: url(../../public/fonts/fraunces-italic.woff2); font-weight: 100 900; font-style: italic; }
+  :root { --ink:#1E1A13; --ink2:#57524A; --ink3:#8B857B; --purple:#893783; --gold:#C98A0E; --emoji:"Noto Color Emoji"; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { width:1080px; height:1350px; overflow:hidden; }
+  body { background:#fff; font-family:Inter, var(--emoji), sans-serif; color:var(--ink); position:relative; }
+  .grid { position:absolute; inset:0; background-image:linear-gradient(#F3EEF5 2px,transparent 2px),linear-gradient(90deg,#F3EEF5 2px,transparent 2px); background-size:108px 108px; background-position:-2px -2px; }
+  .glow { position:absolute; width:900px; height:900px; border-radius:50%; filter:blur(120px); opacity:.16; }
+  .top { position:absolute; top:58px; left:72px; right:72px; display:flex; justify-content:space-between; align-items:center; }
+  .top img { height:60px; }
+  .pill { border:2px solid #EBD9EA; color:var(--purple); font:800 21px Inter; letter-spacing:.16em; padding:11px 22px; border-radius:999px; background:#fff; }
+  .foot { position:absolute; bottom:46px; left:72px; right:72px; display:flex; justify-content:space-between; align-items:center; color:var(--ink3); font:600 22px Inter; }
+  .dots { display:flex; gap:9px; } .dots i { width:10px; height:10px; border-radius:6px; background:#E3DCE6; } .dots i.on { width:34px; background:var(--purple); }
+  .swipe { color:var(--purple); font:800 24px Inter; }
+  h1 { font:800 92px/0.98 Inter; letter-spacing:-0.035em; }
+  h1 b { color:var(--purple); }
+  .sub { font:500 34px/1.3 Inter; color:var(--ink2); margin-top:20px; }
+  .sub em { font-family:Fraunces; font-style:italic; font-weight:600; color:var(--gold); font-size:38px; }
+  svg text { font-family:Inter; }
+  .legend { position:absolute; left:72px; right:72px; display:grid; grid-template-columns:1fr 1fr; gap:14px 30px; }
+  .lg { display:flex; align-items:center; gap:14px; font:700 24px Inter; color:var(--ink); }
+  .lg i { width:44px; height:12px; border-radius:6px; flex:none; }
+  .lg span { color:var(--ink3); font-weight:600; font-size:20px; margin-left:auto; }
+  /* line slides */
+  .no { font:900 150px/0.8 Inter; letter-spacing:-0.05em; }
+  .lname { font:800 64px/1 Inter; letter-spacing:-0.03em; }
+  .exam { margin-top:16px; display:inline-flex; align-items:center; gap:12px; font:700 26px Inter; color:#fff; padding:10px 22px; border-radius:999px; }
+  .card { position:absolute; left:72px; right:72px; background:#fff; border-radius:34px; box-shadow:0 30px 70px rgba(30,26,19,.10), 0 2px 0 rgba(30,26,19,.04); border:1.5px solid #F0EAF1; }
+  .stn { position:relative; display:flex; align-items:center; }
+  .stn .dot { position:absolute; left:0; width:38px; height:38px; border-radius:50%; background:#fff; border-width:9px; border-style:solid; }
+  .stn .nm { font:800 34px Inter; letter-spacing:-0.01em; }
+  .stn .pg { font:500 25px Inter; color:var(--ink2); margin-top:4px; }
+  .stn .via { font:600 22px Inter; margin-top:6px; }
+  .fact { position:absolute; left:72px; right:72px; display:flex; gap:18px; align-items:center; border-radius:24px; padding:24px 28px; font:600 28px/1.32 Inter; }
+  .fact .ic { font-size:40px; }
+  .ticket { position:absolute; left:72px; right:72px; display:flex; background:#fff; border-radius:28px; box-shadow:0 26px 60px rgba(30,26,19,.10); border:1.5px solid #F0EAF1; overflow:visible; }
+  .ticket .stub { width:150px; flex:none; border-radius:28px 0 0 28px; display:flex; align-items:center; justify-content:center; }
+  .ticket .stub span { writing-mode:vertical-rl; transform:rotate(180deg); color:#fff; font:900 26px Inter; letter-spacing:.22em; }
+  .ticket .perf { width:0; border-left:4px dashed #E6DEE8; position:relative; }
+  .ticket .perf:before, .ticket .perf:after { content:''; position:absolute; left:-20px; width:36px; height:36px; border-radius:50%; background:#fff; border:1.5px solid #F0EAF1; }
+  .ticket .perf:before { top:-19px; clip-path:inset(50% 0 0 0); } .ticket .perf:after { bottom:-19px; clip-path:inset(0 0 50% 0); }
+  .ticket .body { flex:1; padding:22px 32px; display:grid; grid-template-columns:140px 1fr; row-gap:10px; align-content:center; }
+  .ticket .k { font:800 19px Inter; letter-spacing:.16em; color:var(--ink3); padding-top:6px; }
+  .ticket .v { font:700 25px/1.3 Inter; color:var(--ink); }
+  /* promo */
+  .btn { display:inline-flex; align-items:center; gap:14px; color:#fff; font:800 34px Inter; padding:24px 40px; border-radius:999px; background:linear-gradient(90deg,#893783,#6A2565); box-shadow:0 22px 44px rgba(137,55,131,.30); }
+  .bul { display:flex; gap:20px; align-items:flex-start; padding:15px 0; border-top:1.5px solid #F2ECF3; }
+  .bul:first-of-type { border-top:none; }
+  .bul .ck { flex:none; width:44px; height:44px; border-radius:14px; background:#F6ECF5; color:var(--purple); display:flex; align-items:center; justify-content:center; font:900 26px Inter; margin-top:2px; }
+  .bul b { font:800 28px Inter; display:block; }
+  .bul span { font:500 23px/1.35 Inter; color:var(--ink2); display:block; margin-top:4px; }
+</style></head>
+<body><div class="grid"></div><div id="app"></div>
+<script>
+const S = +(new URLSearchParams(location.search).get('s') || 1);
+window.addEventListener('load', () => window.ROUTE ? render(window.ROUTE) : fetch('route-map.json').then(r => r.json()).then(render));
+
+function head(pill) {
+  return `<div class="top"><img src="../../public/brand/logo-full.png"><div class="pill">${pill}</div></div>`;
+}
+function foot(n, total, right) {
+  return `<div class="foot"><div class="dots">${Array.from({length: total}, (_, i) => `<i class="${i === n - 1 ? 'on' : ''}"></i>`).join('')}</div>${right}</div>`;
+}
+
+// cover map: every line leaves the "After Class 12" interchange as a parallel bundle, then splits off
+function coverMap(D) {
+  // geometry per line key (row y, where it bends off the bundle, station x positions, short labels)
+  const G = {
+    indore: { row: 96, bend: 134, st: [400, 490, 580, 670, 760, 850, 940], lab: ['Indore', 'Ranchi', 'Amritsar', 'Shillong', 'Sirmaur', 'Sambalpur', 'IIFT'], below: [0, 1, 0, 1, 0, 1, 0] },
+    ugat:   { row: 222, bend: 160, st: [592], lab: ['Bangalore'], below: [0] },
+    jipmat: { row: 360, bend: 0, st: [596, 792], lab: ['Jammu', 'Bodh Gaya'], below: [0, 0] },
+    rohtak: { row: 498, bend: 160, st: [500], lab: ['Rohtak'], below: [0] },
+    own:    { row: 624, bend: 134, st: [470, 690, 920], lab: ['Kozhikode', 'Bangalore', 'Udaipur'], below: [0, 0, 0] },
+  };
+  const order = ['indore', 'ugat', 'jipmat', 'rohtak', 'own'];
+  const hubX = 70, hubY = { indore: 300, ugat: 330, jipmat: 360, rohtak: 390, own: 420 };
+  let s = '';
+  order.forEach((key) => {
+    const ln = D.lines.find((l) => l.key === key), g = G[key];
+    const y0 = hubY[key], y1 = g.row, end = g.st[g.st.length - 1];
+    const pts = key === 'jipmat' ? `${hubX},${y0} ${end},${y1}` : `${hubX},${y0} ${g.bend},${y0} ${g.bend + Math.abs(y1 - y0)},${y1} ${end},${y1}`;
+    s += `<polyline points="${pts}" fill="none" stroke="${ln.color}" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" ${ln.dashed ? 'stroke-dasharray="2 26"' : ''}/>`;
+    g.st.forEach((x, k) => {
+      s += `<circle cx="${x}" cy="${y1}" r="15" fill="#fff" stroke="${ln.color}" stroke-width="8"/>`;
+      s += `<text x="${x}" y="${g.below[k] ? y1 + 50 : y1 - 30}" text-anchor="middle" font-size="23" font-weight="700" fill="#1E1A13">${g.lab[k]}</text>`;
+    });
+  });
+  s += `<rect x="${hubX - 34}" y="270" width="68" height="180" rx="34" fill="#fff" stroke="#1E1A13" stroke-width="7"/>`;
+  s += `<text x="${hubX}" y="500" text-anchor="middle" font-size="22" font-weight="800" fill="#1E1A13">After</text>`;
+  s += `<text x="${hubX}" y="528" text-anchor="middle" font-size="22" font-weight="800" fill="#1E1A13">Class 12</text>`;
+  return `<svg width="1000" height="680" viewBox="0 0 1000 680">${s}</svg>`;
+}
+
+function render(D) {
+  const total = D.lines.length + 2, app = document.getElementById('app');
+  if (S === 1) {
+    app.innerHTML = `<div class="glow" style="background:#893783;left:-300px;top:-260px"></div>
+      ${head('IPM CAREERS GUIDE')}
+      <div style="position:absolute;top:178px;left:72px;right:72px">
+        <h1>IIM Route Map <b>2027</b></h1>
+        <div class="sub">Which exam takes you to <em>which IIM?</em></div>
+      </div>
+      <div style="position:absolute;top:385px;left:40px">${coverMap(D)}</div>
+      <div class="legend" style="top:1088px">${D.lines.map(l => `<div class="lg"><i style="background:${l.color};${l.dashed ? 'background:repeating-linear-gradient(90deg,' + l.color + ' 0 8px,transparent 8px 16px)' : ''}"></i>${l.short}<span>${l.stations.length} stop${l.stations.length > 1 ? 's' : ''}</span></div>`).join('')}</div>
+      ${foot(1, total, '<span class="swipe">Swipe →</span>')}`;
+    return;
+  }
+  if (S <= D.lines.length + 1) {
+    const l = D.lines[S - 2], n = l.stations.length, big = n <= 3;
+    // optional route strip: Class 12 interchange -> this line's stops, drawn large
+    let strip = '', cardTop = 400;
+    if (big) {
+      const xs = n === 1 ? [760] : n === 2 ? [560, 820] : [430, 640, 850];
+      let g = `<polyline points="80,90 ${xs[xs.length - 1]},90" fill="none" stroke="${l.color}" stroke-width="20" stroke-linecap="round" ${l.dashed ? 'stroke-dasharray="2 34"' : ''}/>`;
+      g += `<rect x="40" y="50" width="120" height="80" rx="40" fill="#fff" stroke="#1E1A13" stroke-width="8"/><text x="100" y="168" text-anchor="middle" font-size="22" font-weight="800" fill="#1E1A13">Class 12</text>`;
+      xs.forEach((x, k) => { const nm = l.stations[k].name.replace('IIM ', '');
+        g += `<circle cx="${x}" cy="90" r="24" fill="#fff" stroke="${l.color}" stroke-width="11"/><text x="${x}" y="168" text-anchor="middle" font-size="26" font-weight="800" fill="#1E1A13">${nm}</text>`; });
+      strip = `<svg style="position:absolute;left:72px;top:368px" width="936" height="190" viewBox="0 0 936 190">${g}</svg>`;
+      cardTop = 584;
+    }
+    const hasVia = l.stations.some((x) => x.via);
+    const gap = n > 4 ? 80 : hasVia ? 112 : 128, padTop = n > 4 ? 38 : 44, x0 = 60;
+    const cardH = padTop * 2 + (n - 1) * gap + (hasVia ? 86 : 64);
+    const stations = l.stations.map((st, k) => `
+      <div class="stn" style="position:absolute;left:${x0}px;top:${padTop + k * gap - 4}px;right:40px">
+        <div class="dot" style="border-color:${l.color};top:2px"></div>
+        <div style="margin-left:64px"><div class="nm">${st.name}</div><div class="pg">${st.programme}</div>${st.via ? `<div class="via" style="color:${l.color}">Route: ${st.via}</div>` : ''}</div>
+      </div>`).join('');
+    const track = n > 1 ? `<div style="position:absolute;left:${x0 + 13}px;top:${padTop + 14}px;width:12px;height:${(n - 1) * gap}px;border-radius:6px;${l.dashed ? `background:repeating-linear-gradient(180deg,${l.color} 0 14px,transparent 14px 28px)` : `background:${l.color}`}"></div>` : '';
+    const tTop = cardTop + cardH + 30;
+    const rows = [['FROM', 'After Class 12'], ['TO', n > 2 ? `${n} stops on this line` : l.stations.map((x) => x.name).join(' · ')], ['EXAM', l.exam], ['NOTE', l.fact]];
+    app.innerHTML = `<div class="glow" style="background:${l.color};right:-360px;top:-300px"></div>
+      ${head('IIM ROUTE MAP 2027')}
+      <div style="position:absolute;top:176px;left:72px;right:72px;display:flex;gap:30px;align-items:flex-end">
+        <div class="no" style="color:${l.color}">${l.no}</div>
+        <div style="padding-bottom:8px"><div class="lname">${l.name}</div>
+        <div class="exam" style="background:${l.color}">${l.badge}</div></div>
+      </div>
+      ${strip}
+      <div class="card" style="top:${cardTop}px;height:${cardH}px">${track}${stations}</div>
+      <div class="ticket" style="top:${tTop}px"><div class="stub" style="background:${l.color}"><span>ROUTE PASS</span></div><div class="perf"></div>
+        <div class="body">${rows.map(([k, v]) => `<div class="k">${k}</div><div class="v">${v}</div>`).join('')}</div></div>
+      ${foot(S, total, 'ipmcareer.com')}`;
+    // short lines: centre the strip + card + ticket block in the space between the header and the footer
+    if (big) {
+      const tk = app.querySelector('.ticket'), bottom = tk.offsetTop + tk.offsetHeight;
+      const shift = Math.max(0, Math.round((1240 - bottom) / 2) - 10);
+      [app.querySelector('svg:not(.map)'), app.querySelector('.card'), tk].forEach((el) => el && (el.style.top = (parseInt(el.style.top) + shift) + 'px'));
+    }
+    return;
+  }
+  const P = D.promo;
+  app.innerHTML = `<div class="glow" style="background:#893783;left:-320px;bottom:-380px"></div>
+    ${head('IPM CAREERS STUDY PORTAL')}
+    <div style="position:absolute;top:170px;left:72px;right:72px">
+      <h1 style="font-size:72px">Practise every line<br>in <b>one place.</b></h1>
+    </div>
+    <div class="card" style="top:350px;padding:28px 40px 14px">
+      <div style="font:800 24px Inter;letter-spacing:.14em;color:var(--gold);margin-bottom:8px">WHAT'S ON THE PORTAL</div>
+      ${P.bullets.map(b => `<div class="bul"><div class="ck">✓</div><div><b>${b.title}</b><span>${b.detail}</span></div></div>`).join('')}
+    </div>
+    <div style="position:absolute;left:72px;right:72px;bottom:118px;display:flex;align-items:center;justify-content:space-between">
+      <div><div class="btn">Start practising →</div><div style="font:700 30px Inter;color:var(--purple);margin-top:18px;margin-left:8px">study.ipmcareer.com</div></div>
+      <div style="text-align:center"><div style="background:#fff;border-radius:22px;padding:12px;box-shadow:0 18px 40px rgba(30,26,19,.12);border:1.5px solid #F0EAF1"><img src="qr-study.png" style="width:190px;height:190px;display:block"></div>
+      <div style="font:600 20px Inter;color:var(--ink3);margin-top:10px">Scan to open</div></div>
+    </div>
+    ${foot(S, total, '')}`;
+}
+</script></body></html>

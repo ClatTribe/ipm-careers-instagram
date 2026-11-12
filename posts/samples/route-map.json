@@ -1,0 +1,53 @@
+{
+ "content": {
+  "type": "route-map",
+  "template": "templates/route-map/route-map.html",
+  "data": "templates/route-map/route-map.json",
+  "slides": "out/route-map/",
+  "slide_count": 7,
+  "note": "Undated sample: never auto-posts. Render with ?s=1..7 at 1080x1350."
+ },
+ "caption": "Save this before you fill a single form 📌\n\nYour IIM route map for 2027. Every exam is a line, every IIM is a stop:\n\n🟣 IPMAT Indore: IIM Indore, Ranchi, Amritsar, Shillong, Sirmaur, Sambalpur and IIFT\n🟢 JIPMAT: IIM Jammu and IIM Bodh Gaya\n🟠 IPMAT Rohtak: IIM Rohtak\n🔵 IIM B UGAT: IIM Bangalore\n🔴 Own tests: IIM Kozhikode, IIM Bangalore (DBE) and IIM Udaipur\n\nIPMAT Indore 2027 is on Saturday, 24 April 2027 (afternoon shift). Rohtak and JIPMAT dates are not out yet.\n\nWhich line are you on? Tell us in the comments 👇\nSend this to the friend who keeps asking \"which exam for which IIM?\"\n\n#IPMAT #IPMAT2027 #JIPMAT #IIMBUGAT #IPMCareers",
+ "claims": [
+  {
+   "claim": "IPMAT Indore 2027: Saturday, 24 April 2027, afternoon shift",
+   "source": "AIR 1 Command Center forms page, register.ipmcareer.com/air1commandcenter/forms (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "IPMAT Indore score used by IIM Indore, Ranchi, Amritsar, Shillong, Sirmaur, Sambalpur (MPP) and IIFT",
+   "source": "AIR 1 Command Center forms page, register.ipmcareer.com/air1commandcenter/forms (checked 12 Nov 2026); AIR 1 Command Center FAQ, register.ipmcareer.com/air1commandcenter (checked 12 Nov 2026): 'IPMAT Indore (IIM Indore, Ranchi, Sirmaur, Amritsar, Sambalpur, Shillong, IIFT), IPMAT Rohtak and JIPMAT (IIM Jammu and Bodh Gaya)'"
+  },
+  {
+   "claim": "JIPMAT leads to IIM Jammu and IIM Bodh Gaya; 2027 dates not announced",
+   "source": "AIR 1 Command Center forms page, register.ipmcareer.com/air1commandcenter/forms (checked 12 Nov 2026); AIR 1 Command Center FAQ, register.ipmcareer.com/air1commandcenter (checked 12 Nov 2026): 'IPMAT Indore (IIM Indore, Ranchi, Sirmaur, Amritsar, Sambalpur, Shillong, IIFT), IPMAT Rohtak and JIPMAT (IIM Jammu and Bodh Gaya)'"
+  },
+  {
+   "claim": "IPMAT Rohtak leads to IIM Rohtak; 2027 dates not announced",
+   "source": "AIR 1 Command Center forms page, register.ipmcareer.com/air1commandcenter/forms (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Programmes and durations (IPM 5 years; Sirmaur BMS 4 years; Sambalpur B.S. Management & Public Policy 4 years; Kozhikode BMS 4 years; Udaipur BBA 4 years; IIM Bangalore BBA in Digital Business & Entrepreneurship)",
+   "source": "AIR 1 Command Center forms page, register.ipmcareer.com/air1commandcenter/forms (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "Own routes: IIMK BMS Aptitude Test, IIMB DBE Entrance Test, IIM Udaipur on Class 12 scores (no entrance test)",
+   "source": "AIR 1 Command Center forms page, register.ipmcareer.com/air1commandcenter/forms (checked 12 Nov 2026)"
+  },
+  {
+   "claim": "IIM B UGAT 2025 paper: 60 questions, QA, VARC, DI & LR",
+   "source": "IPM Careers study portal, PYQ Papers page (study.ipmcareer.com, captured 26 Oct 2026)"
+  },
+  {
+   "claim": "Portal: 1,988 past-paper questions (IPMAT Indore 2019 to 2026, Rohtak 2019 to 2023, JIPMAT 2021 to 2025, IIM B UGAT 2025)",
+   "source": "IPM Careers study portal, PYQ Papers page (study.ipmcareer.com, captured 26 Oct 2026)"
+  },
+  {
+   "claim": "Portal: 15 IIM B UGAT mocks, Mistake Vault, My Plan, Samjhao AI and ask a mentor",
+   "source": "IPM Careers study portal captures (study.ipmcareer.com, Oct 2026)"
+  },
+  {
+   "claim": "QR code opens https://study.ipmcareer.com",
+   "source": "Decoded with OpenCV after generation"
+  }
+ ]
+}
