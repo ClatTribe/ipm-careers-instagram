@@ -5,8 +5,8 @@ Never print a token or key.
 
 | Task | Time (IST) | Command |
 |---|---|---|
-| Daily feed post + "New post" Story | starts 19:21, posts 19:30, Story right after | `bash tools/day.sh post $DATE` |
-| Countdown Story (until 14 Nov), plus an answer Story right after it on days with `stories/$DATE-answer.json` | starts 07:51, posts 08:00 | `bash tools/day.sh story $DATE` |
+| Feed post + "New post" Story, **Sun, Mon, Thu** (from 16 Nov; extra one-off posts Tue 17 and Fri 20 Nov) | starts 19:21, posts 19:30, Story right after | `bash tools/day.sh post $DATE` |
+| Countdown Story (ended 14 Nov; scheduled task disabled 15 Nov), plus an answer Story right after it on days with `stories/$DATE-answer.json` | starts 07:51, posts 08:00 (disabled) | `bash tools/day.sh story $DATE` |
 | Reel (Mon, Wed, Fri, Sat) on Instagram + YouTube Shorts | starts 18:21, posts 18:30 | `bash tools/day.sh reel $DATE` |
 
 **Run the upload command in the FOREGROUND** (Bash tool, `timeout: 600000`) and stay in the same turn until it prints DONE, PARTIAL or FAIL.
