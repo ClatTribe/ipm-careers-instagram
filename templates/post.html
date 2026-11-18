@@ -175,7 +175,7 @@ function frame(post, i, inner, opts = {}) {
   const dots = n > 1 ? `<div class="dots">${Array.from({ length: n }, (_, k) => `<i class="${k === i ? "on" : ""}"></i>`).join("")}</div>` : "<div></div>";
   const right = n > 1 && i === 0 ? `<div class="swipe">Swipe →</div>` : `<div>ipmcareer.com</div>`;
   return `<div class="glow"></div>
-    <div class="top"><img src="../public/brand/${/t-(web|logo)/.test(document.body.className) ? "logo-white.png" : "logo-full.png"}"><div class="pill">${SERIES[post.content.type]}</div></div>
+    <div class="top"><img src="../public/brand/${/t-(web|logo)/.test(document.body.className) ? "logo-white.png" : "logo-full.png"}"><div class="pill">${post.content.series || SERIES[post.content.type]}</div></div>
     <div class="body" style="${opts.bodyStyle || ""}">${inner}</div>
     <div class="foot">${n > 1 ? dots : `<div>Save it for later 📌</div>`}${right}</div>`;
 }
