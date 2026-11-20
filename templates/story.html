@@ -64,8 +64,9 @@ const T = {
       <div class="mid"><div style="font:700 32px Inter;letter-spacing:.14em;color:#FFC24D">${md(c.kicker)}</div>
         <div class="big">${c.days}</div><h2 style="color:#fff;margin-top:10px">${md(c.title)}</h2>
         <div class="hand" style="margin-top:56px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);border-radius:32px;padding:36px 44px;font-size:46px;line-height:1.45">
-          <div style="font:700 26px Inter;letter-spacing:.14em;color:#FFC24D;margin-bottom:10px">TODAY'S ONE THING</div>${md(c.task)}</div>
-        <div class="reply">${md(c.reply)}</div></div></div>`,
+          <div style="font:700 26px Inter;letter-spacing:.14em;color:#FFC24D;margin-bottom:10px">${c.taskLabel || "TODAY'S ONE THING"}</div>${md(c.task)}</div>
+        <div class="reply">${md(c.reply)}</div>
+        ${c.cta ? `<div style="margin-top:34px;background:#FFC24D;color:#2A1631;border-radius:999px;padding:22px 36px;font:800 34px/1.25 Inter;text-align:center">${md(c.cta)}</div>` : ""}</div></div>`,
 };
 window.render = (story) => { document.getElementById("s").innerHTML = T[story.type](story); };
 </script></body></html>

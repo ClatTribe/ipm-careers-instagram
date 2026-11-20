@@ -186,8 +186,8 @@ function render(D) {
       ${P.bullets.map(b => `<div class="bul"><div class="ck">✓</div><div><b>${b.title}</b><span>${b.detail}</span></div></div>`).join('')}
     </div>
     <div style="position:absolute;left:72px;right:72px;bottom:118px;display:flex;align-items:center;justify-content:space-between">
-      <div><div class="btn">${P.btn || 'Start practising →'}</div><div style="font:700 30px Inter;color:var(--purple);margin-top:18px;margin-left:8px">study.ipmcareer.com</div></div>
-      <div style="text-align:center"><div style="background:#fff;border-radius:22px;padding:12px;box-shadow:0 18px 40px rgba(30,26,19,.12);border:1.5px solid #F0EAF1"><img src="qr-study.png" style="width:190px;height:190px;display:block"></div>
+      <div><div class="btn">${P.btn || 'Start practising →'}</div><div style="font:700 30px Inter;color:var(--purple);margin-top:18px;margin-left:8px">${P.url || 'study.ipmcareer.com'}</div></div>
+      <div style="text-align:center"><div style="background:#fff;border-radius:22px;padding:12px;box-shadow:0 18px 40px rgba(30,26,19,.12);border:1.5px solid #F0EAF1"><img src="${P.qr || 'qr-study.png'}" style="width:190px;height:190px;display:block"></div>
       <div style="font:600 20px Inter;color:var(--ink3);margin-top:10px">Scan to open</div></div>
     </div>
     ${foot(S, total, '')}`;
