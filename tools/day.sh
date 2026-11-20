@@ -26,7 +26,9 @@ if [ "$MODE" = "post" ]; then
   [ -f "$F" ] || { log "NO_POST: $F does not exist"; exit 3; }
   node tools/check.mjs "$F" || { log "FAIL: safety check"; exit 1; }
   RM=$(node -e "const c=require('./$F').content||{}; if(c.type==='route-map') console.log(c.data)")
-  if [ -n "$RM" ]; then node tools/render-route-map.mjs "$RM" "out/white/$DATE" | tee "out/$DATE-render.log"   # route-map carousels
+  IMG=$(node -e "const c=require('./$F').content||{}; if(c.type==='image') console.log(c.image)")
+  if [ -n "$IMG" ]; then mkdir -p "out/white/$DATE" && rm -f out/white/$DATE/slide-*.png && cp "$IMG" "out/white/$DATE/slide-1.png" && echo "RENDERED out/white/$DATE (1 ready-made image)" | tee "out/$DATE-render.log"   # single ready-made image
+  elif [ -n "$RM" ]; then node tools/render-route-map.mjs "$RM" "out/white/$DATE" | tee "out/$DATE-render.log"   # route-map carousels
   else node tools/render.mjs --theme=white "$F" | tee "out/$DATE-render.log"; fi
   grep -q WARN "out/$DATE-render.log" && { log "FAIL: text too tall on a slide (see log)"; exit 1; }
   sheet "out/$DATE-post-sheet.png" $(ls out/white/$DATE/slide-*.png | sort -t- -k2 -n) && log "review sheet: out/$DATE-post-sheet.png" || log "WARN: no review sheet (Pillow problem); look at out/white/$DATE/slide-*.png directly"
