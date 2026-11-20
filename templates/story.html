@@ -35,6 +35,29 @@
   .big { font: 900 420px/0.9 Inter; letter-spacing: -0.05em; color: #FFC24D; }
   .hand { font-family: Hand, sans-serif; }
   .reply { margin-top: 44px; font: 600 40px Inter; color: #fff; opacity: .92; }
+  .road .cal { position: relative; width: 600px; margin: 0 auto; }
+  .road .page { background: #fff; border-radius: 34px; overflow: hidden; box-shadow: 0 34px 80px rgba(90,30,86,.22); border: 2px solid #EFE3EE; }
+  .road .under { position: absolute; inset: 0; background: #F6EEF5; border-radius: 34px; transform: rotate(5deg) translate(14px, 10px); border: 2px solid #EBD6E8; }
+  .road .band { background: linear-gradient(135deg, #9B3F94, #5A1E56); color: #fff; padding: 46px 30px 26px; text-align: center; font: 800 30px Inter; letter-spacing: .14em; position: relative; }
+  .road .ring { position: absolute; top: -18px; width: 26px; height: 58px; border-radius: 13px; background: #E9E1E8; border: 5px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,.18); }
+  .road .num { text-align: center; font: 900 300px/1 Inter; letter-spacing: -0.06em; padding-top: 26px;
+    background: linear-gradient(180deg, #B04AA6 0%, #5A1E56 100%); -webkit-background-clip: text; color: transparent; }
+  .road .unit { text-align: center; font: 800 46px Inter; color: #1B1420; padding: 4px 30px 40px; letter-spacing: -.01em; }
+  .road .unit b { color: #C47A0A; }
+  .road .tl { position: relative; display: flex; justify-content: space-between; margin-top: 64px; }
+  .road .tl:before { content: ""; position: absolute; left: 60px; right: 60px; top: 21px; height: 6px; border-radius: 3px; background: #EBD6E8; }
+  .road .st { position: relative; width: 180px; text-align: center; font: 600 24px/1.25 Inter; color: #8A7F8C; }
+  .road .st i { display: block; margin: 0 auto 14px; width: 48px; height: 48px; border-radius: 24px; background: #fff; border: 5px solid #DCC6DA; font: 900 24px/38px Inter; color: #fff; font-style: normal; }
+  .road .st.done i { background: #893783; border-color: #893783; }
+  .road .st.now i { background: #FFC24D; border-color: #FFF; box-shadow: 0 0 0 6px #FFC24D, 0 0 30px 10px rgba(255,194,77,.55); }
+  .road .st.now, .road .st.done { color: #1B1420; } .road .st.now b { color: #C47A0A; }
+  .road .task { margin-top: 56px; background: #fff; border-radius: 28px; padding: 30px 38px 34px 44px; border: 2px solid #EFE3EE; box-shadow: 0 18px 40px rgba(90,30,86,.08); position: relative; overflow: hidden; }
+  .road .task:before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 12px; background: #FFC24D; }
+  .road .task small { display: block; font: 800 24px Inter; letter-spacing: .14em; color: #C47A0A; margin-bottom: 10px; }
+  .road .task div { font: 600 40px/1.35 Inter; color: #1B1420; }
+  .road .cta { margin-top: 34px; display: flex; align-items: center; gap: 26px; background: linear-gradient(120deg, #893783, #5A1E56); color: #fff; border-radius: 30px; padding: 26px 34px; box-shadow: 0 20px 44px rgba(90,30,86,.28); }
+  .road .cta .ic { flex: 0 0 84px; height: 84px; border-radius: 22px; background: #FFC24D; display: flex; align-items: center; justify-content: center; font-size: 48px; }
+  .road .cta b { display: block; font: 900 40px Inter; } .road .cta span { display: block; font: 600 28px Inter; opacity: .88; margin-top: 4px; }
 </style></head>
 <body><div id="s"></div>
 <script>
@@ -67,6 +90,20 @@ const T = {
           <div style="font:700 26px Inter;letter-spacing:.14em;color:#FFC24D;margin-bottom:10px">${c.taskLabel || "TODAY'S ONE THING"}</div>${md(c.task)}</div>
         <div class="reply">${md(c.reply)}</div>
         ${c.cta ? `<div style="margin-top:34px;background:#FFC24D;color:#2A1631;border-radius:999px;padding:22px 36px;font:800 34px/1.25 Inter;text-align:center">${md(c.cta)}</div>` : ""}</div></div>`,
+  road: (c) => {
+    const ST = [["Apply", "25 Nov"], ["Admit card", "3 Dec"], ["Test", "5 Dec"], ["SA · MP · PI", "11 to 13 Dec"], ["Final list", "21 Dec"]];
+    const big = String(c.days); const fs = big.length <= 2 ? 300 : big.length <= 4 ? 220 : 170;
+    return `<div class="bg"></div><div class="safe road">
+      <div style="display:flex;justify-content:space-between;align-items:center"><img class="logo" style="height:76px" src="../public/brand/logo-full.png"><span class="pill">${md(c.pill || "CHRIST · BBA 2027")}</span></div>
+      <div style="margin-top:60px" class="cal"><div class="under"></div><div class="page" style="position:relative;transform:rotate(-2deg)">
+        <div class="band"><span class="ring" style="left:150px"></span><span class="ring" style="right:150px"></span>${md(c.band)}</div>
+        <div class="num" style="font-size:${fs}px;padding-top:${fs < 300 ? 50 : 26}px;padding-bottom:${fs < 300 ? 20 : 0}px">${md(big)}</div>
+        <div class="unit">${c.unit}</div></div></div>
+      <div class="tl">${ST.map(([a, b], i) => `<div class="st ${i < c.stage ? "done" : i === c.stage ? "now" : ""}"><i>${i < c.stage ? "✓" : ""}</i><b>${a}</b><br>${b}</div>`).join("")}</div>
+      <div class="task"><small>${c.taskLabel || "TODAY'S ONE THING"}</small><div>${md(c.task)}</div></div>
+      ${c.cta ? `<div class="cta"><div class="ic">📝</div><div><b>${md(c.cta)}</b><span>${md(c.ctaSub || "")}</span></div></div>` : ""}
+    </div>`;
+  },
 };
 window.render = (story) => { document.getElementById("s").innerHTML = T[story.type](story); };
 </script></body></html>
