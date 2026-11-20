@@ -36,7 +36,7 @@ if (!ch && tDays >= 0 && tDays <= 9) {
       : tDays === 2 ? "Admit cards come out tonight at 11 PM on christuniversity.in. Light revision today." : tTasks[tDays % tTasks.length] };
 }
 if (ch) {
-  fs.writeFileSync(`stories/auto/${date}-countdown.json`, JSON.stringify({ type: "road", ...ch, ...(tDays > 0 ? TS : {}) }, null, 1));
+  fs.writeFileSync(`stories/auto/${date}-countdown.json`, JSON.stringify({ type: (fs.existsSync("data/story-style.txt") ? fs.readFileSync("data/story-style.txt", "utf8").trim() : "") || "road", ...ch, ...(tDays > 0 ? TS : {}) }, null, 1));
   made.push(`${date}-countdown`);
 }
 

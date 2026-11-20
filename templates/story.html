@@ -58,6 +58,16 @@
   .road .cta { margin-top: 34px; display: flex; align-items: center; gap: 26px; background: linear-gradient(120deg, #893783, #5A1E56); color: #fff; border-radius: 30px; padding: 26px 34px; box-shadow: 0 20px 44px rgba(90,30,86,.28); }
   .road .cta .ic { flex: 0 0 84px; height: 84px; border-radius: 22px; background: #FFC24D; display: flex; align-items: center; justify-content: center; font-size: 48px; }
   .road .cta b { display: block; font: 900 40px Inter; } .road .cta span { display: block; font: 600 28px Inter; opacity: .88; margin-top: 4px; }
+  .tk { position: absolute; inset: 0; background: radial-gradient(900px 700px at 100% 0%, rgba(255,194,77,.28), transparent 60%), linear-gradient(165deg, #2A0F28 0%, #120610 100%); }
+  .tkw .card { position: absolute; left: 90px; right: 90px; top: 400px; height: 1010px; background: #FFFBF3; border-radius: 40px; overflow: hidden; box-shadow: 0 40px 90px rgba(0,0,0,.45); }
+  .tkw .top { background: linear-gradient(120deg, #893783, #5A1E56); color: #fff; padding: 34px 44px; display: flex; justify-content: space-between; align-items: center; }
+  .tkw .lbl { font: 800 22px Inter; letter-spacing: .16em; color: #9A8F9C; }
+  .tkw .val { font: 800 34px Inter; color: #1B1420; margin-top: 6px; }
+  .tkw .cut { position: absolute; left: -30px; right: -30px; height: 60px; display: flex; justify-content: space-between; align-items: center; }
+  .tkw .cut:before, .tk .cut:after { content: ""; width: 60px; height: 60px; border-radius: 30px; background: #1C0A1A; }
+  .tkw .dash { position: absolute; left: 50px; right: 50px; border-top: 5px dashed #E6D9E4; }
+  .rg { position: absolute; inset: 0; background: radial-gradient(800px 600px at 50% 32%, rgba(255,194,77,.22), transparent 65%), linear-gradient(170deg, #8E3A88 0%, #4A1747 70%, #2E0D2C 100%); }
+  .rg .glass { background: rgba(255,255,255,.10); border: 2px solid rgba(255,255,255,.18); border-radius: 30px; }
 </style></head>
 <body><div id="s"></div>
 <script>
@@ -103,6 +113,49 @@ const T = {
       <div class="task"><small>${c.taskLabel || "TODAY'S ONE THING"}</small><div>${md(c.task)}</div></div>
       ${c.cta ? `<div class="cta"><div class="ic">📝</div><div><b>${md(c.cta)}</b><span>${md(c.ctaSub || "")}</span></div></div>` : ""}
     </div>`;
+  },
+  ticket: (c) => {
+    const big = String(c.days); const fs = big.length <= 2 ? 260 : 170;
+    const ST = [["Apply", "25 Nov"], ["Test", "5 Dec"], ["SA·MP·PI", "11 to 13 Dec"], ["Final list", "21 Dec"]];
+    const now = c.stage === 0 ? 0 : c.stage <= 2 ? 1 : c.stage === 3 ? 2 : 3;
+    return `<div class="tkw" style="position:absolute;inset:0"><div class="tk"></div>
+      <div style="position:absolute;left:90px;right:90px;top:270px;display:flex;justify-content:space-between;align-items:center">
+        <img src="../public/brand/logo-white.png" style="height:70px"><span style="font:800 24px Inter;letter-spacing:.14em;color:#FFC24D;border:2px solid rgba(255,194,77,.5);padding:12px 22px;border-radius:999px">${md(c.pill || "CHRIST · BBA 2027")}</span></div>
+      <div class="card">
+        <div class="top"><div style="font:800 26px Inter;letter-spacing:.16em">BOARDING PASS</div><div style="font:800 26px Inter;letter-spacing:.12em;color:#FFC24D">${md(c.band)}</div></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:40px 50px 10px">
+          <div><div class="lbl">FROM</div><div style="font:900 64px Inter;color:#1B1420">CLASS 12</div></div>
+          <div style="font-size:60px">✈️</div>
+          <div style="text-align:right"><div class="lbl">TO</div><div style="font:900 64px Inter;color:#893783">CHRIST</div></div>
+        </div>
+        <div style="text-align:center;font:900 ${fs}px/1 Inter;letter-spacing:-.06em;color:#1B1420;margin-top:${fs < 260 ? 40 : 10}px">${md(big)}</div>
+        <div style="text-align:center;font:800 44px Inter;color:#1B1420;margin-top:${fs < 260 ? 30 : 0}px">${c.unit.replace(/<b>/g, '<b style="color:#C47A0A">')}</div>
+        <div style="display:flex;justify-content:space-between;padding:44px 50px 0">${ST.map(([a, b], i) => `<div style="opacity:${i < now ? .45 : 1}"><div class="lbl" style="color:${i === now ? "#C47A0A" : "#9A8F9C"}">${i < now ? "✓ " : ""}${a.toUpperCase()}</div><div class="val" style="font-size:30px">${b}</div></div>`).join("")}</div>
+        <div class="cut" style="top:700px"></div><div class="dash" style="top:728px"></div>
+        <div style="position:absolute;left:50px;right:50px;top:772px"><div class="lbl" style="color:#C47A0A">${c.taskLabel || "TODAY'S ONE THING"}</div>
+          <div style="font:600 38px/1.35 Inter;color:#1B1420;margin-top:10px">${md(c.task)}</div></div>
+      </div>
+      ${c.cta ? `<div style="position:absolute;left:90px;right:90px;top:1440px;display:flex;align-items:center;gap:22px;background:#FFC24D;border-radius:26px;padding:22px 30px;color:#2A0F28"><div style="font-size:46px">📝</div><div><div style="font:900 36px Inter">${md(c.cta)}</div><div style="font:600 25px Inter;opacity:.85;margin-top:2px">${md(c.ctaSub || "")}</div></div></div>` : ""}</div>`;
+  },
+  ring: (c) => {
+    const big = String(c.days); const fs = big.length <= 2 ? 250 : 150;
+    const tot = c.stage === 0 ? 25 : 10; const left = typeof c.days === "number" ? c.days : 0; const frac = Math.max(0.04, 1 - left / tot);
+    const R = 250, L = 2 * Math.PI * R;
+    return `<div class="rg"></div>
+      <div style="position:absolute;left:80px;right:80px;top:270px;display:flex;justify-content:space-between;align-items:center">
+        <img src="../public/brand/logo-white.png" style="height:70px"><span style="font:800 24px Inter;letter-spacing:.14em;color:#fff;background:rgba(255,255,255,.12);padding:12px 22px;border-radius:999px">${md(c.pill || "CHRIST · BBA 2027")}</span></div>
+      <div style="position:absolute;top:400px;left:0;right:0;text-align:center;font:800 30px Inter;letter-spacing:.16em;color:#FFC24D">${md(c.band)}</div>
+      <div style="position:absolute;top:470px;left:${540 - R - 30}px;width:${2 * R + 60}px;height:${2 * R + 60}px">
+        <svg width="${2 * R + 60}" height="${2 * R + 60}" style="transform:rotate(-90deg)"><circle cx="${R + 30}" cy="${R + 30}" r="${R}" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="34"/>
+        <circle cx="${R + 30}" cy="${R + 30}" r="${R}" fill="none" stroke="#FFC24D" stroke-width="34" stroke-linecap="round" stroke-dasharray="${L * frac} ${L}" style="filter:drop-shadow(0 0 18px rgba(255,194,77,.7))"/></svg>
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff">
+          <div style="font:900 ${fs}px/0.95 Inter;letter-spacing:-.05em">${md(big)}</div>
+          <div style="font:700 40px Inter;margin-top:14px;text-align:center;max-width:420px">${c.unit.replace(/<b>/g, '<b style="color:#FFC24D">')}</div></div>
+      </div>
+      <div class="glass" style="position:absolute;left:80px;right:80px;top:1080px;padding:30px 38px">
+        <div style="font:800 24px Inter;letter-spacing:.14em;color:#FFC24D">${c.taskLabel || "TODAY'S ONE THING"}</div>
+        <div style="font:600 38px/1.35 Inter;color:#fff;margin-top:10px">${md(c.task)}</div></div>
+      ${c.cta ? `<div style="position:absolute;left:80px;right:80px;top:1360px;display:flex;align-items:center;gap:22px;background:#fff;border-radius:26px;padding:22px 30px;color:#2E0D2C"><div style="font-size:46px">📝</div><div><div style="font:900 36px Inter;color:#893783">${md(c.cta)}</div><div style="font:600 25px Inter;opacity:.8;margin-top:2px">${md(c.ctaSub || "")}</div></div></div>` : ""}`;
   },
 };
 window.render = (story) => { document.getElementById("s").innerHTML = T[story.type](story); };
