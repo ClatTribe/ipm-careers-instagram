@@ -1,7 +1,12 @@
 // Starts Chromium for rendering, wherever this machine keeps it.
 // Tries Playwright's own browser first, then any Chrome under /opt/pw-browsers (folder names change between images).
 import fs from "node:fs";
-import { chromium } from "playwright";
+import { execSync } from "node:child_process";
+// Playwright is installed globally on these machines; plain ESM imports do not look there, so fall back to the global folder.
+const { chromium } = await import("playwright").catch(() => {
+  const root = execSync("npm root -g", { encoding: "utf8" }).trim();
+  return import(`${root}/playwright/index.mjs`);
+});
 
 export async function launchBrowser() {
   try {
