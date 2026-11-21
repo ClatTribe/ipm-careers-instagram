@@ -63,6 +63,8 @@ elif [ "$MODE" = "reel" ]; then
   elif [ -f "out/$DATE-youtube.txt" ]; then log "YouTube already uploaded in this run: $(cat "out/$DATE-youtube.txt")"
   else node tools/upload-youtube.mjs "$F" --publish-at "${DATE}T18:30:00+05:30" | tee "out/$DATE-youtube.log"; [ "${PIPESTATUS[0]}" = "0" ] && grep DONE "out/$DATE-youtube.log" > "out/$DATE-youtube.txt" || YT=failed
   fi
+  # Instagram automation paused (account warning, 20 Nov): YouTube only; the owner posts on Instagram by hand
+  [ -f data/instagram-paused ] && { log "INSTAGRAM_PAUSED: YouTube $YT; Instagram is posted by hand (see data/instagram-paused)"; exit 0; }
   node tools/upload-instagram.mjs reel "$F" --publish-at "${DATE}T18:30:00+05:30" || exit 1
   node tools/share-reel.mjs "$DATE" | tee "out/$DATE-reel-share.txt" || log "WARN: could not make the download link"
   # exit 0 even if YouTube failed: Instagram is live, and a retry would post it twice
