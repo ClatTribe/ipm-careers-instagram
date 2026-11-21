@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- "Looks like a real phone screenshot" memes (1080x1350): ?c=notes | chat. Small @ipmcareers mark only. -->
+<style>
+@font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden;font-family:-apple-system,Inter,"Noto Color Emoji",sans-serif}
+.sb{height:96px;display:flex;justify-content:space-between;align-items:center;padding:20px 64px 0;font:600 38px Inter;letter-spacing:-.5px}
+.sb .r{display:flex;gap:14px;align-items:center;font-size:30px}
+.bat{width:58px;height:28px;border:3px solid currentColor;border-radius:8px;position:relative;opacity:.9}
+.bat:after{content:"";position:absolute;left:3px;top:3px;bottom:3px;width:34px;background:currentColor;border-radius:3px}
+.sig{display:flex;gap:4px;align-items:flex-end}.sig i{width:7px;background:currentColor;border-radius:2px;display:block}
+.mark{position:absolute;right:40px;bottom:28px;font:600 22px Inter;opacity:.55}
+/* notes */
+.notes{background:#fff;color:#1c1c1e;height:100%}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 44px 0;color:#E0A100;font:500 40px Inter}
+.nt{padding:36px 64px 0}
+.nt .d{text-align:center;color:#8e8e93;font:400 26px Inter;margin-bottom:34px}
+.nt h1{font:800 64px Inter;letter-spacing:-1px;margin-bottom:26px}
+.nt p{font:400 44px/1.45 Inter;margin-bottom:6px}
+.ck{display:flex;align-items:flex-start;gap:26px;font:400 44px/1.4 Inter;margin:18px 0}
+.ck i{flex:0 0 50px;height:50px;border-radius:25px;border:3px solid #c7c7cc;margin-top:6px}
+.ck.on i{border:none;background:#E0A100;position:relative}
+.ck.on i:after{content:"";position:absolute;left:16px;top:9px;width:13px;height:24px;border:solid #fff;border-width:0 5px 5px 0;transform:rotate(45deg)}
+.ck.on span{color:#8e8e93}
+.cursor{display:inline-block;width:4px;height:50px;background:#E0A100;vertical-align:-8px;margin-left:4px}
+/* chat */
+.chat{height:100%;background:#EFE7DE;color:#111}
+.chat .hd{background:#F6F6F6;border-bottom:1px solid #ddd}
+.chat .h2{display:flex;align-items:center;gap:22px;padding:10px 34px 22px;font:600 36px Inter}
+.av{width:84px;height:84px;border-radius:42px;background:#C9B6E4;display:flex;align-items:center;justify-content:center;font-size:44px}
+.chat .h2 small{display:block;font:400 26px Inter;color:#777;margin-top:4px}
+.msgs{padding:18px 34px}
+.m{max-width:760px;padding:14px 24px 32px;border-radius:22px;font:400 35px/1.32 Inter;position:relative;margin:10px 0;box-shadow:0 1px 1px rgba(0,0,0,.12);background:#fff}
+.m b{display:block;font:600 30px Inter;margin-bottom:4px}
+.m em{position:absolute;right:18px;bottom:8px;font:400 22px Inter;color:#888;font-style:normal}
+.me{margin-left:auto;background:#D9FDD3}
+.day{margin:22px auto;width:max-content;background:#fff;color:#555;font:500 26px Inter;padding:8px 22px;border-radius:14px;box-shadow:0 1px 1px rgba(0,0,0,.1)}
+</style></head><body><div id="s"></div>
+<script>
+const c=new URLSearchParams(location.search).get("c")||"notes";
+const sb=(col)=>`<div class="sb" style="color:${col}"><span>9:41</span><span class="r"><span class="sig"><i style="height:10px"></i><i style="height:15px"></i><i style="height:20px"></i><i style="height:25px"></i></span> &nbsp;<span class="bat"></span></span></div>`;
+const V={
+notes:()=>`<div class="notes">${sb("#000")}
+ <div class="nav"><span>‹ Notes</span><span style="display:flex;gap:40px">⤴︎ &nbsp;⋯</span></div>
+ <div class="nt"><div class="d">15 November 2026 at 6:12 PM</div>
+ <h1>after iim b ugat 🫠</h1>
+ <p>rules for this week:</p>
+ <div class="ck"><i></i><span>sleep. a lot.</span></div>
+ <div class="ck"><i></i><span>finish the series everyone keeps talking about</span></div>
+ <div class="ck"><i></i><span>NO maths till december</span></div>
+ <div class="ck on"><i></i><span>open the IPMAT 2027 syllabus “just to see” (day 2 💀)</span></div>
+ <div class="ck on"><i></i><span>attempted one mock. only one. promise</span></div>
+ <p style="margin-top:22px">update: it was not one<span class="cursor"></span></p>
+ </div><div class="mark" style="color:#000">@ipmcareers</div></div>`,
+chat:()=>`<div class="chat"><div class="hd">${sb("#000")}<div class="h2"><span style="color:#007AFF;font-size:44px">‹</span><div class="av">📚</div><div>ipmat 27 survivors<small>Riya, Aarav, Kabir, You</small></div></div></div>
+ <div class="msgs">
+ <div class="m"><b style="color:#C2185B">Riya</b>iim b ugat DONE. not opening a book till december<em>6:14 PM</em></div>
+ <div class="m"><b style="color:#1E88E5">Aarav</b>same. full rest mode 😌<em>6:15 PM</em></div>
+ <div class="m me">bro i'm deleting the mock app tonight<em>6:15 PM</em></div>
+ <div class="day">Monday</div>
+ <div class="m"><b style="color:#C2185B">Riya</b>guys quick question. is percentages in ipmat quant or<em>8:02 AM</em></div>
+ <div class="m"><b style="color:#1E88E5">Aarav</b>riya it's been 2 days 💀<em>8:03 AM</em></div>
+ <div class="m"><b style="color:#2E7D32">Kabir</b>i'm on mock 3 already don't tell anyone<em>8:03 AM</em></div>
+ <div class="m me">reinstalled the app at 7 am 🫡<em>8:04 AM</em></div>
+ </div><div class="mark" style="color:#000;right:auto;left:40px">@ipmcareers</div></div>`,
+};
+document.getElementById("s").innerHTML=V[c]();
+</script></body></html>
