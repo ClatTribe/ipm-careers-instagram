@@ -11,7 +11,7 @@ html,body{width:1080px;height:1080px;overflow:hidden;background:#fff}
 .b{position:absolute;background:#fff;border:4px solid #1b1b1b;border-radius:34px;padding:22px 34px;font:800 46px/1.18 Inter;color:#1b1b1b;text-align:center;box-shadow:0 4px 0 rgba(0,0,0,.08)}
 .b.red{color:#B3261E}
 .tail{position:absolute;width:0;height:0}
-.hdr{position:absolute;left:0;right:0;top:34px;text-align:center;font:700 26px Inter;color:#555;line-height:1.3;letter-spacing:.04em}
+.hdr{position:absolute;right:40px;top:30px;text-align:right;font:700 26px Inter;color:#555;line-height:1.3;letter-spacing:.04em}
 .hdr b{display:block;color:#B3261E;font-weight:800;font-size:30px}
 .sig{position:absolute;right:30px;bottom:28px;background:rgba(255,255,255,.82);padding:10px 20px 12px;border-radius:12px;text-align:right}
 .sig .n{font:italic 700 46px FrauncesI;color:#B3261E}
@@ -26,6 +26,6 @@ for(const b of d.bubbles){
   h+=`<svg style="position:absolute;left:0;top:0;width:1080px;height:1080px;overflow:visible"><polygon points="${b.tail}" fill="#fff" stroke="#1b1b1b" stroke-width="4" stroke-linejoin="round"/></svg>`;
   h+=`<div class="b ${b.red?"red":""}" style="left:${b.x}px;top:${b.y}px;width:${b.w}px;font-size:${b.fs||46}px">${b.t}</div>`;
 }
-h+=`<div class="sig" style="${d.sigStyle||""}"><div class="n">IPM Careers</div><div class="s">run by IIM alumni · @ipmcareers</div></div>`;
+h+=`<img src="../../public/brand/${d.logo==="white"?"logo-white.png":"logo-full.png"}" style="position:absolute;left:34px;top:26px;height:64px">`;
 document.getElementById("s").innerHTML=h;
 </script></body></html>
