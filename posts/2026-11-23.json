@@ -1,35 +1,19 @@
 {
  "date": "2026-11-23",
  "content": {
-  "type": "checklist",
-  "kicker": "IPMAT 2027 · daily routine",
-  "title": "A daily IPMAT routine\n*that actually lasts.*",
-  "subtitle": "Small and steady beats long and rare. Five parts of a simple study day.",
-  "steps": [
-   {
-    "title": "Warm up with mental maths",
-    "detail": "Ten minutes of squares, percentages and fractions before anything else."
-   },
-   {
-    "title": "One Quant topic, deep",
-    "detail": "Learn or revise one topic and solve 20 to 25 questions on it."
-   },
-   {
-    "title": "One reading block",
-    "detail": "Read one long article and note three new words with their meanings."
-   },
-   {
-    "title": "Mixed practice, timed",
-    "detail": "Fifteen mixed questions under time, Quant and Verbal together."
-   },
-   {
-    "title": "Redo your mistakes",
-    "detail": "End the day by redoing what you got wrong. That is where marks come from."
-   }
-  ],
-  "saveTitle": "Save this and *start tomorrow.*",
-  "saveLine": "Send it to your study partner."
+  "type": "image",
+  "image": "media/posts/2026-11-23-iimb-shortlist.png",
+  "made": "templates/cards/info-iimb-doc.html (marked-up official document)"
  },
- "caption": "A daily IPMAT routine that actually lasts 👇\n\n1. Warm up with mental maths\n2. One Quant topic, deep\n3. One reading block\n4. Mixed practice, timed\n5. Redo your mistakes\n\nSave this 📌\n\n#IPMAT #IPMAT2027 #StudyRoutine #IPMCareers #IPMATPrep",
- "claims": []
+ "caption": "Wrote the IIM B UGAT? This is exactly how IIM Bangalore decides who gets an interview, straight from IIMB's own admissions document 👇\n\n1. Clear every cut-off. General: VARC 50, LR 50, QADI 75 and 80 overall (percentiles). And your raw score must be positive in all 3 sections.\n2. Pre-interview score out of 100: UG Test 70, Class 10 overall 15, Class 10 maths 10, gender diversity 5.\n3. Final score: UG Test 40, interview 40, Class 10 overall 10, Class 10 maths 10.\n\nYes, your Class 10 maths marks count twice. And the interview counts as much as the test.\n\nResults are expected on 15 Dec (tentative). Check your raw score now: register.ipmcareer.com/response-v1\n\nSave this and send it to a friend who wrote it 📌\n\n#IIMBUGAT #IIMBangalore #IPMCareers #IIMB #BBA",
+ "claims": [
+  {
+   "text": "cut-offs, positive raw score, pre-PI and post-PI weights",
+   "source": "ug.iimb.ac.in UG-Admissions-Process_2026.pdf, Stage I, Annexure I Table 1, Stage II (checked 21 Nov 2026)"
+  },
+  {
+   "text": "results 15 Dec tentative",
+   "source": "register.ipmcareer.com/response-v1 KEY_DATES (IIMB FAQ)"
+  }
+ ]
 }
