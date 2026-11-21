@@ -1,0 +1,52 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Sat 21 Nov post options (1080x1350): ?c=meme | poll | next -->
+<style>
+@font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
+@font-face { font-family: Fraunces; src: url(../../public/fonts/fraunces.woff2); font-weight: 100 900; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden;font-family:Inter,"Noto Color Emoji",sans-serif;color:#1E1A13;background:#fff}
+.bg{position:absolute;inset:0;background:radial-gradient(circle at 88% 8%,rgba(137,55,131,.10),transparent 42%),linear-gradient(rgba(0,0,0,.035) 1px,transparent 1px) 0 0/54px 54px,linear-gradient(90deg,rgba(0,0,0,.035) 1px,transparent 1px) 0 0/54px 54px}
+.top{position:absolute;top:56px;left:70px;right:70px;display:flex;justify-content:space-between;align-items:center}
+.pill{font:700 22px Inter;letter-spacing:.12em;color:#893783;background:#F3E6F1;padding:12px 22px;border-radius:999px}
+.foot{position:absolute;left:70px;right:70px;bottom:50px;display:flex;justify-content:space-between;font:600 26px Inter;color:#8B857B}
+.k{font:800 26px Inter;letter-spacing:.14em;color:#C47A0A}
+h1{font:900 88px/1.02 Inter;letter-spacing:-2px}
+.p{color:#893783}
+.panel{position:absolute;left:70px;right:70px;height:500px;border-radius:36px;overflow:hidden;display:flex;align-items:center;box-shadow:0 18px 44px rgba(90,30,86,.14)}
+.panel .t{flex:1;padding:0 44px}
+.panel .tag{font:800 24px Inter;letter-spacing:.14em;color:#C47A0A}
+.panel .l{margin-top:18px;font:900 52px/1.12 Inter;letter-spacing:-1px}
+.panel .e{flex:0 0 330px;font-size:230px;text-align:center;filter:drop-shadow(0 16px 26px rgba(0,0,0,.25))}
+.grid{position:absolute;top:520px;left:70px;right:70px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.opt{display:flex;align-items:center;gap:22px;background:#fff;border:2px solid #EFE3EE;border-radius:28px;padding:26px;box-shadow:0 14px 30px rgba(90,30,86,.08);height:150px}
+.opt b{flex:0 0 78px;height:78px;border-radius:39px;background:#893783;color:#fff;font:900 40px/78px Inter;text-align:center}
+.opt span{font:800 33px/1.15 Inter;flex:1}.opt i{font-style:normal;font-size:50px}
+.step{display:flex;gap:26px;align-items:flex-start;background:#fff;border:2px solid #EFE3EE;border-radius:28px;padding:28px 32px;margin-bottom:22px;box-shadow:0 14px 30px rgba(90,30,86,.07)}
+.step .ic{flex:0 0 74px;height:74px;border-radius:22px;background:#F6EEF5;font-size:42px;display:flex;align-items:center;justify-content:center}
+.step h3{font:900 38px Inter}.step p{font:400 28px/1.35 Inter;color:#57524A;margin-top:8px}
+.cta{position:absolute;left:70px;right:70px;top:1110px;display:flex;align-items:center;gap:26px;background:linear-gradient(120deg,#893783,#5A1E56);color:#fff;border-radius:30px;padding:24px 32px;box-shadow:0 20px 44px rgba(90,30,86,.25)}
+.cta .ic{flex:0 0 78px;height:78px;border-radius:20px;background:#FFC24D;display:flex;align-items:center;justify-content:center;font-size:44px}
+.cta b{display:block;font:900 36px Inter}.cta span{display:block;font:600 25px Inter;opacity:.88;margin-top:4px}
+</style></head><body><div class="bg"></div><div id="s"></div>
+<script>
+const c=new URLSearchParams(location.search).get("c")||"meme";
+const hdr=(pill)=>`<div class="top"><img src="../../public/brand/logo-full.png" style="height:62px"><span class="pill">${pill}</span></div>`;
+const V={
+meme:()=>hdr("SATURDAY MOOD")+`
+ <div class="panel" style="top:170px;background:#F6EEF5"><div class="t"><div class="tag">ME, 15 NOV, AFTER THE IIM B UGAT</div><div class="l">"I deserve a <span class="p">week off.</span>"</div></div><div class="e">😴</div></div>
+ <div class="panel" style="top:700px;background:linear-gradient(135deg,#893783,#5A1E56);color:#fff"><div class="t"><div class="tag" style="color:#FFC24D">ALSO ME, 2 DAYS LATER</div><div class="l">Opens the IPMAT 2027 syllabus <span style="color:#FFC24D">"just to see"</span></div></div><div class="e">📚</div></div>
+ <div class="foot"><span>Tag the friend who did this 👇</span><span>@ipmcareers</span></div>`,
+poll:()=>hdr("YOUR TURN")+`
+ <div style="position:absolute;top:180px;left:70px;right:70px"><h1>Which exam are you<br>writing <span class="p">next?</span></h1>
+ <div style="margin-top:20px;font:400 34px Inter;color:#57524A">Comment the letter. We'll plan our posts around your answers.</div></div>
+ <div class="grid">${[["A","IPMAT Indore 2027","🏛️"],["B","JIPMAT 2027","🏔️"],["C","IPMAT Rohtak 2027","🎯"],["D","CHRIST, 5 Dec","🎓"],["E","NPAT 2027","📘"],["F","IIM B UGAT, next year","🌳"]].map(([l,t,e])=>`<div class="opt"><b>${l}</b><span>${t}</span><i>${e}</i></div>`).join("")}</div>
+ <div style="position:absolute;top:1100px;left:70px;right:70px;text-align:center;font:900 40px Inter;color:#5A1E56">Comment A, B, C, D, E or F 👇</div>
+ <div class="foot"><span>More than one? Comment both.</span><span>@ipmcareers</span></div>`,
+next:()=>hdr("IIM B UGAT 2026")+`
+ <div style="position:absolute;top:180px;left:70px;right:70px"><div class="k">WROTE IT ON 15 NOV?</div><h1 style="margin-top:14px;font-size:86px">IIM B UGAT done.<br><span class="p">What now?</span></h1></div>
+ <div style="position:absolute;top:470px;left:70px;right:70px">
+ ${[["Check your raw score now","Paste your response sheet link at register.ipmcareer.com/response-v1. Free, no login.","📊"],["Mark the dates","Results 15 Dec 2026. Interviews in the 2nd and 3rd week of Jan 2027. Both tentative, as per IIMB.","🗓️"],["Start PI prep early","The interview stage carries real weight in IIMB's final score. A month of practice beats a week of panic.","🎤"]].map(([t,d,e],i)=>`<div class="step"><div class="ic">${e}</div><div><h3>${i+1}. ${t}</h3><p>${d}</p></div></div>`).join("")}</div>
+ <div class="cta"><div class="ic">🤖</div><div><b>Practise your interview with AI</b><span>AI Mock Interview · register.ipmcareer.com/interview-prep</span></div></div>`,
+};
+document.getElementById("s").innerHTML=V[c]();
+</script></body></html>
