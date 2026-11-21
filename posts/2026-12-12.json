@@ -1,0 +1,15 @@
+{
+ "date": "2026-12-12",
+ "content": {
+  "type": "image",
+  "image": "media/cartoons/post-home.png",
+  "made": "templates/cards/cartoon.html + data/cartoons (ElevenLabs drawing)"
+ },
+ "caption": "Every IIM B UGAT house this week 😅\n\nResults are expected on 15 Dec (tentative) and interviews in the 2nd and 3rd week of January 2027. The interview carries 40 of 100 in IIMB's final score, as much as the test, so the smart plan for the next few weeks is interview practice.\n\nPractise with our AI Mock Interview: register.ipmcareer.com/interview-prep\n\nTag the friend whose Papa asks this every evening 👇\n\n#IIMBUGAT #IIMBangalore #IPMCareers #InterviewPrep #BBA",
+ "claims": [
+  {
+   "text": "results 15 Dec tentative; interviews 2nd and 3rd week Jan 2027; PI 40 of 100",
+   "source": "ug.iimb.ac.in UG Admissions 2027 page and UG-Admissions-Process_2026.pdf Stage II (checked 21 Nov 2026)"
+  }
+ ]
+}
