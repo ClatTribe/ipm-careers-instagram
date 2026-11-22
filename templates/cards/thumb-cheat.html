@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- YouTube thumbnail, game loading-screen style. ?img=&w=&h=&x=<crop 0-1> . Our own fonts/text, no game logos. -->
+<style>
+@font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{overflow:hidden;background:#140818;font-family:Inter,"Noto Color Emoji",sans-serif;color:#fff}
+.art{position:absolute;inset:0;background-size:cover}
+.shade{position:absolute;inset:0}
+.t{position:absolute;font:900 1px/0.92 Inter;letter-spacing:-.02em;text-transform:uppercase;transform:rotate(-3deg);transform-origin:left top}
+.code{display:inline-block;background:#000;color:#3DFF7A;font:800 1px Inter;letter-spacing:.06em;padding:.25em .5em;border:3px solid #3DFF7A;border-radius:10px;box-shadow:0 0 24px rgba(61,255,122,.45)}
+.logo{position:absolute}
+</style></head><body>
+<script>
+const q=new URLSearchParams(location.search), W=+q.get("w"), H=+q.get("h"), V=H>W;
+document.documentElement.style.width=document.body.style.width=W+"px"; document.documentElement.style.height=document.body.style.height=H+"px";
+const s=V?1:0.72;
+document.body.innerHTML=`<div class="art" style="background-image:url(${q.get("img")});background-position:${(+q.get("x"))*100}% 50%"></div>
+<div class="shade" style="background:${V?"linear-gradient(rgba(10,0,20,.75) 0%,rgba(10,0,20,0) 38%,rgba(10,0,20,0) 62%,rgba(10,0,20,.85) 100%)":"linear-gradient(90deg,rgba(10,0,20,.82) 0%,rgba(10,0,20,.35) 48%,rgba(10,0,20,0) 65%)"}"></div>
+<img class="logo" src="../../public/brand/logo-white.png" style="${V?"left:60px;top:260px;height:64px":"left:44px;top:34px;height:52px"}">
+<div class="t" style="${V?"left:60px;top:360px":"left:44px;top:130px"};font-size:${V?150:120*s/0.72*0.8}px;text-shadow:${V?"6px 6px 0 #893783,12px 12px 0 #000":"5px 5px 0 #893783,9px 9px 0 #000"}">Cheat<br>codes</div>
+<div class="t" style="${V?"left:66px;top:660px":"left:50px;top:355px"};font-size:${V?66:52}px;color:#FFC24D;text-shadow:4px 4px 0 #000">for IIM Indore 🎮</div>
+<div style="position:absolute;${V?"left:60px;right:60px;top:1330px":"left:44px;top:450px;width:560px"};display:flex;flex-direction:column;gap:${V?22:14}px">
+${["TIMEMASTER","MOCKANALYSIS","DAILYGRIND"].map((c,i)=>`<div><span class="code" style="font-size:${V?44:30}px">${c}</span></div>`).join("")}
+</div>`;
+</script></body></html>
