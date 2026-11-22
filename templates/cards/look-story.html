@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- safe zone y 250 to 1580. "Your IPMAT look" trend Story (1080x1920): game loading-screen style art (ElevenLabs), our own text. ?img=&x=<crop centre 0-1>&t1=&t2= -->
+<style>
+@font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#140818;font-family:Inter,"Noto Color Emoji",sans-serif;color:#fff}
+.blur{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(30px) brightness(.55) saturate(1.3)}
+.art{position:absolute;left:0;top:480px;width:1080px;height:960px;background-size:auto 100%;border-top:6px solid #fff;border-bottom:6px solid #fff;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+.t1{position:absolute;left:60px;right:60px;top:340px;font:900 68px/1 Inter;white-space:nowrap;letter-spacing:-1.5px;text-transform:uppercase;transform:rotate(-2deg);text-shadow:4px 4px 0 #893783,8px 8px 0 #000}
+.t2{position:absolute;left:60px;right:60px;top:1470px;font:800 40px/1.3 Inter;text-shadow:0 3px 0 #000}
+.t2 b{color:#FFC24D}
+.logo{position:absolute;left:60px;top:250px;height:58px}
+</style></head><body>
+<script>
+const q=new URLSearchParams(location.search);
+const img=q.get("img"), x=+q.get("x");
+document.body.innerHTML+=`<div class="blur" style="background-image:url(${img})"></div>
+<div class="art" style="background-image:url(${img});background-position:${x*100}% 0"></div>
+<div class="t1">${q.get("t1")}</div>
+<div class="t2">${q.get("t2")}</div>
+<img class="logo" src="../../public/brand/logo-white.png">`;
+</script></body></html>
