@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset="utf-8">
-<!-- YouTube thumbnail, game loading-screen style. ?img=&w=&h=&x=<crop 0-1> . Our own fonts/text, no game logos. -->
+<!-- Vertical: all text kept inside the middle 4:5 area (y 285 to 1635), because Shorts feeds crop the top and bottom. YouTube thumbnail, game loading-screen style. ?img=&w=&h=&x=<crop 0-1> . Our own fonts/text, no game logos. -->
 <style>
 @font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -14,12 +14,12 @@ html,body{overflow:hidden;background:#140818;font-family:Inter,"Noto Color Emoji
 const q=new URLSearchParams(location.search), W=+q.get("w"), H=+q.get("h"), V=H>W;
 document.documentElement.style.width=document.body.style.width=W+"px"; document.documentElement.style.height=document.body.style.height=H+"px";
 const s=V?1:0.72;
-document.body.innerHTML=`<div class="art" style="background-image:url(${q.get("img")});background-position:${(+q.get("x"))*100}% 50%"></div>
-<div class="shade" style="background:${V?"linear-gradient(rgba(10,0,20,.35) 0%,rgba(10,0,20,0) 20%,rgba(10,0,20,0) 45%,rgba(10,0,20,.92) 70%,rgba(10,0,20,.95) 100%)":"linear-gradient(90deg,rgba(10,0,20,.82) 0%,rgba(10,0,20,.35) 48%,rgba(10,0,20,0) 65%)"}"></div>
-<img class="logo" src="../../public/brand/logo-white.png" style="${V?"left:60px;top:60px;height:64px":"left:44px;top:34px;height:52px"}">
-<div class="t" style="${V?"left:60px;top:1060px":"left:44px;top:130px"};font-size:${V?150:120*s/0.72*0.8}px;text-shadow:${V?"6px 6px 0 #893783,12px 12px 0 #000":"5px 5px 0 #893783,9px 9px 0 #000"}">Cheat<br>codes</div>
-<div class="t" style="${V?"left:66px;top:1360px":"left:50px;top:355px"};font-size:${V?66:52}px;color:#FFC24D;text-shadow:4px 4px 0 #000">for IIM Indore 🎮</div>
-<div style="position:absolute;${V?"left:60px;right:60px;top:1480px":"left:44px;top:450px;width:560px"};display:flex;flex-direction:column;gap:${V?22:14}px">
+document.body.innerHTML=`${V?`<div class="art" style="background:linear-gradient(#3a2150 0%,#7a3f72 12%,#c96a6a 20%)"></div>`:""}<div class="art" style="${V?"top:230px;bottom:auto;height:1690px;-webkit-mask-image:linear-gradient(transparent 0,#000 140px);":""}background-image:url(${q.get("img")});background-position:${(+q.get("x"))*100}% 50%"></div>
+<div class="shade" style="background:${V?"linear-gradient(rgba(10,0,20,.35) 0%,rgba(10,0,20,0) 20%,rgba(10,0,20,0) 38%,rgba(10,0,20,.9) 58%,rgba(10,0,20,.95) 100%)":"linear-gradient(90deg,rgba(10,0,20,.82) 0%,rgba(10,0,20,.35) 48%,rgba(10,0,20,0) 65%)"}"></div>
+<img class="logo" src="../../public/brand/logo-white.png" style="${V?"left:70px;top:310px;height:64px":"left:44px;top:34px;height:52px"}">
+<div class="t" style="${V?"left:70px;top:880px":"left:44px;top:130px"};font-size:${V?140:120*s/0.72*0.8}px;text-shadow:${V?"6px 6px 0 #893783,12px 12px 0 #000":"5px 5px 0 #893783,9px 9px 0 #000"}">Cheat<br>codes</div>
+<div class="t" style="${V?"left:76px;top:1180px":"left:50px;top:355px"};font-size:${V?66:52}px;color:#FFC24D;text-shadow:4px 4px 0 #000">for IIM Indore 🎮</div>
+<div style="position:absolute;${V?"left:70px;right:70px;top:1290px":"left:44px;top:450px;width:560px"};display:flex;flex-direction:column;gap:${V?22:14}px">
 ${["TIMEMASTER","MOCKANALYSIS","DAILYGRIND"].map((c,i)=>`<div><span class="code" style="font-size:${V?44:30}px">${c}</span></div>`).join("")}
 </div>`;
 </script></body></html>
