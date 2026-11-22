@@ -14,10 +14,11 @@ fs.mkdirSync(outDir, { recursive: true });
 const b = await launchBrowser();
 const p = await b.newPage({ viewport: { width: 1080, height: 1350 } });
 await p.addInitScript((d) => { window.ROUTE = d; }, data);
-for (let s = 1; s <= n; s++) {
+const pick = data.pick ?? Array.from({ length: n }, (_, i) => i + 1); // data.pick: publish only these slides
+for (const [k, s] of pick.entries()) {
   await p.goto(`file://${html}?s=${s}`, { waitUntil: "networkidle" });
   await p.waitForTimeout(900);
-  await p.screenshot({ path: `${outDir}/slide-${s}.png` });
+  await p.screenshot({ path: `${outDir}/slide-${k + 1}.png` });
 }
 await b.close();
-console.log(`RENDERED ${outDir} (${n} slides)`);
+console.log(`RENDERED ${outDir} (${pick.length} slides)`);

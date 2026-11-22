@@ -25,17 +25,14 @@
     "row": 60,
     "bend": 134,
     "st": [
-     800,
      870,
      940
     ],
     "lab": [
      "",
-     "",
      ""
     ],
     "below": [
-     0,
      0,
      0
     ],
@@ -115,7 +112,6 @@
     "row": 460,
     "bend": 134,
     "st": [
-     590,
      660,
      730,
      800,
@@ -127,11 +123,9 @@
      "",
      "",
      "",
-     "",
      ""
     ],
     "below": [
-     0,
      0,
      0,
      0,
@@ -145,17 +139,14 @@
     "row": 560,
     "bend": 134,
     "st": [
-     800,
      870,
      940
     ],
     "lab": [
      "",
-     "",
      ""
     ],
     "below": [
-     0,
      0,
      0
     ],
@@ -179,8 +170,8 @@
    "no": "01",
    "name": "Bangalore Central",
    "short": "Central",
-   "legendRight": "3 BBA routes",
-   "badge": "3 BBA routes in 2027",
+   "legendRight": "2 BBA routes",
+   "badge": "2 BBA routes in 2027",
    "color": "#2A6FCB",
    "tint": "#EAF1FB",
    "ink": "#1A4A8A",
@@ -193,11 +184,6 @@
      "name": "BBA (Decision Science)",
      "short": "Decision|Science",
      "programme": "Its own paper: adds design thinking"
-    },
-    {
-     "name": "BBA LLB (Hon)",
-     "short": "BBA LLB",
-     "programme": "Law paper, same as BA LLB"
     }
    ],
    "exam": "CHRIST Entrance Test",
@@ -376,8 +362,8 @@
    "no": "05",
    "name": "Delhi NCR",
    "short": "Delhi NCR",
-   "legendRight": "6 BBA routes",
-   "badge": "6 BBA routes in 2027",
+   "legendRight": "5 BBA routes",
+   "badge": "5 BBA routes in 2027",
    "color": "#D9534F",
    "tint": "#FCEDEC",
    "ink": "#8E2A27",
@@ -401,10 +387,6 @@
     {
      "name": "BBA (Strategy and Business Analytics)",
      "programme": "Hon / Hon with Research options"
-    },
-    {
-     "name": "BBA LLB (Honours)",
-     "programme": "Law paper, same as BA LLB"
     }
    ],
    "exam": "CHRIST Entrance Test",
@@ -435,8 +417,8 @@
    "no": "06",
    "name": "Pune Lavasa",
    "short": "Pune Lavasa",
-   "legendRight": "3 BBA routes",
-   "badge": "3 BBA routes in 2027",
+   "legendRight": "2 BBA routes",
+   "badge": "2 BBA routes in 2027",
    "color": "#138A8A",
    "tint": "#E6F4F4",
    "ink": "#0B5757",
@@ -449,11 +431,6 @@
      "name": "BBA (Business Analytics)",
      "short": "Business|Analytics",
      "programme": "Hon / Hon with Research options"
-    },
-    {
-     "name": "BBA LLB (Honours)",
-     "short": "BBA LLB",
-     "programme": "Law paper, same as BA LLB"
     }
    ],
    "exam": "CHRIST Entrance Test",
@@ -479,8 +456,8 @@
   },
   {
    "key": "test",
-   "no": "07",
-   "name": "Test line",
+   "no": "02",
+   "name": "Test + dates",
    "short": "BBA test + dates",
    "legendRight": "5 stops",
    "badge": "BBA paper: 120 marks",
@@ -564,5 +541,10 @@
     "detail": "Pay by UPI, card, net banking or wallet; access details follow"
    }
   ]
- }
+ },
+ "pick": [
+  1,
+  8,
+  9
+ ]
 }

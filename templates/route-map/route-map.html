@@ -63,6 +63,8 @@ function head(pill) {
   return `<div class="top"><img src="../../public/brand/logo-full.png"><div class="pill">${pill}</div></div>`;
 }
 function foot(n, total, right) {
+  // optional D.pick: only these slide numbers are published, so the dots count and number those
+  const P = window.ROUTE && window.ROUTE.pick; if (P) { total = P.length; n = P.indexOf(n) + 1; }
   return `<div class="foot"><div class="dots">${Array.from({length: total}, (_, i) => `<i class="${i === n - 1 ? 'on' : ''}"></i>`).join('')}</div>${right}</div>`;
 }
 
