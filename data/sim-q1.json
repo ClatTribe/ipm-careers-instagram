@@ -8,8 +8,11 @@
  ],
  "right": 1,
  "why": [
-  "It opens with one real story, not a list",
-  "It shows curiosity, which IIMB says it checks",
-  "It hands the panel an easy follow-up question"
- ]
+  "one real story, not a list",
+  "shows curiosity (IIMB checks this)",
+  "gives the panel an easy next question"
+ ],
+ "ringTop": 612,
+ "whyTop": 1090,
+ "voteTop": 1110
 }

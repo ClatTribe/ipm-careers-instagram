@@ -34,6 +34,12 @@ html,body{width:1080px;height:1350px;overflow:hidden;font-family:-apple-system,I
 .m b{display:block;font:600 30px Inter;margin-bottom:4px}
 .m em{position:absolute;right:18px;bottom:8px;font:400 22px Inter;color:#888;font-style:normal}
 .me{margin-left:auto;background:#D9FDD3}
+.chat.pi .m{font-size:34px;padding:10px 22px 30px;margin:9px 0;width:fit-content;min-width:230px}
+#s{height:100%}
+.chat.pi .me{margin-left:auto}
+.chat.pi .cont{margin-top:-4px}
+.bar{position:absolute;left:0;right:0;bottom:0;height:120px;background:#F6F6F6;border-top:1px solid #ddd;display:flex;align-items:center;gap:20px;padding:0 30px}
+.bar .in{flex:1;height:72px;border-radius:36px;background:#fff;border:1px solid #ddd;font:400 30px/72px Inter;color:#999;padding:0 30px}
 .day{margin:22px auto;width:max-content;background:#fff;color:#555;font:500 26px Inter;padding:8px 22px;border-radius:14px;box-shadow:0 1px 1px rgba(0,0,0,.1)}
 </style></head><body><div id="s"></div>
 <script>
@@ -63,6 +69,16 @@ chat:()=>`<div class="chat"><div class="hd">${sb("#000")}<div class="h2"><span s
  <div class="m"><b style="color:#2E7D32">Kabir</b>i'm on mock 3 already don't tell anyone<em>8:03 AM</em></div>
  <div class="m me">reinstalled the app at 7 am 🫡<em>8:04 AM</em></div>
  </div><div class="mark" style="color:#000;right:auto;left:40px">@ipmcareers</div></div>`,
+pi:()=>`<div class="chat pi"><div class="hd">${sb("#000")}<div class="h2"><span style="color:#007AFF;font-size:44px">‹</span><div class="av">🎯</div><div>iimb ugat 26 💀<small>Riya, Aarav, Kabir, You</small></div></div></div>
+ <div class="msgs">
+ <div class="m"><b style="color:#C2185B">Riya</b>interview after results?? never given one in my life 😭<em>9:12 PM</em></div>
+ <div class="m"><b style="color:#2E7D32">Kabir</b>it's 40 out of 100 btw 💀<em>9:13 PM</em></div>
+ <div class="m cont">ipm careers PI batch. unlimited mocks with IIM alumni<em>9:13 PM</em></div>
+ <div class="m"><b style="color:#C2185B">Riya</b>how much 👀<em>9:14 PM</em></div>
+ <div class="m"><b style="color:#2E7D32">Kabir</b>₹99<em>9:14 PM</em></div>
+ <div class="m"><b style="color:#1E88E5">Aarav</b>₹99?? for UNLIMITED mocks?? 😳<em>9:14 PM</em></div>
+ <div class="m me">booking before results 🫡 send link<em>9:15 PM</em></div>
+ </div><div class="bar"><span style="font-size:44px;color:#007AFF">+</span><div class="in">Message</div><span style="font-size:40px">🎙️</span></div><div class="mark" style="color:#000;right:40px;bottom:136px">@ipmcareers</div></div>`,
 };
 document.getElementById("s").innerHTML=V[c]();
 </script></body></html>
