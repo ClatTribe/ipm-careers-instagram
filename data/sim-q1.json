@@ -1,0 +1,15 @@
+{
+ "n": 1,
+ "q": "Tell us about yourself.",
+ "opts": [
+  "\"My name is Riya. I am from Jaipur. My father is an engineer and my mother is a teacher.\"",
+  "\"I'm a Class 12 student who got hooked on data after I started tracking my school cricket team's scores in a spreadsheet.\"",
+  "\"I am hardworking, punctual, honest and a team player.\""
+ ],
+ "right": 1,
+ "why": [
+  "It opens with one real story, not a list",
+  "It shows curiosity, which IIMB says it checks",
+  "It hands the panel an easy follow-up question"
+ ]
+}

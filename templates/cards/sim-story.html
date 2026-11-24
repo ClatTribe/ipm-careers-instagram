@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- "Interview Simulator" Stories (1080x1920), safe zone y 250-1580. ?d=<json>: {n, q, opts:[A,B,C], mode:"ask"|"reveal", right, why:[..]} -->
+<style>
+@font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;font-family:Inter,"Noto Color Emoji",sans-serif;color:#fff}
+body{background:radial-gradient(900px 700px at 100% 0%,rgba(255,194,77,.22),transparent 60%),linear-gradient(165deg,#2A0F28 0%,#120610 100%)}
+.hud{position:absolute;left:80px;right:80px;top:270px;display:flex;justify-content:space-between;align-items:center}
+.lvl{font:800 24px Inter;letter-spacing:.16em;color:#FFC24D;border:2px solid rgba(255,194,77,.5);padding:10px 20px;border-radius:999px}
+.panel{position:absolute;left:80px;right:80px;top:400px;background:#FFFBF3;color:#1B1420;border-radius:30px;padding:34px 40px}
+.panel small{display:block;font:800 22px Inter;letter-spacing:.16em;color:#893783;margin-bottom:12px}
+.opt{display:flex;gap:18px;align-items:flex-start;margin-top:18px;background:rgba(255,255,255,.07);border:2px solid rgba(255,255,255,.15);border-radius:22px;padding:20px 24px;font:600 30px/1.35 Inter}
+.opt b{flex:0 0 52px;height:52px;border-radius:26px;background:#FFC24D;color:#2A0F28;font:900 28px/52px Inter;text-align:center}
+.opt.ok{border-color:#3DDC84;background:rgba(61,220,132,.12)} .opt.no{opacity:.45}
+</style></head><body><div id="s"></div>
+<script>
+const d=JSON.parse(decodeURIComponent(new URLSearchParams(location.search).get("d")));
+const R=d.mode==="reveal";
+document.getElementById("s").innerHTML=`
+<div class="hud"><img src="../../public/brand/logo-white.png" style="height:60px"><span class="lvl">INTERVIEW SIMULATOR · Q${d.n}</span></div>
+<div class="panel"><small>🎤 THE IIMB PANEL ASKS</small><div style="font:900 52px/1.15 Inter">"${d.q}"</div></div>
+<div style="position:absolute;left:80px;right:80px;top:${R?700:720}px">
+ <div style="font:800 28px Inter;letter-spacing:.12em;color:#FFC24D">${R?"THE ANSWER THAT WORKS":"WHICH OPENER WORKS BEST?"}</div>
+ ${d.opts.map((o,i)=>`<div class="opt ${R?(i===d.right?"ok":"no"):""}"><b>${"ABC"[i]}</b><span>${o}</span></div>`).join("")}
+ ${R?`<div style="margin-top:30px;font:600 30px/1.4 Inter;color:#eee">${d.why.map(w=>"✓ "+w).join("<br>")}</div>`:
+ `<div style="margin-top:40px;text-align:center;font:700 30px Inter;color:rgba(255,255,255,.7)">👇 vote with the quiz sticker below</div>`}
+</div>
+${R?`<div style="position:absolute;left:80px;right:80px;top:1420px;display:flex;align-items:center;gap:20px;background:#FFC24D;border-radius:24px;padding:20px 28px;color:#2A0F28"><div style="font-size:42px">🎟️</div><div><div style="font:900 34px Inter">Practise this with IIM alumni</div><div style="font:600 24px Inter;opacity:.85">Unlimited mock interviews · PI batch ₹99</div></div></div>`:""}`;
+</script></body></html>
