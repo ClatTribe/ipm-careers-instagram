@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- PI launch (1080x1350): a student's study-wall / vision board. Polaroid of the IIMB UG campus (photo: ug.iimb.ac.in, kept in out/, not in git), taped notebook plan, ₹99 ticket stub. -->
+<style>
+@font-face { font-family: Hand; src: url(../../public/fonts/shantell-sans.woff2); font-weight: 300 800; }
+@font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{background:#B98E5F;background-image:radial-gradient(rgba(0,0,0,.08) 1px,transparent 1.4px),radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.4px);background-size:7px 7px,11px 11px}
+.grain{position:absolute;inset:0;opacity:.25;mix-blend-mode:multiply}
+.pol{position:absolute;background:#FBFAF6;padding:22px 22px 96px;box-shadow:0 18px 36px rgba(0,0,0,.35)}
+.pol img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(1.05) contrast(1.03)}
+.tape{position:absolute;width:170px;height:46px;background:rgba(245,236,200,.78);box-shadow:0 2px 4px rgba(0,0,0,.12)}
+.pin{position:absolute;width:30px;height:30px;border-radius:15px;background:radial-gradient(circle at 35% 35%,#ff8a80,#C62828 60%,#7f1010);box-shadow:2px 6px 8px rgba(0,0,0,.4)}
+.note{position:absolute;background:#FFFEF8;background-image:repeating-linear-gradient(transparent 0 46px,#B9D3EA 46px 48px);background-position:0 24px;box-shadow:0 14px 28px rgba(0,0,0,.3);font-family:Hand;color:#1F3A8A}
+.hand{font-family:Hand}
+.stub{position:absolute;background:#F7E7C6;border:2px dashed #B08A4A;box-shadow:0 12px 24px rgba(0,0,0,.3);font-family:Inter;color:#3A2A00}
+</style></head><body>
+<svg class="grain" width="1080" height="1350"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".6" numOctaves="3"/><feColorMatrix values="0 0 0 0 .4 0 0 0 0 .28 0 0 0 0 .15 0 0 0 .7 0"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+
+<div class="pol" style="left:70px;top:70px;width:700px;height:580px;transform:rotate(-3deg)">
+  <img src="../../out/pi/iimb-ug-campus.jpg">
+  <div class="hand" style="position:absolute;left:30px;bottom:26px;font:700 34px Hand;color:#2b2b2b;white-space:nowrap">me, IIMB, Aug 2027? 🤞</div>
+</div>
+<div class="tape" style="left:330px;top:46px;transform:rotate(-4deg)"></div>
+<div class="pin" style="left:800px;top:120px"></div>
+
+<div class="note" style="left:560px;top:660px;width:450px;height:430px;transform:rotate(2.5deg);padding:28px 30px">
+  <div style="font:800 34px/48px Hand;color:#C8312B">the plan:</div>
+  <div style="font:500 31px/48px Hand">15 Dec · result 🙏<br>Jan · interview 40/100!!<br>Feb · offer list<br><span style="background:linear-gradient(transparent 25%,rgba(255,230,80,.85) 25%,rgba(255,230,80,.85) 88%,transparent 88%)">→ start mocks NOW</span><br>→ ask 2 teachers</div>
+</div>
+<div class="tape" style="left:690px;top:642px;transform:rotate(6deg);width:140px"></div>
+
+<div class="stub" style="left:80px;top:760px;width:440px;transform:rotate(-6deg);padding:24px 28px">
+  <div style="font:800 18px Inter;letter-spacing:.2em;color:#8a6a2a">ADMIT ONE · IPM CAREERS</div>
+  <div style="font:900 40px/1.1 Inter;margin-top:10px">Interview Prep Batch</div>
+  <div style="font:600 22px/1.4 Inter;margin-top:10px">Unlimited mock interviews<br>with IIM alumni</div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:14px"><span style="font:900 64px/1 Inter">₹99</span><span style="font:700 18px Inter;color:#8a6a2a">register.ipmcareer.com<br>/pi-batch</span></div>
+</div>
+<div class="pin" style="left:290px;top:742px"></div>
+
+<div class="hand" style="position:absolute;left:70px;top:1130px;width:940px;font:800 52px/1.12 Hand;color:#fff;text-shadow:0 3px 8px rgba(0,0,0,.45);transform:rotate(-1deg)">Every IIMB aspirant's wall right now.<br><span style="color:#FFE27A">Don't wait for the 15th.</span></div>
+<div style="position:absolute;right:40px;top:24px;font:600 18px Inter;color:rgba(255,255,255,.8)">campus photo: IIM Bangalore</div><div style="position:absolute;right:44px;bottom:30px;font:700 22px Inter;color:rgba(255,255,255,.85)">@ipmcareers</div>
+</body></html>
