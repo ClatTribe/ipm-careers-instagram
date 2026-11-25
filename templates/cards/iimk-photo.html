@@ -23,8 +23,22 @@ html,body{width:1080px;height:1350px;overflow:hidden;background:#000;font-family
 .foot .a{font:600 26px Inter;color:rgba(255,255,255,.85)}
 .foot .b{font:800 28px Inter;color:#1B1420;background:#FFD23F;padding:12px 22px;border-radius:999px}
 .cr{position:absolute;right:20px;top:1180px;font:500 16px Inter;color:rgba(255,255,255,.5);transform:rotate(-90deg);transform-origin:right top}
+
+body.sq,html.sq{height:1080px}
+.sq .bg{height:1080px}
+.sq .top{height:420px}
+.sq .bot{height:640px}
+.sq .kick{top:150px;font-size:26px}
+.sq .h{top:188px;font-size:104px}
+.sq .list{bottom:118px}
+.sq .r{padding:13px 0}
+.sq .r span{font-size:28px}
+.sq .r b{font-size:36px}
+.sq .r.key b{font-size:42px}
+.sq .foot{bottom:40px}
 </style></head><body>
 <img class="bg" src="../../out/iimk/campus.jpg">
+<script>if(location.search.includes("sq")){document.documentElement.classList.add("sq");document.body.classList.add("sq");document.querySelector(".bg").src="../../out/iimk/campus-sq.jpg";document.addEventListener("DOMContentLoaded",()=>{document.querySelector(".h").innerHTML="Forms are <i>out.</i>"})}</script>
 <div class="top"></div><div class="bot"></div>
 <img class="logo" src="../../public/brand/logo-white.png">
 <div class="kick">IIM KOZHIKODE · BMS 2027</div>
