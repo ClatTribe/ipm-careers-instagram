@@ -1,0 +1,111 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- IIM Kozhikode BMS 2027 key dates, three looks: ?v=cal (desk calendar pages circled) | notes (phone Notes screenshot) | book (notebook page). -->
+<style>
+@font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
+@font-face { font-family: Hand; src: url(../../public/fonts/shantell-sans.woff2); font-weight: 300 800; }
+@font-face { font-family: Fraunces; src: url(../../public/fonts/fraunces.woff2); font-weight: 100 900; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden;font-family:Inter,"Noto Color Emoji",sans-serif}
+.hand{font-family:Hand}
+/* calendar */
+.cal{position:absolute;inset:0;background:#7A5C43;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:6px 6px}
+.wood{position:absolute;inset:0;background:repeating-linear-gradient(92deg,rgba(0,0,0,.05) 0 3px,transparent 3px 22px),linear-gradient(160deg,#8C6A4E,#6E5139)}
+.pg{position:absolute;width:470px;background:#FFFDF7;box-shadow:0 18px 34px rgba(0,0,0,.35);padding:0 0 74px}
+.pg .rings{height:34px;background:#2C2C2C;display:flex;justify-content:space-around;align-items:center;padding:0 40px}
+.pg .rings i{width:14px;height:44px;border-radius:7px;background:linear-gradient(#ddd,#888);margin-top:-22px}
+.pg .mh{background:#893783;color:#fff;font:800 38px Inter;letter-spacing:.06em;padding:16px 24px 14px;display:flex;justify-content:space-between;align-items:baseline}
+.pg .mh small{font:600 24px Inter;opacity:.8}
+.pg .grid{display:grid;grid-template-columns:repeat(7,1fr);padding:12px 18px 0;gap:2px}
+.pg .grid b{font:700 18px Inter;color:#9a8f86;text-align:center;padding:6px 0}
+.pg .grid span{font:600 27px Inter;color:#2B2522;text-align:center;height:52px;line-height:52px;position:relative}
+.pg .grid span.x{color:#fff}
+.pg .grid span.on:after{content:"";position:absolute;left:-6px;right:-6px;top:-2px;bottom:-2px;border:5px solid #D2302A;border-radius:50%;transform:rotate(-8deg)}
+.pg .note{position:absolute;bottom:18px;left:0;right:0;text-align:center;font:700 38px/1.05 Hand;color:#D2302A;white-space:nowrap}
+.stick{position:absolute;background:#FFE27A;box-shadow:0 12px 22px rgba(0,0,0,.3);padding:24px 26px;font-family:Hand;color:#2E2400}
+/* notes */
+.notes{background:#fff;color:#1c1c1e;height:100%;position:relative}
+.sb{height:96px;display:flex;justify-content:space-between;align-items:center;padding:20px 64px 0;font:600 38px Inter;letter-spacing:-.5px}
+.sb .r{display:flex;gap:14px;align-items:center;font-size:30px}
+.bat{width:58px;height:28px;border:3px solid currentColor;border-radius:8px;position:relative}
+.bat:after{content:"";position:absolute;left:3px;top:3px;bottom:3px;width:34px;background:currentColor;border-radius:3px}
+.sig{display:flex;gap:4px;align-items:flex-end}.sig i{width:7px;background:currentColor;border-radius:2px;display:block}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 44px 0;color:#E0A100;font:500 40px Inter}
+.nt{padding:30px 64px 0}
+.nt .d{text-align:center;color:#8e8e93;font:400 26px Inter;margin-bottom:28px}
+.nt h1{font:800 70px/1.1 Inter;letter-spacing:-1px;margin-bottom:24px}
+.nt p{font:400 46px/1.45 Inter}
+.nt .row{display:flex;gap:22px;font:400 46px/1.35 Inter;margin:26px 0;align-items:baseline}
+.nt .row b{font-weight:700;min-width:300px}
+.nt .hlt{background:#FFF1A8;border-radius:6px;padding:0 6px}
+.cursor{display:inline-block;width:4px;height:46px;background:#E0A100;vertical-align:-8px;margin-left:4px}
+.mark{position:absolute;right:40px;bottom:28px;font:600 22px Inter;opacity:.55}
+/* notebook */
+.bk{position:absolute;inset:0;background:#D9D2C5}
+.page{position:absolute;left:40px;top:34px;width:1000px;height:1282px;background:#FFFEF8;transform:rotate(-.7deg);box-shadow:0 20px 40px rgba(0,0,0,.18);
+ background-image:repeating-linear-gradient(transparent 0 61px,#B9D3EA 61px 63px);background-position:0 150px}
+.page:before{content:"";position:absolute;left:118px;top:0;bottom:0;width:3px;background:#E9A3A3}
+.holes{position:absolute;left:38px;top:120px;display:flex;flex-direction:column;gap:330px}.holes i{width:34px;height:34px;border-radius:17px;background:#D9D2C5;box-shadow:inset 0 3px 4px rgba(0,0,0,.2)}
+.ink{position:absolute;font-family:Hand;color:#1F3A8A;font-weight:500}
+.hl{background:linear-gradient(transparent 20%,rgba(255,230,80,.75) 20%,rgba(255,230,80,.75) 85%,transparent 85%);padding:0 6px}
+.red{color:#C8312B}
+.tl{position:absolute;left:170px;top:380px;width:780px}
+.tl .it{position:relative;padding-left:70px;height:126px}
+.tl .it:before{content:"";position:absolute;left:14px;top:14px;width:26px;height:26px;border:4px solid #1F3A8A;border-radius:50%}
+.tl .it:after{content:"";position:absolute;left:28px;top:46px;bottom:-8px;width:3px;background:#1F3A8A}
+.tl .it:last-child:after{display:none}
+.tl .it.big:before{background:#C8312B;border-color:#C8312B}
+.tl .k{font:700 42px Hand;color:#1F3A8A}
+.tl .v{font:500 32px Hand;color:#1F3A8A;opacity:.85}
+</style></head><body><div id="s" style="height:100%"></div>
+<script>
+const v=new URLSearchParams(location.search).get("v")||"cal";
+const s=document.getElementById("s");
+function month(y,m,name,on){ // m 0-based
+  const first=new Date(y,m,1).getDay(), days=new Date(y,m+1,0).getDate();
+  let g="SMTWTFS".split("").map(d=>`<b>${d}</b>`).join("");
+  for(let i=0;i<first;i++)g+="<span></span>";
+  for(let d=1;d<=days;d++)g+=`<span class="${d===on?'on':''}">${d}</span>`;
+  return `<div class="rings">${"<i></i>".repeat(6)}</div><div class="mh">${name}<small>${y}</small></div><div class="grid">${g}</div>`;
+}
+const sb=c=>`<div class="sb" style="color:${c}"><span>9:41</span><span class="r"><span class="sig"><i style="height:10px"></i><i style="height:16px"></i><i style="height:22px"></i><i style="height:28px"></i></span><span class="bat"></span></span></div>`;
+if(v==="cal"){
+ s.innerHTML=`<div class="cal"><div class="wood"></div>
+  <div class="hand" style="position:absolute;left:54px;top:44px;font-size:60px;font-weight:800;color:#fff;line-height:1.08;text-shadow:0 3px 10px rgba(0,0,0,.35)">IIM K BMS 2027 dates<br>mark your calendar 📌</div>
+  <div class="pg" style="left:40px;top:240px;transform:rotate(-4deg)">${month(2026,10,"NOVEMBER",25)}<div class="note" style="transform:rotate(-3deg)">forms open today!</div></div>
+  <div class="pg" style="left:566px;top:270px;transform:rotate(3deg)">${month(2027,1,"FEBRUARY",20)}<div class="note" style="transform:rotate(-2deg)">last date to apply</div></div>
+  <div class="pg" style="left:300px;top:770px;transform:rotate(-1.5deg);z-index:2">${month(2027,3,"APRIL",11)}<div class="note" style="transform:rotate(-3deg);font-size:46px">THE TEST ✍️</div></div>
+  <div class="stick" style="left:40px;top:800px;width:250px;transform:rotate(-5deg);z-index:3"><div style="font:800 28px/1.2 Hand">also:</div><div style="font:600 24px/1.35 Hand">result 25 Apr<br>interviews end May<br>offers 25 June</div></div>
+  <div class="stick" style="left:34px;top:1060px;width:270px;transform:rotate(3deg);z-index:3;background:#FFB8C9"><div style="font:800 30px/1.2 Hand">April, not June this year!</div><div style="font:600 24px/1.3 Hand;margin-top:6px">Prep with your boards.<br>Comment "IIMK" 👇</div></div>
+  <div style="position:absolute;right:40px;bottom:22px;font:700 24px Inter;color:#fff;opacity:.85">@ipmcareers</div></div>`;
+}
+if(v==="notes"){
+ s.innerHTML=`<div class="notes">${sb("#000")}
+ <div class="nav"><span>‹ Notes</span><span>⤴︎ &nbsp;⋯</span></div>
+ <div class="nt"><div class="d">25 November 2026 at 10:12 AM</div>
+ <h1>IIM K BMS 2027 📌<br>dates (official)</h1>
+ <div class="row"><b>Forms open</b><span>25 Nov 2026 ✅</span></div>
+ <div class="row"><b>Last date</b><span class="hlt">20 Feb 2027</span></div>
+ <div class="row"><b>THE TEST</b><span class="hlt"><b style="min-width:0">11 April 2027</b></span></div>
+ <div class="row"><b>Result</b><span>25 April 2027</span></div>
+ <div class="row"><b>Interviews</b><span>end May / 1st wk June</span></div>
+ <div class="row"><b>Offers</b><span>25 June 2027</span></div>
+ <p style="margin-top:50px">April, not June this year 😳 right after boards. so prep starts NOW, with pre-boards<span class="cursor"></span></p>
+ </div><div class="mark">@ipmcareers</div></div>`;
+}
+if(v==="book"){
+ s.innerHTML=`<div class="bk"><div class="page"><div class="holes"><i></i><i></i><i></i></div>
+  <div class="ink" style="left:150px;top:44px;font-size:30px;color:#6B6660">IIM Kozhikode BMS 2027 · official dates</div>
+  <div class="ink" style="left:150px;top:150px;font-size:60px;font-weight:800;line-height:1.05;transform:rotate(-1deg);white-space:nowrap">IIM K forms are <span class="hl">OUT</span> 📌</div>
+  <div class="ink" style="left:150px;top:262px;font-size:34px">Write these down before you forget 👇</div>
+  <div class="tl" style="transform:rotate(-.6deg)">
+   <div class="it"><div class="k">25 Nov 2026</div><div class="v">forms open (today!)</div></div>
+   <div class="it"><div class="k"><span class="hl">20 Feb 2027</span></div><div class="v">last date to apply</div></div>
+   <div class="it big"><div class="k red" style="font-size:52px">11 April 2027 ← TEST</div><div class="v">April, not June this year!</div></div>
+   <div class="it"><div class="k">25 April 2027</div><div class="v">result</div></div>
+   <div class="it"><div class="k">end May / 1st wk June</div><div class="v">interviews</div></div>
+   <div class="it"><div class="k">25 June 2027</div><div class="v">offer release</div></div>
+  </div>
+  <div class="ink red" style="left:150px;top:1150px;width:760px;font-size:38px;line-height:1.25;transform:rotate(-1.5deg)">test right after boards → prep WITH boards, not after. Comment "IIMK" 👇</div>
+  </div></div>`;
+}
+</script></body></html>
