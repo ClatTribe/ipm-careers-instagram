@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- CHRIST BBA test pattern on a real CHRIST Bangalore Central campus photo (christuniversity.in, kept in out/christ). ?sq=1 for the 1080x1080 YouTube layout. -->
+<style>
+@font-face { font-family: Inter; src: url(../../public/fonts/inter.woff2); font-weight: 100 900; }
+@font-face { font-family: Fraunces; src: url(../../public/fonts/fraunces.woff2); font-weight: 100 900; }
+@font-face { font-family: FrauncesI; src: url(../../public/fonts/fraunces-italic.woff2); font-weight: 100 900; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden;background:#12142A;font-family:Inter,sans-serif;color:#fff}
+.ph{position:absolute;left:0;top:0;width:1080px;height:600px;object-fit:cover}
+.g{position:absolute;left:0;right:0;top:0;height:602px;background:linear-gradient(rgba(10,10,30,.35),transparent 25%,rgba(18,20,42,.7) 55%,#12142A)}
+.logo{position:absolute;left:50px;top:42px;height:62px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4))}
+.kick{position:absolute;left:58px;top:318px;font:800 26px Inter;letter-spacing:.16em;color:#F5C451}
+.h{position:absolute;left:54px;top:356px;font:800 86px/1 Fraunces;text-shadow:0 4px 20px rgba(0,0,0,.45)}
+.h i{font-family:FrauncesI;font-weight:600;color:#F5C451}
+.meta{position:absolute;left:58px;right:58px;top:548px;display:flex;gap:16px;font:700 28px Inter;color:#fff}
+.meta span{border:2px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 20px}
+.list{position:absolute;left:58px;right:58px;top:630px}
+.r{display:grid;grid-template-columns:330px 1fr 120px;align-items:center;gap:20px;padding:13px 0;border-bottom:1.5px solid rgba(255,255,255,.16)}
+.r span{font:600 31px Inter;color:rgba(255,255,255,.9)}
+.r small{display:block;font:700 19px Inter;color:#F5C451;letter-spacing:.04em;margin-top:2px}
+.bar{height:14px;border-radius:7px;background:rgba(255,255,255,.12);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:7px;background:#8E9BFF}
+.r.new .bar i{background:#F5C451}
+.r b{font:800 36px Inter;text-align:right}
+.note{position:absolute;left:58px;right:58px;top:1150px;font:600 29px/1.4 Inter;color:rgba(255,255,255,.88)}
+.note b{color:#F5C451}
+.foot{position:absolute;left:58px;right:58px;bottom:44px;display:flex;justify-content:space-between;align-items:center}
+.foot .a{font:600 24px Inter;color:rgba(255,255,255,.7)}
+.foot .b{font:800 28px Inter;color:#1B1420;background:#F5C451;padding:12px 24px;border-radius:999px}
+/* square */
+.sq body,body.sq{height:1080px}
+.sq .ph{height:440px}.sq .g{height:442px}
+.sq .kick{top:262px;font-size:24px}.sq .h{top:298px;font-size:74px}
+.sq .meta{top:418px;font-size:25px}.sq .meta span{padding:6px 16px}
+.sq .list{top:478px}.sq .r{padding:7px 0}.sq .r span{font-size:28px}.sq .r b{font-size:32px}.sq .r small{font-size:17px}
+.sq .note{top:900px;font-size:25px}
+.sq .foot{bottom:30px}
+</style></head><body>
+<img class="ph" src="../../out/christ/campus.jpg"><div class="g"></div>
+<img class="logo" src="../../public/brand/logo-white.png">
+<div class="kick">CHRIST BBA ENTRANCE TEST · 5 DEC</div>
+<div class="h">Your 90 minutes, <i>decoded.</i></div>
+<div class="meta"><span>120 questions</span><span>90 minutes</span><span>+1 / −0.25</span></div>
+<div class="list">
+ <div class="r"><span>English</span><div class="bar"><i style="width:100%"></i></div><b>25</b></div>
+ <div class="r"><span>Reasoning</span><div class="bar"><i style="width:100%"></i></div><b>25</b></div>
+ <div class="r new"><span>General Knowledge<small>NOT IN IPMAT PREP</small></span><div class="bar"><i style="width:80%"></i></div><b>20</b></div>
+ <div class="r"><span>Quantitative Aptitude</span><div class="bar"><i style="width:80%"></i></div><b>20</b></div>
+ <div class="r"><span>Data Interpretation</span><div class="bar"><i style="width:80%"></i></div><b>20</b></div>
+ <div class="r new" style="border:none"><span>Accounting<small>NOT IN IPMAT PREP</small></span><div class="bar"><i style="width:40%"></i></div><b>10</b></div>
+</div>
+<div class="note"><b>45 seconds</b> a question, and 4 wrong answers cancel 1 right one. Skipping is a skill here.</div>
+<div class="foot"><span class="a">Official pattern · @ipmcareers</span><span class="b">Free CHRIST mock: ipmcareer.com</span></div>
+<script>if(location.search.includes("sq")){document.documentElement.classList.add("sq");document.body.classList.add("sq");document.querySelector(".ph").src="../../out/christ/campus-sq.jpg";}</script>
+</body></html>
