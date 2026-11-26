@@ -1,0 +1,14 @@
+{
+ "date": "2026-12-02",
+ "id": "quant-up20-down20",
+ "video": "media/reels/2026-12-02.mp4",
+ "format": "Quant trick (Voiced (ElevenLabs, Monika Sogam); solution in the video; same file on Instagram and YouTube; made with tools/make-reel.mjs)",
+ "caption": "Most students get this wrong 👀\n\nA price goes up by 20%, then comes down by 20%. What is the net change?\n\nComment your answer before the solution shows 👇\n\nSave this shortcut for IPMAT 📌\n\n#Percentages #IPMAT #IPMAT2027 #QuantTricks #IPMCareers",
+ "answer": "4% loss: 100 becomes 120, then 96. Shortcut: a + b + ab/100 = 20 - 20 - 4 = -4%",
+ "claims": [{"text": "4% loss", "source": "worked out: 100 x 1.2 x 0.8 = 96"}],
+ "youtube": {
+  "title": "Up 20%, down 20%: net change? Most get it wrong | IPMAT 2027 Quant | #ipmat #ipmat2027 #shorts",
+  "description": "Most students get this wrong 👀\n\nA price goes up by 20%, then comes down by 20%. What is the net change?\n\nTry it, then watch the shortcut.\n\n#Percentages #IPMAT #IPMAT2027 #QuantTricks #IPMCareers",
+  "tags": ["IPMAT", "IPMAT 2027", "percentages", "quant tricks", "successive percentage change", "aptitude", "IPM Careers"]
+ }
+}
