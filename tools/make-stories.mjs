@@ -26,7 +26,7 @@ const tTasks = ["Fundamental Accounting: revise the golden rules of debit and cr
   "GK: 15 minutes of this month's current affairs.", "One DI set with a timer. Tables and bar graphs first.", "Reasoning: one arrangement puzzle and one blood-relation set.",
   "English: one reading passage and 10 grammar questions.", "Review your last mock: which wrong answers should you have skipped?"];
 const tDays = Math.round((Date.parse("2026-12-05") - Date.parse(date)) / 86400000);
-const TS = { cta: "Try a free CHRIST mock", ctaSub: "10 full mocks, real pattern · ₹1,999 · ipmcareer.com" };
+const TS = { cta: "Try a free CHRIST mock", ctaSub: "10 full mocks, real pattern · ₹999 · ipmcareer.com" };
 let ch = CHRIST[date] && { band: "APPLY BY 25 NOV · 5 PM", stage: 0, ...CHRIST[date] };
 if (!ch && tDays >= 0 && tDays <= 9) {
   ch = { band: "ENTRANCE TEST · 5 DEC", stage: tDays <= 1 ? 2 : 1, days: tDays || "GO",
