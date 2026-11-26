@@ -1,0 +1,21 @@
+{
+ "tag": "PYQ", "sub": "IPMAT Indore 2025",
+ "title": "IPMAT 2025:<br>smallest m + n?",
+ "voice": "media/reels/voice/2026-11-27.mp3",
+ "beats": [
+  {"t": 0.0}, {"t": 3.6}, {"t": 13.15, "hold": 2.6}, {"t": 14.6}, {"t": 15.8}, {"t": 21.6},
+  {"t": 23.85}, {"t": 27.65}, {"t": 33.15}, {"t": 40.2}, {"t": 42.5}
+ ],
+ "els": [
+  {"type": "card", "at": 1, "head": "IPMAT Indore 2025 · QA · Short Answer", "html": "If m and n are two positive integers such that 7m + 11n = 200, then the minimum possible value of m + n is ____", "cps": 40, "stamp": {"at": 2, "text": "ASKED IN 2025"}},
+  {"type": "timer", "at": 2, "until": 3, "d": 0.9, "secs": 3, "label": "Pause and try it ⏸"},
+  {"type": "line", "at": 3, "html": "<pu>The trick:</pu>"},
+  {"type": "line", "at": 4, "html": "11 &gt; 7, so a bigger <pu>n</pu> means a smaller <pu>m + n</pu>"},
+  {"type": "line", "at": 5, "html": "Make <pu>n</pu> as big as possible"},
+  {"type": "line", "at": 6, "html": "200 − 11n must be divisible by 7"},
+  {"type": "line", "at": 7, "html": "n = 1, 8, 15 <g>✓</g> &nbsp; 22 <r>✗ too big</r>"},
+  {"type": "line", "at": 8, "html": "n = 15 → 200 − 165 = 35 → m = 5"},
+  {"type": "ans", "at": 9, "html": "m + n = <g>20</g>"},
+  {"type": "follow", "at": 10, "html": "Follow <hl>IPM Careers</hl> for more PYQs"}
+ ]
+}

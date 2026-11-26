@@ -1,0 +1,16 @@
+{
+ "tag": "Verbal", "sub": "Spot the error",
+ "title": "Spot the error<br>in 5 seconds",
+ "voice": "media/reels/voice/2026-11-28.mp3",
+ "beats": [
+  {"t": 0.0}, {"t": 2.55}, {"t": 7.35, "hold": 3.4}, {"t": 8.9}, {"t": 12.0}, {"t": 16.4}, {"t": 19.2}, {"t": 22.35}
+ ],
+ "els": [
+  {"type": "opts", "at": 1, "ts": [0.1, 1.35, 2.5, 3.2], "items": ["Neither the teacher", "nor the students", "was ready", "for the surprise test."], "fix": {"at": 3, "d": 1.3, "i": 2, "to": "were ready"}},
+  {"type": "timer", "at": 2, "until": 3, "secs": 5, "label": "Which part is wrong?"},
+  {"type": "line", "at": 4, "html": "<pu>Rule:</pu> with <pu>neither … nor</pu>, the verb agrees with the <hl>closer</hl> subject."},
+  {"type": "line", "at": 5, "html": "\"students\" is plural → <g>were</g>"},
+  {"type": "line", "at": 6, "html": "Neither the teacher nor the students <g>were</g> ready. <g>✓</g>"},
+  {"type": "follow", "at": 7, "html": "Follow <hl>IPM Careers</hl> for more VA practice"}
+ ]
+}

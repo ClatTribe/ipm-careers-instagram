@@ -1,0 +1,77 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Whiteboard reel (1080x1920). Driven by window.render(t) with spec + beat start times set by tools/make-reel.mjs. -->
+<style>
+@font-face { font-family: Inter; src: url(../public/fonts/inter.woff2); font-weight: 100 900; }
+@font-face { font-family: Hand; src: url(../public/fonts/shantell-sans.woff2); font-weight: 300 800; }
+@font-face { font-family: Fraunces; src: url(../public/fonts/fraunces.woff2); font-weight: 100 900; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#fff;color:#1B1420;font-family:Inter,"Noto Color Emoji",sans-serif}
+#wrap{position:absolute;left:70px;right:70px;top:150px}
+.hdr{display:flex;align-items:center;justify-content:center;gap:14px;font:600 26px Inter;color:#8a8190}
+.hdr img{height:44px}
+.hdr .tag{background:#FFE58A;color:#1B1420;font:800 24px Inter;padding:4px 14px;border-radius:8px}
+.title{font:800 76px/1.08 Hand;text-align:center;margin:26px 0 34px;min-height:82px}
+.el{margin:0 0 26px}
+.card{position:relative;background:#FFFCF2;border:2px solid #EDE3C8;border-radius:16px;padding:22px 30px 26px;box-shadow:0 10px 26px rgba(0,0,0,.08);
+ background-image:repeating-linear-gradient(transparent 0 57px,#EDE3C8 57px 59px);background-position:0 54px}
+.card .h{font:800 22px Inter;color:#C8312B;letter-spacing:.04em;margin-bottom:10px}
+.card .q{font:600 44px/59px Fraunces;color:#1B1420}
+.stamp{position:absolute;right:-10px;top:-22px;border:5px solid #C8312B;color:#C8312B;font:900 30px Inter;letter-spacing:.06em;padding:6px 16px;border-radius:10px;background:rgba(255,255,255,.85);transform:rotate(6deg)}
+.timer{display:flex;align-items:center;justify-content:space-between;font:800 50px Hand;padding:6px 6px}
+.ring{width:120px;height:120px;position:relative}
+.ring svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.ring b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 56px Inter;color:#C8312B}
+.line{font:600 52px/1.32 Hand}
+.small{font:600 40px/1.32 Hand;color:#4a4350}
+.opt{display:flex;align-items:center;gap:22px;font:600 50px/1.25 Hand;margin:0 0 22px}
+.opt i{flex:0 0 66px;height:66px;border-radius:50%;border:4px solid #893783;color:#893783;font:800 32px Inter;font-style:normal;display:flex;align-items:center;justify-content:center}
+.opt span.u{border-bottom:3px solid #c9c1cf;padding-bottom:4px}
+.opt.bad span.u{background:rgba(200,49,43,.12)}
+.opt s{color:#C8312B;text-decoration-thickness:5px}
+.fix{color:#1E8A4C;font-weight:800}
+.ans{font:800 66px Hand;text-align:center;margin-top:10px}
+.follow{font:600 40px Hand;text-align:center;margin-top:40px}
+g,.g{color:#1E8A4C;font-weight:800}
+r,.r{color:#C8312B;font-weight:800}
+pu,.p{color:#893783;font-weight:800}
+hl{background:#FFE58A;padding:0 8px;border-radius:6px}
+</style></head><body><div id="wrap"></div>
+<script>
+let S=null, B=[];
+const ease=x=>{x=Math.max(0,Math.min(1,x));return 1-Math.pow(1-x,3)};
+function typeHTML(html,n){ // keep first n visible characters of html
+  const d=document.createElement('div');d.innerHTML=html;let left=n;
+  const walk=node=>{for(const c of [...node.childNodes]){ if(c.nodeType===3){ if(left<=0){c.nodeValue='';} else if(c.nodeValue.length>left){c.nodeValue=c.nodeValue.slice(0,left);left=0;} else left-=c.nodeValue.length; } else walk(c);} };
+  walk(d);return d.innerHTML;
+}
+const plainLen=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.length};
+window.setup=(spec,beats)=>{S=spec;B=beats;};
+window.render=(t)=>{
+  const at=e=>B[e.at].start+(e.d||0), end=e=>e.until!=null?B[e.until].start:1e9;
+  const CPS=S.cps||38;
+  let h=`<div class="hdr"><img src="../public/brand/favicon_ipm.svg"><span class="tag">${S.tag}</span><span>${S.sub}</span></div>`;
+  h+=`<div class="title">${typeHTML(S.title,Math.floor((t-0.05)*30))}</div>`;
+  for(const e of S.els){
+    const a=at(e); if(t<a||t>=end(e)) continue;
+    const k=t-a, n=Math.floor(k*CPS);
+    if(e.type==='card'){
+      const st=e.stamp&&t>=B[e.stamp.at].start?`<div class="stamp" style="transform:rotate(6deg) scale(${1.6-0.6*ease((t-B[e.stamp.at].start)/.25)});opacity:${ease((t-B[e.stamp.at].start)/.15)}">${e.stamp.text}</div>`:'';
+      h+=`<div class="el card">${st}<div class="h">${e.head}</div><div class="q">${typeHTML(e.html,Math.floor(k*(e.cps||55)))}</div></div>`;
+    } else if(e.type==='timer'){
+      const total=e.secs, left=Math.max(0,total-k), frac=left/total;
+      h+=`<div class="el timer"><span>${e.label}</span><div class="ring"><svg width="120" height="120"><circle cx="60" cy="60" r="52" fill="none" stroke="#f1e2e1" stroke-width="10"/><circle cx="60" cy="60" r="52" fill="none" stroke="#C8312B" stroke-width="10" stroke-linecap="round" stroke-dasharray="${2*Math.PI*52}" stroke-dashoffset="${2*Math.PI*52*(1-frac)}"/></svg><b>${Math.ceil(left)}</b></div></div>`;
+    } else if(e.type==='opts'){
+      h+='<div class="el">';
+      e.items.forEach((it,i)=>{ const ia=a+(e.ts?e.ts[i]:i*(e.gap||0.9)); if(t<ia) return;
+        const fa=e.fix?B[e.fix.at].start+(e.fix.d||0):1e9; const fixed=e.fix&&t>=fa&&i===e.fix.i;
+        const txt=fixed?`<s>${it}</s> <span class="fix">→ ${typeHTML(e.fix.to,Math.floor((t-fa)*CPS))}${t-fa>0.6?' ✓':''}</span>`:typeHTML(it,Math.floor((t-ia)*CPS));
+        h+=`<div class="opt ${fixed?'bad':''}"><i>${'ABCD'[i]}</i><span class="u">${txt}</span></div>`;});
+      h+='</div>';
+    } else {
+      const cls={line:'line',small:'small line',ans:'ans',follow:'follow'}[e.type]||'line';
+      h+=`<div class="el ${cls}">${typeHTML(e.html,n)}</div>`;
+    }
+  }
+  document.getElementById('wrap').innerHTML=h;
+};
+</script></body></html>
