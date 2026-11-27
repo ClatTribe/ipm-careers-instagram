@@ -1,5 +1,12 @@
 # Reels
 
+## APPROVED FORMAT (owner, 27 Nov 2026): exam-desk POV, tools/make-desk.mjs
+Practice sheet on a wooden desk, "60 seconds. No calculator.", moving clock hand, a pencil that follows the rough work.
+The voice (ElevenLabs Monika Sogam, ONLY the question) reads it, the rough work writes itself and stops BEFORE the answer, then "Finish it in the comments 👇 / Answer pinned in the comments".
+Spec `reels/src/<date>-desk.json`: {hook, src, q, opts[4], rough[] (stop before the answer), voice: {file, a, z}}. Preview with `--frames`, render without.
+Any change to this look, or any new format, is shown to the owner as ONE sample first. Never batch-produce an unapproved format.
+The 15-second dark "challenge" template was REJECTED (27 Nov); its drafts are in reels/drafts and must not be used.
+
 ## Default since 27 Nov 2026: the 15-second challenge (tools/make-challenge.mjs)
 The long whiteboard reels got the lowest views on the channel (median 144 vs 1,287 for 6 to 13 sec memes), so question reels are now 15 to 18 seconds:
 hook + big question from the first frame, the voice reads only the question, 5-second ticking countdown, "Comment your answer" end card. The solution goes in the pinned comment, never in the video.

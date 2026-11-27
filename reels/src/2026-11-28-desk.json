@@ -1,0 +1,5 @@
+{"hook": "60 seconds.<br><span>No calculator.</span>", "src": "PERCENTAGES",
+ "q": "A price goes <b>up by 20%</b>, then comes <b>down by 20%</b>. What is the net change?",
+ "opts": ["No change", "4% loss", "4% gain", "2% loss"],
+ "rough": ["rough work:", "start with 100", "+20% → 120", "−20% of 120 = ?", "so it becomes … ?"],
+ "voice": {"file": "media/reels/voice/pct-up20-down20.mp3", "a": 2.0, "z": 7.75}}

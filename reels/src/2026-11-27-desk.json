@@ -1,0 +1,5 @@
+{"hook": "60 seconds.<br><span>No calculator.</span>", "src": "IPMAT INDORE 2025",
+ "q": "m, n are positive integers and <b>7m + 11n = 200</b>. Smallest possible <b>m + n</b>?",
+ "opts": ["20", "24", "28", "32"],
+ "rough": ["rough work:", "200 − 11n ÷ 7 ?", "n = 1 → m = 27", "n = 8 → m = 16", "n = 15 → m = 5 …"],
+ "voice": {"file": "media/reels/voice/2026-11-27.mp3", "a": 3.6, "z": 12.85}}

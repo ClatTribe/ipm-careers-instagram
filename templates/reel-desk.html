@@ -1,0 +1,53 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- Approved 27 Nov 2026: "exam-desk POV" question reel (1080x1920). Practice sheet on a wooden desk, wall clock, pencil;
+     the voice reads the question, rough work writes itself (stopping before the answer), then "Finish it in the comments".
+     Driven by setup(spec, T) and render(t) from tools/make-desk.mjs. -->
+<style>
+@font-face { font-family: Inter; src: url(../public/fonts/inter.woff2); font-weight: 100 900; }
+@font-face { font-family: Fraunces; src: url(../public/fonts/fraunces.woff2); font-weight: 100 900; }
+@font-face { font-family: Hand; src: url(../public/fonts/shantell-sans.woff2); font-weight: 300 800; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;font-family:Inter,"Noto Color Emoji",sans-serif}
+.desk{position:absolute;inset:0;background:linear-gradient(160deg,#9b7653,#6d4f35)}
+.grain{position:absolute;inset:0;background:repeating-linear-gradient(92deg,rgba(0,0,0,.06) 0 3px,transparent 3px 26px)}
+.sheet{position:absolute;left:90px;top:330px;width:900px;height:1180px;background:#FBFAF6;transform:rotate(-3deg);box-shadow:0 30px 60px rgba(0,0,0,.45);padding:70px}
+.sh{display:flex;justify-content:space-between;font:700 26px Inter;color:#555;border-bottom:3px solid #222;padding-bottom:14px}
+.qn{font:700 34px Fraunces;margin-top:40px;color:#222}
+.q{font:500 50px/1.4 Fraunces;color:#1b1b1b;margin-top:10px}
+.op{margin-top:44px;display:flex;flex-wrap:wrap;gap:18px 40px;font:600 40px Fraunces;color:#222}
+.rw{position:absolute;left:70px;font:600 44px Hand;color:#1F3A8A;transform:rotate(-2deg);white-space:nowrap}
+.clock{position:absolute;left:70px;top:110px;width:200px;height:200px;border-radius:50%;background:#fff;border:12px solid #222;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.clock i{position:absolute;left:84px;top:84px;width:8px;height:70px;background:#C8312B;border-radius:4px;transform-origin:4px 4px}
+.hook{position:absolute;left:310px;top:150px;font:900 68px/1.05 Inter;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.45)}
+.hook span{color:#F5C451}
+.pencil{position:absolute;width:760px;height:46px;transform-origin:0 50%}
+.pencil .body{position:absolute;left:60px;right:0;top:0;bottom:0;background:linear-gradient(#F5C451,#d9a62c);border-radius:0 6px 6px 0;box-shadow:0 10px 20px rgba(0,0,0,.35)}
+.pencil .wood{position:absolute;left:0;top:0;width:0;height:0;border-top:23px solid transparent;border-bottom:23px solid transparent;border-right:60px solid #e9cfa0}
+.pencil .lead{position:absolute;left:0;top:17px;width:0;height:0;border-top:6px solid transparent;border-bottom:6px solid transparent;border-right:16px solid #333}
+.pencil .end{position:absolute;right:0;top:0;width:70px;height:46px;background:linear-gradient(#d9d9d9,#a9a9a9);border-radius:0 8px 8px 0}
+.cta{position:absolute;left:60px;right:60px;top:820px;text-align:center;font:900 70px/1.12 Inter;color:#fff}
+.cta div{font:600 38px Inter;margin-top:14px;color:#F5C451}
+</style></head><body><div id="s"></div>
+<script>
+let S,T; window.setup=(s,t)=>{S=s;T=t;};
+const e=x=>{x=Math.max(0,Math.min(1,x));return 1-Math.pow(1-x,3)};
+const pop=k=>`opacity:${e(k/0.18)};transform:translateY(${(1-e(k/0.25))*30}px) scale(${0.92+0.08*e(k/0.25)})`;
+window.render=(t)=>{
+  let h=`<div class="desk"></div><div class="grain"></div><div class="sheet"><div class="sh"><span>IPM Careers · Practice sheet</span><span>${S.time||'Time: 60 sec'}</span></div>
+    <div class="qn">${S.qn||'Q.1'}${S.src?` <span style="font:700 24px Inter;color:#C8312B;letter-spacing:.06em;margin-left:14px">${S.src}</span>`:''}</div><div class="q">${S.q}</div>`;
+  if(S.opts) h+=`<div class="op">${S.opts.map((o,i)=>`<span>(${'abcd'[i]}) ${o}</span>`).join('')}</div>`;
+  // rough work, one line per second after the question is read
+  let px=380, py=1420; // pencil tip resting spot (page coords)
+  S.rough.forEach((r,i)=>{const a=T.rough+i*S.gap; if(t>a){const n=Math.floor((t-a)*22); const top=(S.roughTop||700)+i*72;
+    h+=`<div class="rw" style="top:${top}px">${r.slice(0,n)}</div>`;
+    if(t<a+S.gap||i===S.rough.length-1){ px=90+70+Math.min(n,r.length)*24+20; py=330+top+40; }}});
+  h+='</div>';
+  // pencil: lies on the desk, then follows the writing (tip at px,py), slightly tilted
+  const writing=t>T.rough && t<T.cta;
+  const tipX=writing?px:300, tipY=writing?py:1440, ang=writing?34+Math.sin(t*18)*1.5:-28;
+  h+=`<div class="pencil" style="left:${tipX}px;top:${tipY-23}px;transform:rotate(${ang}deg)"><div class="body"></div><div class="wood"></div><div class="lead"></div><div class="end"></div></div>`;
+  h+=`<div class="clock"><i style="transform:rotate(${180+t*24}deg)"></i></div><div class="hook" style="${pop(t)}">${S.hook}</div>`;
+  if(t>=T.cta) h+=`<div style="position:absolute;inset:0;background:rgba(0,0,0,${.6*e((t-T.cta)/.3)})"></div><div class="cta" style="${pop(t-T.cta)}">${S.cta||'Finish it in the comments 👇'}<div>${S.cta2||'Answer pinned in the comments'}</div></div>`;
+  document.getElementById('s').innerHTML=h;
+};
+</script></body></html>

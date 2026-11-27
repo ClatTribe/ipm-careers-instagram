@@ -1,0 +1,25 @@
+{
+ "date": "2026-11-28",
+ "id": "quant-up20-down20",
+ "video": "media/reels/2026-11-28.mp4",
+ "format": "Exam-desk POV question reel (approved 27 Nov): voice reads the question (ElevenLabs Monika Sogam), rough work writes itself, answer pinned in comments; tools/make-desk.mjs",
+ "caption": "60 seconds. No calculator. ⏱\n\nA price goes up by 20%, then comes down by 20%. What is the net change?\n\n(a) No change  (b) 4% loss  (c) 4% gain  (d) 2% loss\n\nMost people pick (a). Comment your answer 👇 Answer is pinned.\n\n#Percentages #IPMAT #IPMAT2027 #IPMCareers",
+ "answer": "(b) 4% loss. 100 becomes 120, then 120 - 24 = 96. Shortcut: a + b + ab/100 = 20 - 20 - 4 = -4%.",
+ "claims": [
+  {
+   "text": "4% loss",
+   "source": "worked out: 100 x 1.2 x 0.8 = 96"
+  }
+ ],
+ "youtube": {
+  "title": "Up 20%, then down 20%: net change? 60 sec, no calculator #ipmat #shorts",
+  "description": "A price goes up by 20%, then down by 20%. What is the net change? (a) No change (b) 4% loss (c) 4% gain (d) 2% loss. Comment your answer.\n\n#Percentages #IPMAT #IPMAT2027 #IPMCareers",
+  "tags": [
+   "IPMAT",
+   "IPMAT 2027",
+   "percentages",
+   "quant tricks",
+   "IPM Careers"
+  ]
+ }
+}

@@ -2,9 +2,9 @@
  "date": "2026-11-27",
  "id": "pyq-ipmat-2025-7m-11n",
  "video": "media/reels/2026-11-27.mp4",
- "format": "15-second challenge (question read by ElevenLabs Monika Sogam, 5-second countdown, solution in the pinned comment; tools/make-challenge.mjs)",
- "caption": "Came in IPMAT Indore 2025 👀\n\n7m + 11n = 200, where m and n are positive integers. What is the smallest possible value of m + n?\n\nYou get 5 seconds. Comment your answer, solution is pinned 👇\n\n#IPMAT #IPMAT2027 #IPMATIndore #IPMCareers",
- "answer": "20: make n as big as possible. 200 - 11n must be divisible by 7, so n = 15, m = 5, and m + n = 20",
+ "format": "Exam-desk POV question reel (approved 27 Nov): voice reads the question (ElevenLabs Monika Sogam), rough work writes itself, answer pinned in comments; tools/make-desk.mjs",
+ "caption": "60 seconds. No calculator. ⏱\n\nThis came in IPMAT Indore 2025: m, n are positive integers and 7m + 11n = 200. What is the smallest possible value of m + n?\n\n(a) 20  (b) 24  (c) 28  (d) 32\n\nFinish the rough work and comment your answer 👇 Answer is pinned.\n\n#IPMAT #IPMAT2027 #IPMATIndore #IPMCareers",
+ "answer": "(a) 20. Make n as big as possible: 200 - 11n must be divisible by 7, so n = 15, m = 5, and m + n = 20.",
  "claims": [
   {
    "text": "IPMAT Indore 2025 question",
