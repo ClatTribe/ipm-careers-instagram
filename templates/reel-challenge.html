@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- 15-second "challenge" reel (1080x1920): hook + big question from frame 1, voice reads it, 5-second countdown, "comment your answer" end card.
+     Driven by window.setup(spec, T) and window.render(t) from tools/make-challenge.mjs. Key content sits between y 220 and 1500 (clear of Instagram/YouTube buttons). -->
+<style>
+@font-face { font-family: Inter; src: url(../public/fonts/inter.woff2); font-weight: 100 900; }
+@font-face { font-family: Hand; src: url(../public/fonts/shantell-sans.woff2); font-weight: 300 800; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;font-family:Inter,"Noto Color Emoji",sans-serif;color:#fff}
+body{background:#1A1024}
+.glow{position:absolute;inset:0;background:radial-gradient(900px 700px at 50% 38%,rgba(137,55,131,.55),transparent 70%)}
+#w{position:absolute;left:70px;right:70px;top:250px;bottom:380px;display:flex;flex-direction:column;align-items:center}
+.brand{display:flex;align-items:center;gap:14px;font:700 26px Inter;color:rgba(255,255,255,.7)}
+.brand img{height:46px}
+.hook{margin-top:30px;background:#FFD23F;color:#1A1024;font:900 54px/1.1 Inter;padding:16px 34px;border-radius:22px;text-align:center;transform:rotate(-1.5deg);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.tag{margin-top:26px;font:800 28px Inter;letter-spacing:.14em;color:#FFD23F}
+.q{margin-top:22px;font:800 66px/1.22 Inter;text-align:center}
+.q .hl{color:#FFD23F}
+.opts{margin-top:28px;width:100%}
+.opt{display:flex;align-items:center;gap:24px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.18);border-radius:22px;padding:18px 26px;margin:0 0 18px;font:700 52px/1.2 Inter}
+.opt i{flex:0 0 72px;height:72px;border-radius:50%;background:#FFD23F;color:#1A1024;font:900 38px Inter;font-style:normal;display:flex;align-items:center;justify-content:center}
+.timer{margin-top:auto;position:relative;width:250px;height:250px}
+.timer svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.timer b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:900 120px Inter;color:#FFD23F}
+.cta{margin-top:auto;text-align:center}
+.cta .a{font:900 76px/1.1 Inter}
+.cta .a span{color:#FFD23F}
+.cta .b{margin-top:18px;font:600 38px Inter;color:rgba(255,255,255,.8)}
+.read{position:absolute;left:0;right:0;bottom:300px;text-align:center;font:600 30px Inter;color:rgba(255,255,255,.55)}
+</style></head><body><div class="glow"></div><div id="w"></div><div class="read" id="rd"></div>
+<script>
+let S, T;
+window.setup=(s,t)=>{S=s;T=t;};
+const ease=x=>{x=Math.max(0,Math.min(1,x));return 1-Math.pow(1-x,3)};
+window.render=(t)=>{
+  const pop=k=>`transform:scale(${0.85+0.15*ease(k/0.25)});opacity:${ease(k/0.2)}`;
+  let h=`<div class="brand"><img src="../public/brand/favicon_ipm.svg">IPM Careers · ${S.sub}</div>`;
+  h+=`<div class="hook" style="${pop(t+0.25)}">${S.hook}</div>`;
+  if(S.tag) h+=`<div class="tag">${S.tag}</div>`;
+  if(S.q) h+=`<div class="q" style="font-size:${S.qsize||66}px">${S.q}</div>`;
+  if(S.opts){ h+='<div class="opts">'; S.opts.forEach((o,i)=>{h+=`<div class="opt"><i>${'ABCD'[i]}</i><span>${o}</span></div>`;}); h+='</div>'; }
+  const c0=T.count, c1=T.count+S.secs;
+  if(t>=c0 && t<c1){ const left=c1-t, frac=left/S.secs, R=110, L=2*Math.PI*R;
+    h+=`<div class="timer"><svg width="250" height="250"><circle cx="125" cy="125" r="${R}" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="18"/><circle cx="125" cy="125" r="${R}" fill="none" stroke="#FFD23F" stroke-width="18" stroke-linecap="round" stroke-dasharray="${L}" stroke-dashoffset="${L*(1-frac)}"/></svg><b>${Math.ceil(left)}</b></div>`; }
+  if(t>=c1){ const k=t-c1; h+=`<div class="cta" style="${pop(k)}"><div class="a">Comment your<br><span>answer 👇</span></div><div class="b">Solution in the pinned comment</div></div>`; }
+  document.getElementById('w').innerHTML=h;
+  document.getElementById('rd').textContent = t<c0 ? (S.readHint||'') : '';
+};
+</script></body></html>

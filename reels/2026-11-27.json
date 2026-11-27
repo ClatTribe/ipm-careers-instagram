@@ -2,16 +2,30 @@
  "date": "2026-11-27",
  "id": "pyq-ipmat-2025-7m-11n",
  "video": "media/reels/2026-11-27.mp4",
- "format": "PYQ, Short Answer (Voiced (ElevenLabs, Monika Sogam); solution in the video; same file on Instagram and YouTube; made with tools/make-reel.mjs)",
- "caption": "This came in IPMAT Indore 2025 👀\n\n7m + 11n = 200, where m and n are positive integers. What is the smallest possible value of m + n?\n\nPause the reel and try it before the solution. Comment your answer 👇\n\nSave this for your number system revision 📌\n\n#IPMAT #IPMAT2027 #IPMATIndore #QuantitativeAbility #IPMCareers",
+ "format": "15-second challenge (question read by ElevenLabs Monika Sogam, 5-second countdown, solution in the pinned comment; tools/make-challenge.mjs)",
+ "caption": "Came in IPMAT Indore 2025 👀\n\n7m + 11n = 200, where m and n are positive integers. What is the smallest possible value of m + n?\n\nYou get 5 seconds. Comment your answer, solution is pinned 👇\n\n#IPMAT #IPMAT2027 #IPMATIndore #IPMCareers",
  "answer": "20: make n as big as possible. 200 - 11n must be divisible by 7, so n = 15, m = 5, and m + n = 20",
  "claims": [
-  {"text": "IPMAT Indore 2025 question", "source": "IPM Careers portal PYQ bank, IPMAT Indore 2025, Q1 of 90 (Number System, short answer), seen 24 Nov 2026"},
-  {"text": "answer 20", "source": "checked by brute force over all positive (m, n): solutions (27,1), (16,8), (5,15); minimum m + n = 20"}
+  {
+   "text": "IPMAT Indore 2025 question",
+   "source": "IPM Careers portal PYQ bank, IPMAT Indore 2025, Q1 of 90 (Number System, short answer), seen 24 Nov 2026"
+  },
+  {
+   "text": "answer 20",
+   "source": "checked by brute force over all positive (m, n): solutions (27,1), (16,8), (5,15); minimum m + n = 20"
+  }
  ],
  "youtube": {
-  "title": "IPMAT 2025 PYQ: 7m + 11n = 200, smallest m + n? | IPMAT 2027 Quant | #ipmat #ipmat2027 #shorts",
-  "description": "This came in IPMAT Indore 2025 👀\n\n7m + 11n = 200, where m and n are positive integers. What is the smallest possible value of m + n?\n\nTry it, then watch the trick.\n\n#IPMAT #IPMAT2027 #IPMATIndore #QuantitativeAbility #IPMCareers",
-  "tags": ["IPMAT", "IPMAT 2027", "IPMAT Indore", "IPMAT PYQ", "number system", "quant tricks", "IPM Careers"]
+  "title": "Came in IPMAT 2025: can you solve it in 5 sec? #ipmat #shorts",
+  "description": "7m + 11n = 200, m and n positive integers. Smallest possible m + n? Comment your answer.\n\n#IPMAT #IPMAT2027 #IPMATIndore #IPMCareers",
+  "tags": [
+   "IPMAT",
+   "IPMAT 2027",
+   "IPMAT Indore",
+   "IPMAT PYQ",
+   "number system",
+   "quant tricks",
+   "IPM Careers"
+  ]
  }
 }

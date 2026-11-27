@@ -2,13 +2,26 @@
  "date": "2026-11-30",
  "id": "lr-order-youngest",
  "video": "media/reels/2026-11-30.mp4",
- "format": "LR puzzle (Voiced (ElevenLabs, Monika Sogam); solution in the video; same file on Instagram and YouTube; made with tools/make-reel.mjs)",
- "caption": "4 friends, 3 clues. Who is the youngest? 🧩\n\n1. P is older than Q.\n2. R is younger than S.\n3. Q is older than S.\n\nComment your answer before the solution shows 👇\n\n#LogicalReasoning #IPMAT #IPMAT2027 #Reasoning #IPMCareers",
+ "format": "15-second challenge (question read by ElevenLabs Monika Sogam, 5-second countdown, solution in the pinned comment; tools/make-challenge.mjs)",
+ "caption": "4 friends, 3 clues 🧩 Who is the youngest?\n\n1. P is older than Q.\n2. R is younger than S.\n3. Q is older than S.\n\nYou get 5 seconds. Comment your answer, solution is pinned 👇\n\n#LogicalReasoning #IPMAT #IPMAT2027 #IPMCareers",
  "answer": "R (oldest to youngest: P, Q, S, R)",
- "claims": [{"text": "one answer", "source": "original, checked by computer over all 24 orders: exactly one order fits"}],
+ "claims": [
+  {
+   "text": "one answer",
+   "source": "original, checked by computer over all 24 orders: exactly one order fits"
+  }
+ ],
  "youtube": {
-  "title": "4 friends, 3 clues: who is the youngest? | IPMAT 2027 LR | #ipmat #ipmat2027 #shorts",
-  "description": "4 friends, 3 clues. Who is the youngest? 🧩\n\n1. P is older than Q.\n2. R is younger than S.\n3. Q is older than S.\n\nTry it, then watch the solution.\n\n#LogicalReasoning #IPMAT #IPMAT2027 #Reasoning #IPMCareers",
-  "tags": ["IPMAT", "IPMAT 2027", "logical reasoning", "LR puzzle", "ordering puzzle", "reasoning tricks", "IPM Careers"]
+  "title": "4 friends, 3 clues: who is the youngest? Solve in 5 sec #ipmat #shorts",
+  "description": "1. P is older than Q. 2. R is younger than S. 3. Q is older than S. Who is the youngest? Comment your answer.\n\n#LogicalReasoning #IPMAT #IPMAT2027 #IPMCareers",
+  "tags": [
+   "IPMAT",
+   "IPMAT 2027",
+   "logical reasoning",
+   "LR puzzle",
+   "ordering puzzle",
+   "reasoning tricks",
+   "IPM Careers"
+  ]
  }
 }

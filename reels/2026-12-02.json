@@ -1,14 +1,14 @@
 {
  "date": "2026-12-02",
- "id": "quant-up20-down20",
+ "id": "quant-x-plus-1-over-x",
  "video": "media/reels/2026-12-02.mp4",
- "format": "Quant trick (Voiced (ElevenLabs, Monika Sogam); solution in the video; same file on Instagram and YouTube; made with tools/make-reel.mjs)",
- "caption": "Most students get this wrong 👀\n\nA price goes up by 20%, then comes down by 20%. What is the net change?\n\nComment your answer before the solution shows 👇\n\nSave this shortcut for IPMAT 📌\n\n#Percentages #IPMAT #IPMAT2027 #QuantTricks #IPMCareers",
- "answer": "4% loss: 100 becomes 120, then 96. Shortcut: a + b + ab/100 = 20 - 20 - 4 = -4%",
- "claims": [{"text": "4% loss", "source": "worked out: 100 x 1.2 x 0.8 = 96"}],
+ "format": "15-second challenge (question read by ElevenLabs Monika Sogam, 5-second countdown, solution in the pinned comment; tools/make-challenge.mjs)",
+ "caption": "Most students try to find x. You don't need to 😏\n\nIf x + 1/x = 3, what is x² + 1/x²?\n\nYou get 5 seconds. Comment your answer, solution is pinned 👇\n\n#Algebra #IPMAT #IPMAT2027 #QuantTricks #IPMCareers",
+ "answer": "7: square both sides. (x + 1/x)² = x² + 2 + 1/x² = 9, so x² + 1/x² = 9 - 2 = 7",
+ "claims": [{"text": "answer 7", "source": "worked out: (x + 1/x)^2 = x^2 + 1/x^2 + 2; checked numerically with x = (3 + sqrt 5)/2"}],
  "youtube": {
-  "title": "Up 20%, down 20%: net change? Most get it wrong | IPMAT 2027 Quant | #ipmat #ipmat2027 #shorts",
-  "description": "Most students get this wrong 👀\n\nA price goes up by 20%, then comes down by 20%. What is the net change?\n\nTry it, then watch the shortcut.\n\n#Percentages #IPMAT #IPMAT2027 #QuantTricks #IPMCareers",
-  "tags": ["IPMAT", "IPMAT 2027", "percentages", "quant tricks", "successive percentage change", "aptitude", "IPM Careers"]
+  "title": "x + 1/x = 3, find x² + 1/x² in 5 sec #ipmat #shorts",
+  "description": "If x + 1/x = 3, what is x² + 1/x²? Comment your answer.\n\n#Algebra #IPMAT #IPMAT2027 #QuantTricks #IPMCareers",
+  "tags": ["IPMAT", "IPMAT 2027", "algebra", "quant tricks", "IPM Careers"]
  }
 }

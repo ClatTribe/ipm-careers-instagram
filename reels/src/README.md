@@ -1,4 +1,15 @@
-# Making a reel (whiteboard style, voiced)
+# Reels
+
+## Default since 27 Nov 2026: the 15-second challenge (tools/make-challenge.mjs)
+The long whiteboard reels got the lowest views on the channel (median 144 vs 1,287 for 6 to 13 sec memes), so question reels are now 15 to 18 seconds:
+hook + big question from the first frame, the voice reads only the question, 5-second ticking countdown, "Comment your answer" end card. The solution goes in the pinned comment, never in the video.
+1. Voice: ElevenLabs Monika Sogam (`2zRM7PkgwBPiau2jvVXc`), eleven_v4, 1 take, ONLY the question (no intro, no solution). Save `media/reels/voice/<date>.mp3`.
+2. Spec `reels/src/<date>-challenge.json`: {sub, hook (max 2 short lines), tag, q (html, `<span class="hl">` for yellow) or opts [A-D], qsize, secs: 5, voice: {file, a, z}}.
+3. `node tools/make-challenge.mjs <date> --frames 0,5,12` to preview, then without --frames to render `media/reels/<date>.mp4`.
+4. `reels/<date>.json`: short caption ending "You get 5 seconds. Comment your answer, solution is pinned 👇", the answer (pinned comment), claims, a SHORT YouTube title (under 70 characters, ending "#ipmat #shorts").
+Topics: IPMAT PYQ, quant trick, LR. Spot-the-error is paused (owner, 27 Nov). Check every answer by brute force or worked steps.
+
+## Old format: whiteboard reel with full solution (tools/make-reel.mjs), kept for reference
 
 Everything lives in this repo now (the old ipm-short folders were lost on a machine reset).
 
